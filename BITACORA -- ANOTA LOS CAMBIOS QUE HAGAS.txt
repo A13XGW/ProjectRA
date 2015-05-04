@@ -1,0 +1,8 @@
+Lunes 27 de Abril
+4:45 PM
+Se actualizo el canvas incluyendo un ScrollRect de nombre ScrollView en el cual se contiene un Panel con las diferentes imagenes.
+5:50
+Se hace prototipo del seleccionador/Indicador de imagen con un "brillo" (Imagen trasera con color)
+Marte 28 de Abril
+5:29
+Se configura el scrollBar y se liga al movimiento del scrollrect, se presenta problema de tipos de variable, no se como convertirlo
