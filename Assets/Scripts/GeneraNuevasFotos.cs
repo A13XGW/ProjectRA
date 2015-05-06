@@ -12,8 +12,8 @@ public class GeneraNuevasFotos : MonoBehaviour {
 
 	void Start () {
 	
-		imagen2=objetoBaseFoto2.GetComponent<Image> ();
-		imagen2.sprite = xd;
+//		imagen2=objetoBaseFoto2.GetComponent<Image> ();
+		//imagen2.sprite = xd;
 	//	imagenes=objetoBaseFoto.GetComponent<Image> ();
 	}
 	
