@@ -1,9 +1,13 @@
-Archivo de prueba agregado desde Git en Linux, descarga y commit con exito
+﻿Archivo de prueba agregado desde Git en Linux, descarga y commit con exito
 Pasos:
 1.-git clone https://github.com/A13XGW/ProjectRA.git
 2.-Realiza tus cambios
 3.-git add archivo
 4.-git commit -m "Version 0.1.0.0"
 5.-git push (Este pide usuario y contraseña de github)
+<<<<<<< HEAD
 
 Linea agregada por Alex
+=======
+Prueba edicion de codigo en paralelo
+>>>>>>> origin/master
