@@ -22,10 +22,12 @@ public class CambiarImagen : MonoBehaviour {
 			carrete [i].sprite = imagenes [i];
 		}
 			brillo [0].sprite = amarillo;
-
-		
 	}
 	// Update is called once per frame
+	void Update(){
+
+	}
+
 	public void Avanza () {
 		brillo [indice].sprite = transparente;
 		if (indice < longitud) {
