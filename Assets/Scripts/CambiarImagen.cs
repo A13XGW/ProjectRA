@@ -15,6 +15,8 @@ public class CambiarImagen : MonoBehaviour {
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
+
+	public Image prueba;
 	//-----------------------------
 
 	// Use this for initialization
@@ -25,7 +27,7 @@ public class CambiarImagen : MonoBehaviour {
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
-
+		
 		Image[] images = new Image[thumbs.Length];
 		for (int x=1; x<thumbs.Length; x++) {
 			images[x] = Instantiate (thumb);
@@ -33,6 +35,13 @@ public class CambiarImagen : MonoBehaviour {
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
 			images[x].transform.position = new Vector2 (thumb.transform.position.x + (66*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
+			/*if (x>=14){
+				float xx = panel.transform.position.x;
+				float yy = panel.transform.position.y;
+				Vector3 n = new Vector3 (1.0f+1, 1.0f);
+				panel.transform.localScale = n;
+				panel.transform.position = new Vector2(xx,yy);
+			}*/
 		}
 
 		//EditorUtility.DisplayDialog(thumbs.Length.ToString(), "Seguro que deseas continuar?", "Si", "No");
