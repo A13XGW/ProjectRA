@@ -15,6 +15,10 @@ public class CambiaImgClick : MonoBehaviour {
 	public void Clickea() {
 			imgPrincipal.sprite = img.sprite;
 			canvasImg.GetComponent<CambiarImagen> ().indice = ind;
+
+		Image N = canvasImg.GetComponent<CambiarImagen> ().fondo;
+
+			N.transform.position = new Vector2 (img.transform.position.x, img.transform.position.y);
 			
 	}
 }

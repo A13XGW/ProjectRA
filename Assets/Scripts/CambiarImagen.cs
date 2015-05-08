@@ -8,19 +8,18 @@ public class CambiarImagen : MonoBehaviour {
 	public Image objetoImagen;
 	public int indice=0;
 	public Scrollbar barra;
-
+	public int i = 0;
 	//-----------------------------
 	public Image fondo;
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
 
-	public Image prueba;
 	//-----------------------------
 
 	// Use this for initialization
 	void Start() {
-		thumbs = Resources.LoadAll<Texture2D>("Images");
+		thumbs = Resources.LoadAll<Texture2D>("Fase1");
 
 		Rect rec = new Rect (0, 0, thumbs [0].width, thumbs [0].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
@@ -63,14 +62,12 @@ public class CambiarImagen : MonoBehaviour {
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
-		
-		
-		if(indice == 6){
-			barra.value =  0.70248f;
+		if (i == 6) {
+			barra.value += 0.50f;
+			i = 0;
 		}
-		if(indice == 12 ){
-			barra.value =  1f;
-		}
+		i++;
+
 
 
 	}
