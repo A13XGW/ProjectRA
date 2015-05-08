@@ -34,6 +34,9 @@ public class CambiarImagen : MonoBehaviour {
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
 			images[x].transform.position = new Vector2 (thumb.transform.position.x + (66*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
+
+			//agregar
+			images[x].GetComponent<CambiaImgClick>().ind=x;
 			/*if (x>=14){
 				float xx = panel.transform.position.x;
 				float yy = panel.transform.position.y;
@@ -49,9 +52,19 @@ public class CambiarImagen : MonoBehaviour {
 	// Update is called once per frame
 	public void Avanza () {
 		if (indice < thumbs.Length) {
-			fondo.transform.position = new Vector2 (fondo.transform.position.x+66, fondo.transform.position.y);
+			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
 			indice++;
+		} 
+		if (indice == thumbs.Length) {
+			indice--;
+			gameObject.GetComponent<CapturarText> ().enabled = true;
+		} else {
+			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
+			Vector2 vec = new Vector2 (0.5f, 0.5f);
+			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
+		
+		
 		if(indice == 6){
 			barra.value =  0.70248f;
 		}
@@ -59,9 +72,7 @@ public class CambiarImagen : MonoBehaviour {
 			barra.value =  1f;
 		}
 
-		Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
-		Vector2 vec = new Vector2 (0.5f, 0.5f);
-		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
+
 	}
 	
 	public void Retrocede() {

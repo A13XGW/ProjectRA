@@ -2,8 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CambiarImagen.cs">
     <Files>
-      <File FileName="Assets\Scripts\CambiarImagen.cs" Line="81" Column="53" />
+      <File FileName="Assets\Scripts\CambiarImagen.cs" Line="39" Column="51" />
       <File FileName="Assets\Scripts\GeneraNuevasFotos.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CambiaImgClick.cs" Line="17" Column="4" />
+      <File FileName="Assets\Scripts\CapturarText.cs" Line="10" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

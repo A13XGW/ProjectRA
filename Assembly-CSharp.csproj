@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CambiaImgClick.cs" />
      <Compile Include="Assets\Scripts\CambiarImagen.cs" />
      <Compile Include="Assets\Scripts\CapturarText.cs" />
      <Compile Include="Assets\Scripts\GeneraNuevasFotos.cs" />
