@@ -14,7 +14,7 @@ public class GeneraNuevasFotos : MonoBehaviour {
 		posicionGenX = GeneradorDeImagenes.transform.position.x;
 		for(int i = 0; i<= 4; i++){
 			posicionGenX = posicionGenX - 60f;
-			Instantiate(objetoBaseFoto1, GeneradorDeImagenes.position);
+			//Instantiate(objetoBaseFoto1, GeneradorDeImagenes.position);
 			GeneradorDeImagenes.transform.position = new Vector3 (posicionGenX,-43,0);
 		}
 //		imagen2=objetoBaseFoto2.GetComponent<Image> ();
