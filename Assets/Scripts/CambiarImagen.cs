@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using System.Collections;
 
-using UnityEditor;
 
 public class CambiarImagen : MonoBehaviour {
 
