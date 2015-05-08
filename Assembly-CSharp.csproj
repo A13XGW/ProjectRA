@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CambiarImagen.cs" />
+     <Compile Include="Assets\Scripts\CapturarText.cs" />
      <Compile Include="Assets\Scripts\GeneraNuevasFotos.cs" />
      <Compile Include="Assets\Scripts\GuardadNuevaImagen.cs" />
  <Reference Include="UnityEngine.UI">

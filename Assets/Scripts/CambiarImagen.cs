@@ -21,6 +21,7 @@ public class CambiarImagen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+<<<<<<< HEAD
 		thumbs = Resources.LoadAll<Texture2D>("Images");
 
 		Rect rec = new Rect (0, 0, thumbs [0].width, thumbs [0].height);
@@ -45,9 +46,21 @@ public class CambiarImagen : MonoBehaviour {
 		}
 
 		//EditorUtility.DisplayDialog(thumbs.Length.ToString(), "Seguro que deseas continuar?", "Si", "No");
+=======
+		objetoImagen.sprite = imagenes [0];
+		for (int i=0; i<=longitud; i++) {
+			brillo [i].sprite = transparente;
+			carrete [i].sprite = imagenes [i];
+		}
+			brillo [0].sprite = amarillo;
+>>>>>>> f493ad23b52ef365298cd35df79571ae30c7bdc9
 	}
 
 	// Update is called once per frame
+	void Update(){
+
+	}
+
 	public void Avanza () {
 		if (indice < thumbs.Length) {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x+66, fondo.transform.position.y);
