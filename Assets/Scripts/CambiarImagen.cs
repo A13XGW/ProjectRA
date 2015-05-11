@@ -25,15 +25,13 @@ public class CambiarImagen : MonoBehaviour {
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
-		
 		Image[] images = new Image[thumbs.Length];
 		for (int x=1; x<thumbs.Length; x++) {
-			images[x] = Instantiate (thumb);
+			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
 			images[x].transform.position = new Vector2 (thumb.transform.position.x + (66*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
-
 			//agregar
 			images[x].GetComponent<CambiaImgClick>().ind=x;
 			/*if (x>=14){
@@ -62,8 +60,8 @@ public class CambiarImagen : MonoBehaviour {
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
-		if (i == 6) {
-			barra.value += 0.50f;
+		if (i == 7) {
+			barra.value += 0.25f;
 			i = 0;
 		}
 		i++;
@@ -77,12 +75,11 @@ public class CambiarImagen : MonoBehaviour {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x-66, fondo.transform.position.y);
 			indice--;
 		}
-		if(indice == 6){
-			barra.value =  0f;
+		if (i == 7) {
+			barra.value -= 0.25f;
+			i = 0;
 		}
-		if(indice == 12 ){
-			barra.value =  .70248f;
-		}
+		i++;
 
 		Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
