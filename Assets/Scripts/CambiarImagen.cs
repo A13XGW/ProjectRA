@@ -4,7 +4,7 @@ using System.Collections;
 
 
 public class CambiarImagen : MonoBehaviour {
-
+	
 	public Image objetoImagen;
 	public int indice=0;
 	public Scrollbar barra;
@@ -14,17 +14,18 @@ public class CambiarImagen : MonoBehaviour {
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
-
+	
 	//-----------------------------
-
+	
 	// Use this for initialization
 	void Start() {
 		thumbs = Resources.LoadAll<Texture2D>("Fase1");
-
+		
 		Rect rec = new Rect (0, 0, thumbs [0].width, thumbs [0].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
+
 		Image[] images = new Image[thumbs.Length];
 		for (int x=1; x<thumbs.Length; x++) {
 			images[x] = Instantiate(thumb);
@@ -42,10 +43,10 @@ public class CambiarImagen : MonoBehaviour {
 				panel.transform.position = new Vector2(xx,yy);
 			}*/
 		}
-
+		
 		//EditorUtility.DisplayDialog(thumbs.Length.ToString(), "Seguro que deseas continuar?", "Si", "No");
 	}
-
+	
 	// Update is called once per frame
 	public void Avanza () {
 		if (indice < thumbs.Length) {
@@ -65,9 +66,9 @@ public class CambiarImagen : MonoBehaviour {
 			i = 0;
 		}
 		i++;
-
-
-
+		
+		
+		
 	}
 	
 	public void Retrocede() {
@@ -80,10 +81,10 @@ public class CambiarImagen : MonoBehaviour {
 			i = 0;
 		}
 		i++;
-
+		
 		Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
-
+		
 	}
 }
