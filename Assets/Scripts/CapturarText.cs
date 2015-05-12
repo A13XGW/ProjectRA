@@ -4,19 +4,14 @@ using System.IO;
 using UnityEngine.UI;
 
 public class CapturarText : MonoBehaviour {
-	public string TextoAGuardar = "Esribe tus comentarios";
-	public GameObject panelTexto;
-	public Text Texto;
-	//private Rect miTextoCampo = new Rect(202,20,0,0);
-
-	void OnGUI(){
-		panelTexto.SetActive (true);
-	//	TextoAGuardar = GUI.TextArea(miTextoCampo,TextoAGuardar);
-
+	public string TextoAGuardar;
+	public InputField CampoTexto;
+	public void ActivateInputField (){
+		//CampoTexto.transform.
 	}
-	void Update(){
-		Texto.text = "Esribe tus comentarios";
-		Texto.text = Keyframe;
+	public void guardar(){
+		TextoAGuardar = CampoTexto.text;
+
 	}
 }
 

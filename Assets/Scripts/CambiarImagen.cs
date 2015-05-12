@@ -9,6 +9,7 @@ public class CambiarImagen : MonoBehaviour {
 	public int indice=0;
 	public Scrollbar barra;
 	public int i = 0;
+	public Canvas area;
 	//-----------------------------
 	public Image fondo;
 	public Image thumb;
@@ -49,8 +50,9 @@ public class CambiarImagen : MonoBehaviour {
 	
 	// Update is called once per frame
 	public void Avanza () {
-		if (indice < thumbs.Length) {
+		if (indice < thumbs.Length-1) {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
+
 			indice++;
 		} 
 		if (indice == thumbs.Length) {
@@ -61,12 +63,16 @@ public class CambiarImagen : MonoBehaviour {
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
-		if (i == 7) {
+		if (i == 7 ) {
 			barra.value += 0.25f;
 			i = 0;
 		}
-		i++;
-		
+		if (indice < thumbs.Length - 1) {
+			i++;
+		}
+//		if (indice == thumbs.Length) {
+//			area.GetComponent<CapturarText>().ActivarTexto(true);
+//		}
 		
 		
 	}
@@ -86,5 +92,7 @@ public class CambiarImagen : MonoBehaviour {
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
 		
+	}
+	void Update(){
 	}
 }
