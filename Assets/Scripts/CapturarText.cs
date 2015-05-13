@@ -12,7 +12,7 @@ public class CapturarText : MonoBehaviour {
 	public void guardar(){
 		TextoAGuardar = CampoTexto.text;
 		System.IO.File.WriteAllText ("./Resources/Fase1/Comentarios", TextoAGuardar);
-		Debug.
+		//Debug.
 
 	}
 }
