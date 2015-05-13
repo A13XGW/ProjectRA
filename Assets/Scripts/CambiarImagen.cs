@@ -53,10 +53,10 @@ public class CambiarImagen : MonoBehaviour {
 		if (indice < thumbs.Length-1) {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
 			indice++;
+			if (indice == thumbs.Length-1) indice++;
 		} 
 		if (indice == thumbs.Length) {
 			area.GetComponent<CapturarText>().ActivarTexto();
-			indice--;
 		} else {
 			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
@@ -66,6 +66,7 @@ public class CambiarImagen : MonoBehaviour {
 			barra.value += 0.25f;
 			i = 1;
 		}
+
 		i++;
 	}
 	
