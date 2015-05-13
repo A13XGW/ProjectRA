@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class CapturarText : MonoBehaviour {
 	public string TextoAGuardar;
 	public InputField CampoTexto;
-	public void ActivateInputField (){
-		//CampoTexto.transform.
+	public void ActivarTexto (){
+		CampoTexto.gameObject.SetActive (true);
 	}
 	public void guardar(){
 		TextoAGuardar = CampoTexto.text;

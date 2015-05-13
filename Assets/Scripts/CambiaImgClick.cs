@@ -19,6 +19,7 @@ public class CambiaImgClick : MonoBehaviour {
 		Image N = canvasImg.GetComponent<CambiarImagen> ().fondo;
 
 			N.transform.position = new Vector2 (img.transform.position.x, img.transform.position.y);
+
 			
 	}
 }

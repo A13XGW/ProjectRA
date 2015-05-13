@@ -6,7 +6,7 @@ using System.Collections;
 public class CambiarImagen : MonoBehaviour {
 	
 	public Image objetoImagen;
-	public int indice=0;
+	public int indice=1;
 	public Scrollbar barra;
 	public int i = 0;
 	public Canvas area;
@@ -52,12 +52,11 @@ public class CambiarImagen : MonoBehaviour {
 	public void Avanza () {
 		if (indice < thumbs.Length-1) {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
-
 			indice++;
 		} 
 		if (indice == thumbs.Length) {
+			area.GetComponent<CapturarText>().ActivarTexto();
 			indice--;
-			gameObject.GetComponent<CapturarText> ().enabled = true;
 		} else {
 			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
@@ -65,16 +64,9 @@ public class CambiarImagen : MonoBehaviour {
 		}
 		if (i == 7 ) {
 			barra.value += 0.25f;
-			i = 0;
+			i = 1;
 		}
-		if (indice < thumbs.Length - 1) {
-			i++;
-		}
-//		if (indice == thumbs.Length) {
-//			area.GetComponent<CapturarText>().ActivarTexto(true);
-//		}
-		
-		
+		i++;
 	}
 	
 	public void Retrocede() {
