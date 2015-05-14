@@ -62,10 +62,11 @@ public class CambiarImagen : MonoBehaviour {
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
-		if (i == 7 ) {
+		/*int imagnes= thumbs.Length / 4 
+		if (thumbs.Length / 4 ) {
 			barra.value += 0.25f;
 			i = 1;
-		}
+		}*/
 
 		i++;
 	}
