@@ -4,19 +4,22 @@ using System.Collections;
 
 
 public class CambiarImagen : MonoBehaviour {
-	
+	//Emmanuel
 	public Image objetoImagen;
 	public int indice=1;
 	public Scrollbar barra;
 	public int i = 0;
 	public Canvas area;
-	//-----------------------------
+	public GameObject panelS;
+	public RectTransform rectPanel;
+	//Emmanuel
+	//Alex
 	public Image fondo;
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
 	
-	//-----------------------------
+	//Alex
 	
 	// Use this for initialization
 	void Start() {
@@ -27,8 +30,13 @@ public class CambiarImagen : MonoBehaviour {
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
 
+		//Alex
 		Image[] images = new Image[thumbs.Length];
 		for (int x=1; x<thumbs.Length; x++) {
+			//Emmanuel
+			rectPanel = panelS.GetComponent<RectTransform> ();
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+84, rectPanel.sizeDelta.y);
+			//Emmanuel
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
@@ -47,6 +55,7 @@ public class CambiarImagen : MonoBehaviour {
 		
 		//EditorUtility.DisplayDialog(thumbs.Length.ToString(), "Seguro que deseas continuar?", "Si", "No");
 	}
+	//Alex
 	
 	// Update is called once per frame
 	public void Avanza () {
