@@ -12,6 +12,8 @@ public class CambiarImagen : MonoBehaviour {
 	public Canvas area;
 	public GameObject panelS;
 	public RectTransform rectPanel;
+	public GameObject ImagenS;
+	public RectTransform rectImagen;
 	//Emmanuel
 	//Alex
 	public Image fondo;
@@ -37,9 +39,15 @@ public class CambiarImagen : MonoBehaviour {
 			rectPanel = panelS.GetComponent<RectTransform> ();
 			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+84, rectPanel.sizeDelta.y);
 			//Emmanuel
+
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
+
+			//Emmanuel
+			rectImagen = ImagenS.GetComponent<RectTransform> ();
+			rectImagen.sizeDelta = new Vector2 ((rectImagen.sizeDelta.x = 55), (rectImagen.sizeDelta.y = 55));
+			//Emmanuel
 			images[x].transform.position = new Vector2 (thumb.transform.position.x + (66*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
 			//agregar
