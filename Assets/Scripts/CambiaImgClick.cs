@@ -6,7 +6,7 @@ public class CambiaImgClick : MonoBehaviour {
 	public Canvas area;
 	public Image imgPrincipal;
 	public Image img;
-	public int ind=0;
+	public int ind;
 	public GameObject canvasImg;
 
 

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -43,11 +43,6 @@ public class CambiarImagen : MonoBehaviour {
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-
-			//Emmanuel
-			rectImagen = ImagenS.GetComponent<RectTransform> ();
-			rectImagen.sizeDelta = new Vector2 ((rectImagen.sizeDelta.x = 55), (rectImagen.sizeDelta.y = 55));
-			//Emmanuel
 			images[x].transform.position = new Vector2 (thumb.transform.position.x + (66*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
 			//agregar
@@ -70,22 +65,26 @@ public class CambiarImagen : MonoBehaviour {
 		if (indice < thumbs.Length-1) {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
 			indice++;
-			if (indice == thumbs.Length-1) indice++;
 		} 
-		if (indice == thumbs.Length) {
-			area.GetComponent<CapturarText>().ActivarTexto();
-		} else {
+
+		if (indice < thumbs.Length) {
 			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
-		/*int imagnes= thumbs.Length / 4 
-		if (thumbs.Length / 4 ) {
+		if (indice == thumbs.Length-1) {
+			area.GetComponent<CapturarText>().ActivarTexto();
+		} 
+
+		/*
+		if (i == thumbs.Length / 4) {
 			barra.value += 0.25f;
 			i = 1;
 		}*/
 
 		i++;
+
+		thumb.GetComponent<CambiaImgClick> ().ind = indice;
 	}
 	
 	public void Retrocede() {
@@ -98,7 +97,7 @@ public class CambiarImagen : MonoBehaviour {
 			i = 0;
 		}
 		i++;
-		
+		thumb.GetComponent<CambiaImgClick> ().ind = indice;
 		Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
