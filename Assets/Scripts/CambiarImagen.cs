@@ -92,9 +92,9 @@ public class CambiarImagen : MonoBehaviour {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x-66, fondo.transform.position.y);
 			indice--;
 		}
-		if (i == 7) {
+		if (i == thumbs.Length / 4) {
 			barra.value -= 0.25f;
-			i = 0;
+			i = 1;
 		}
 		i++;
 		thumb.GetComponent<CambiaImgClick> ().ind = indice;

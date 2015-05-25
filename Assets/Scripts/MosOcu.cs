@@ -4,20 +4,18 @@ using UnityEngine.UI;
 
 public class MosOcu : MonoBehaviour {
 
-	public Image GroupInputField;
-	public Canvas area;
-	public float sizePH ;
-	public float sizePW;
+	public Scrollbar barra;
 
 	void Start () {
-		//sizePW = area.GetComponent<RectTransform>().sizeDelta.x;
-		sizePW = GroupInputField.GetComponent<RectTransform> ().position.x;
-		Debug.Log (sizePW);
-		sizePH = area.GetComponent<RectTransform>().position.y * 2 + (area.GetComponent<RectTransform>().position.y/3);
-		Debug.Log (sizePH);
 	}
 	public void OcultarObjeto(){
-		GroupInputField.GetComponent<RectTransform> ().position = new Vector2 (sizePW,sizePH);
+//		GroupInputField.GetComponent<RectTransform> ().position = new Vector2 (sizePW,sizePH);
+
+		if (barra.value == 0) {
+			barra.value = 1;
+		} else {
+			barra.value = 0;
+		}
 	}
 	// Update is called once per frame
 	void Update () {
