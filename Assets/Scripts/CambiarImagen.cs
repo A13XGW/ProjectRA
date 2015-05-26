@@ -39,7 +39,6 @@ public class CambiarImagen : MonoBehaviour {
 			rectPanel = panelS.GetComponent<RectTransform> ();
 			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+84, rectPanel.sizeDelta.y);
 			//Emmanuel
-
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
@@ -47,16 +46,7 @@ public class CambiarImagen : MonoBehaviour {
 			images[x].transform.SetParent(panel.transform);
 			//agregar
 			images[x].GetComponent<CambiaImgClick>().ind=x;
-			/*if (x>=14){
-				float xx = panel.transform.position.x;
-				float yy = panel.transform.position.y;
-				Vector3 n = new Vector3 (1.0f+1, 1.0f);
-				panel.transform.localScale = n;
-				panel.transform.position = new Vector2(xx,yy);
-			}*/
 		}
-		
-		//EditorUtility.DisplayDialog(thumbs.Length.ToString(), "Seguro que deseas continuar?", "Si", "No");
 	}
 	//Alex
 	
@@ -76,12 +66,11 @@ public class CambiarImagen : MonoBehaviour {
 			area.GetComponent<CapturarText>().ActivarTexto();
 		} 
 
-		/*
+
 		if (i == thumbs.Length / 4) {
 			barra.value += 0.25f;
 			i = 1;
-		}*/
-
+		}
 		i++;
 
 		thumb.GetComponent<CambiaImgClick> ().ind = indice;
@@ -102,7 +91,5 @@ public class CambiarImagen : MonoBehaviour {
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
 		
-	}
-	void Update(){
 	}
 }
