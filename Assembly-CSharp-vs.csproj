@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CambiarObj.cs" />
      <Compile Include="Assets\Scripts\CapturarText.cs" />
      <Compile Include="Assets\Scripts\Fase 2\DragHandeler.cs" />
+     <Compile Include="Assets\Scripts\Fase 2\GuardarImg.cs" />
      <Compile Include="Assets\Scripts\Fase 2\Slot.cs" />
      <Compile Include="Assets\Scripts\GeneraNuevasFotos.cs" />
      <Compile Include="Assets\Scripts\GuardadNuevaImagen.cs" />
