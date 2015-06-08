@@ -14,12 +14,14 @@ public class CambiarImagen : MonoBehaviour {
 	public RectTransform rectPanel;
 	public GameObject ImagenS;
 	public RectTransform rectImagen;
+//	Vector3 diferencia = new Vector3(1,1,1);
 	//Emmanuel
 	//Alex
 	public Image fondo;
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
+
 	
 	//Alex
 	
@@ -30,20 +32,20 @@ public class CambiarImagen : MonoBehaviour {
 		Rect rec = new Rect (0, 0, thumbs [0].width, thumbs [0].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
+		//Emmanuel
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
 
 		//Alex
 		Image[] images = new Image[thumbs.Length];
 		for (int x=1; x<thumbs.Length; x++) {
-			//Emmanuel
 			rectPanel = panelS.GetComponent<RectTransform> ();
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+84, rectPanel.sizeDelta.y);
-			//Emmanuel
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.80f))/*+84*/, rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-			images[x].transform.position = new Vector2 (thumb.transform.position.x + (66*x), thumb.transform.position.y);
+			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.4831f))*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
+			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
 			//agregar
 			images[x].GetComponent<CambiaImgClick>().ind=x;
 		}
