@@ -37,6 +37,7 @@ public class CambiarImagen : MonoBehaviour {
 
 		//Alex
 		Image[] images = new Image[thumbs.Length];
+		Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
 			rectPanel = panelS.GetComponent<RectTransform> ();
 			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.80f))/*+84*/, rectPanel.sizeDelta.y);

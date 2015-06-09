@@ -20,7 +20,6 @@ public class PantallaInstrucciones : MonoBehaviour {
 		panelInstrucciones.SetActive (true);
 		ruta = "./Assets/Tutorial/"; 
 		ruta += archivo;
-		Debug.Log (ruta);
 		texto.text = File.ReadAllText (ruta);
 	}
 	public void boton(){
