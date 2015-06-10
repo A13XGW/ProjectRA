@@ -52,8 +52,7 @@ public class CambiarImagen : MonoBehaviour {
 		}
 	}
 	//Alex
-	
-	// Update is called once per frame
+
 	public void Avanza () {
 		if (indice < thumbs.Length-1) {
 			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
