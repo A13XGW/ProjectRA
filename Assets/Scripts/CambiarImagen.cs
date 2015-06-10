@@ -37,14 +37,14 @@ public class CambiarImagen : MonoBehaviour {
 
 		//Alex
 		Image[] images = new Image[thumbs.Length];
-		Debug.Log (images);
+		//Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
 			rectPanel = panelS.GetComponent<RectTransform> ();
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.80f))/*+84*/, rectPanel.sizeDelta.y);
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.50f)), rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.4831f))*x), thumb.transform.position.y);
+			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f))*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
 			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
 			//agregar

@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase4\ArregloInicio.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fase4\ArregloInicio.cs" Line="31" Column="252" />
-      <File FileName="Assets\Scripts\CambiarImagen.cs" Line="18" Column="12" />
-      <File FileName="Assets\Scripts\CapturarText.cs" Line="26" Column="23" />
+      <File FileName="Assets\Scripts\Fase4\ArregloInicio.cs" Line="27" Column="167" />
+      <File FileName="Assets\Scripts\CambiarImagen.cs" Line="43" Column="170" />
+      <File FileName="Assets\Scripts\CapturarText.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MosOcu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" Line="23" Column="40" />
+      <File FileName="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
