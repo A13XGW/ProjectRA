@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 	public static GameObject itemBeingDragged;
-	public static Vector3 startPosition;
+	static Vector3 startPosition;
 	public static Transform startParent;
 
 	#region IBeginDragHandler implementation
@@ -34,6 +34,12 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 	{
 		itemBeingDragged = null;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
+		if(transform.parent == startParent)
+		{
+			transform.position = startPosition;
+		}
+
+
 	}
 	
 	#endregion

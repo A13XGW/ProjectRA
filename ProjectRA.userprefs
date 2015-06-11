@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase 2\Slot.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase4\Drop.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fase 2\DragHandeler.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fase 2\Slot.cs" Line="32" Column="3" />
-      <File FileName="Assets\Scripts\Fase4\Drag.cs" Line="3" Column="1" />
-      <File FileName="Assets\Scripts\Fase4\Drop.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\Fase4\Drop.cs" Line="40" Column="14" />
+      <File FileName="Assets\Scripts\Fase4\CargarImagenes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase4\DragHand.cs" Line="7" Column="31" />
+      <File FileName="Assets\Scripts\Fase4\ArregloInicio.cs" Line="31" Column="196" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
