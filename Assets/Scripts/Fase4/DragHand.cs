@@ -6,6 +6,8 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public static GameObject itemBeingDragged;
 	static Vector3 startPosition;
 	public static Transform startParent;
+	public GameObject panel;
+	public GameObject canvas;
 
 	#region IBeginDragHandler implementation
 	
@@ -36,6 +38,9 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
 		if(transform.parent == startParent)
 		{
+			transform.position = startPosition;
+		}
+		if (transform.parent == panel.transform || transform.parent == canvas.transform) {
 			transform.position = startPosition;
 		}
 	}
