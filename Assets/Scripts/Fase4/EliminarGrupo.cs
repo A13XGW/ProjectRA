@@ -7,7 +7,9 @@ public class EliminarGrupo : MonoBehaviour {
 	public void OnButtonDown(){
 		GameObject tmp = GameObject.FindWithTag (grupo.tag);
 		if (tmp.tag == grupo.tag) {
-			tmp.slots = tmp.slots-1;
+//			tmp.slots = tmp.slots-1;
+			Debug.Log(tmp.tag);
+			tmp.GetComponent<Drop>().slots -=1;
 			Destroy (grupo);
 		}
 			

@@ -8,7 +8,7 @@ public class Drop : MonoBehaviour, IDropHandler {
 	public RectTransform panelGrid;
 	public Image referencia;
 	public RectTransform grupoPrin;
-	public int slots = 1;
+	public  int slots = 1;
 	int slotg = 1;
 	public GameObject item 	{
 		get	{
