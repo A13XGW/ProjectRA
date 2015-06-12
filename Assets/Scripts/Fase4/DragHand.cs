@@ -38,8 +38,6 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		{
 			transform.position = startPosition;
 		}
-
-
 	}
 	
 	#endregion
