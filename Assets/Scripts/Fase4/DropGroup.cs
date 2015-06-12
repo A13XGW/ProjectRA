@@ -13,20 +13,20 @@ public class DropGroup : MonoBehaviour, IDropHandler {
 	
 	public void OnDrop (PointerEventData eventData)
 	{
-		if (DragHand.itemBeingDragged == null) {
+		if (DragGroup.itemBeingDragged == null) {
 		}
 		else
-		if (DragHand.startParent == canvas) {
-			DragHand.itemBeingDragged.transform.SetParent (transform);
-			DragHand.itemBeingDragged.transform.position = Input.mousePosition;
+		if (DragGroup.startParent == canvas) {
+			DragGroup.itemBeingDragged.transform.SetParent (transform);
+			DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
 		} else {
-			GameObject tmp = Instantiate(DragHand.itemBeingDragged);
-			//tmp.transform.position = DragHand.startPosition;
-			tmp.transform.SetParent(DragHand.startParent);
+			GameObject tmp = Instantiate(DragGroup.itemBeingDragged);
+			//tmp.transform.position = DragGroup.startPosition;
+			tmp.transform.SetParent(DragGroup.startParent);
 			tmp.transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
 			
-			DragHand.itemBeingDragged.transform.SetParent (transform);
-			DragHand.itemBeingDragged.transform.position = Input.mousePosition;
+			DragGroup.itemBeingDragged.transform.SetParent (transform);
+			DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
 		}
 	}
 	

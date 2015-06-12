@@ -57,11 +57,13 @@
      <Compile Include="Assets\Scripts\Fase 2\Slot.cs" />
      <Compile Include="Assets\Scripts\Fase4\ArregloInicio.cs" />
      <Compile Include="Assets\Scripts\Fase4\CargarImagenes.cs" />
+     <Compile Include="Assets\Scripts\Fase4\DeleteAlert.cs" />
      <Compile Include="Assets\Scripts\Fase4\DragGroup.cs" />
      <Compile Include="Assets\Scripts\Fase4\DragHand.cs" />
      <Compile Include="Assets\Scripts\Fase4\Drop.cs" />
      <Compile Include="Assets\Scripts\Fase4\DropGroup.cs" />
      <Compile Include="Assets\Scripts\Fase4\EliminarGrupo.cs" />
+     <Compile Include="Assets\Scripts\Fase4\Guardad.cs" />
      <Compile Include="Assets\Scripts\Fase4\NuevoGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
      <Compile Include="Assets\Scripts\GeneraNuevasFotos.cs" />

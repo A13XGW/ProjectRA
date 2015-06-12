@@ -7,6 +7,7 @@ public class DragGroup : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 	public static GameObject itemBeingDragged;
 	static Vector3 startPosition;
 	public static Transform startParent;
+	public int slots=1;
 	
 	#region IBeginDragHandler implementation
 	

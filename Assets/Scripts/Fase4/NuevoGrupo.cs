@@ -10,8 +10,9 @@ public class NuevoGrupo : MonoBehaviour {
 		grupo.SetActive (true);
 		GameObject tmp = Instantiate (grupo);
 		tmp.transform.SetParent (canvas);
+		tmp.transform.position = new Vector2(Screen.width/2,Screen.height/2);
 		tagGrupo = "grupo" + contador;
-		Debug.Log (tagGrupo);
+		//Debug.Log (tagGrupo);
 		tmp.gameObject.tag = tagGrupo;
 		contador++;
 		grupo.SetActive (false);
