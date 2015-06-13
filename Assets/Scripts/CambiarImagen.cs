@@ -21,7 +21,7 @@ public class CambiarImagen : MonoBehaviour {
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
-
+	Image[] images;
 	
 	//Alex
 	
@@ -36,11 +36,11 @@ public class CambiarImagen : MonoBehaviour {
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
 
 		//Alex
-		Image[] images = new Image[thumbs.Length];
+		images = new Image[thumbs.Length];
 		//Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
 			rectPanel = panelS.GetComponent<RectTransform> ();
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.50f)), rectPanel.sizeDelta.y);
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
@@ -55,7 +55,8 @@ public class CambiarImagen : MonoBehaviour {
 
 	public void Avanza () {
 		if (indice < thumbs.Length-1) {
-			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
+			//fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
+			fondo.transform.position = images[indice].transform.position;
 			indice++;
 		} 
 
@@ -80,7 +81,8 @@ public class CambiarImagen : MonoBehaviour {
 	
 	public void Retrocede() {
 		if (indice > 0) {
-			fondo.transform.position = new Vector2 (fondo.transform.position.x-66, fondo.transform.position.y);
+			//fondo.transform.position = new Vector2 (fondo.transform.position.x-66, fondo.transform.position.y);
+			fondo.transform.position = images[indice].transform.position;
 			indice--;
 		}
 		if (i == thumbs.Length / 4) {

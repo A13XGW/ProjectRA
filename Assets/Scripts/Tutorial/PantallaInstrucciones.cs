@@ -18,7 +18,7 @@ public class PantallaInstrucciones : MonoBehaviour {
 			archivo = "Fase2.txt";
 		}
 		panelInstrucciones.SetActive (true);
-		ruta = "./Assets/Tutorial/"; 
+		ruta = "./Assets/Resources/Tutorial/"; 
 		ruta += archivo;
 		texto.text = File.ReadAllText (ruta);
 	}

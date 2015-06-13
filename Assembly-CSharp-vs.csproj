@@ -71,9 +71,9 @@
      <Compile Include="Assets\Scripts\MosOcu.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
      <Compile Include="Assets\Scripts\inciar.cs" />
-     <None Include="Assets\Tutorial\Fase1.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase1.txt" />
      <None Include="Assets\Resources\Comentarios\Comentario.txt" />
-     <None Include="Assets\Tutorial\Fase2.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase2.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
