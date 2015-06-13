@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase4\Guardad.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CapturarText.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fase4\DragGroup.cs" Line="39" Column="24" />
-      <File FileName="Assets\Scripts\Fase4\Drop.cs" Line="35" Column="6" />
-      <File FileName="Assets\Scripts\Fase4\DragHand.cs" Line="15" Column="3" />
-      <File FileName="Assets\Scripts\Fase4\DropGroup.cs" Line="23" Column="58" />
-      <File FileName="Assets\Scripts\Fase4\Guardad.cs" Line="17" Column="32" />
-      <File FileName="Assets\Scripts\Fase 2\GuardarImg.cs" Line="103" Column="33" />
-      <File FileName="Assets\Scripts\CapturarText.cs" Line="3" Column="1" />
+      <File FileName="Assets\Scripts\CapturarText.cs" Line="27" Column="4" />
+      <File FileName="Assets\Scripts\Fase4\DragGroup.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase4\Drop.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase4\DragHand.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase4\DropGroup.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase4\Guardad.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase 2\GuardarImg.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
