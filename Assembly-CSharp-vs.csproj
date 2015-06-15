@@ -55,6 +55,17 @@
      <Compile Include="Assets\Scripts\Fase 2\GuardarImg.cs" />
      <Compile Include="Assets\Scripts\Fase 2\Seleccion.cs" />
      <Compile Include="Assets\Scripts\Fase 2\Slot.cs" />
+     <Compile Include="Assets\Scripts\Fase3\CambiaImgClick3.cs" />
+     <Compile Include="Assets\Scripts\Fase3\CambiarImagen3.cs" />
+     <Compile Include="Assets\Scripts\Fase3\Contador.cs" />
+     <Compile Include="Assets\Scripts\Fase3\GeneraNuevasFotos3.cs" />
+     <Compile Include="Assets\Scripts\Fase3\GuardadNuevaImagen3.cs" />
+     <Compile Include="Assets\Scripts\Fase3\MosOcu3.cs" />
+     <Compile Include="Assets\Scripts\Fase3\Slot3.cs" />
+     <Compile Include="Assets\Scripts\Fase3\Slots\DragGroup_1.cs" />
+     <Compile Include="Assets\Scripts\Fase3\Slots\DragHand_1.cs" />
+     <Compile Include="Assets\Scripts\Fase3\Slots\Drop_1.cs" />
+     <Compile Include="Assets\Scripts\Fase3\TExto.cs" />
      <Compile Include="Assets\Scripts\Fase4\ArregloInicio.cs" />
      <Compile Include="Assets\Scripts\Fase4\CargarImagenes.cs" />
      <Compile Include="Assets\Scripts\Fase4\DeleteAlert.cs" />
