@@ -6,9 +6,12 @@ using UnityEngine.EventSystems;
 public class Seleccion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 	public Image fondo;
 	public Image selectionimg;
-	public Image seleccion;
+	public static Image seleccion;
 
-	int ix, iy, fx, fy;
+	public Canvas lienzo;
+
+	public static int ix, iy, fx, fy;
+	public static int width, height;
 
 	#region IBeginDragHandler implementation
 	public void OnBeginDrag (PointerEventData eventData)
@@ -17,7 +20,7 @@ public class Seleccion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		Destroy (seleccion);
 		seleccion = Instantiate (selectionimg);
 		seleccion.transform.position = Input.mousePosition;
-		seleccion.transform.SetParent (fondo.transform);
+		seleccion.transform.SetParent (lienzo.transform);
 		ix = (int)seleccion.transform.position.x;
 		iy = (int)seleccion.transform.position.y;
 	}
@@ -30,8 +33,8 @@ public class Seleccion : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		fx = (int)Input.mousePosition.x;
 		fy = (int)Input.mousePosition.y;
 
-		int width = fx>ix?fx-ix:ix-fx;
-		int height = fy>iy?fy-iy:iy-fy;
+		width = fx>ix?fx-ix:ix-fx;
+		height = fy>iy?fy-iy:iy-fy;
 
 		RectTransform tamanio = seleccion.GetComponent<RectTransform> ();
 		tamanio.sizeDelta = new Vector2 (width,height);

@@ -6,21 +6,17 @@ using System.IO;
 public class PantallaInstrucciones : MonoBehaviour {
 
 	public GameObject panelInstrucciones;
+	public TextAsset[] archivos;
 	public Text texto;
-	public string ruta;
 	public string archivo;
+	public int contador=0;
+	public GameObject canvas;
 	// Use this for initialization
 	void Start () {
-		if (Application.loadedLevelName == "Fase1") {
-			archivo = "Fase1.txt";
-		}
-		if (Application.loadedLevelName == "Fase2") {
-			archivo = "Fase2.txt";
-		}
+
+		contador = canvas.GetComponent<CapturarText> ().contadorFase;
 		panelInstrucciones.SetActive (true);
-		ruta = "./Assets/Resources/Tutorial/"; 
-		ruta += archivo;
-		texto.text = File.ReadAllText (ruta);
+		texto.text = archivos [contador].text;
 	}
 	public void boton(){
 		panelInstrucciones.SetActive (false);

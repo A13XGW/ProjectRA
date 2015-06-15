@@ -14,6 +14,7 @@ public class Guardad : MonoBehaviour {
 		ruta += ".png";
 		Debug.Log (ruta);
 		Application.CaptureScreenshot(ruta);
+		//Agregar timer
 		Comentarios.SetActive (true);
 	}
 }

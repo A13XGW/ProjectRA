@@ -13,9 +13,11 @@ public class GuardarImg : MonoBehaviour {
 	public Image lienzo;
 	public Canvas kanvas;
 
+	public int capturas;
+
 	// Use this for initialization
 	void Start () {
-
+		capturas = 0;
 	}
 
 	void OnGUI(){
@@ -101,10 +103,11 @@ public class GuardarImg : MonoBehaviour {
 
 		//---Guardar imagen-------------------------------------------------------
 		byte[] textureBuffer = textura.EncodeToPNG();
-		BinaryWriter binary = new BinaryWriter(File.Open (Application.dataPath + "/myTextureName.png",FileMode.Create));
+		BinaryWriter binary = new BinaryWriter(File.Open (Application.dataPath + "/Resources/Fase2/New/Imagen"+capturas.ToString()+".png",FileMode.Create));
 		binary.Write(textureBuffer);
 
 		Debug.Log ("Guardado");
+		capturas++;
 		//------------------------------------------------------------------------
 	}
 	

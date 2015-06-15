@@ -21,7 +21,7 @@ public class CambiarImagen : MonoBehaviour {
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image panel;
-	Image[] images;
+	public Image[] images;
 	
 	//Alex
 	
@@ -40,11 +40,12 @@ public class CambiarImagen : MonoBehaviour {
 		//Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
 			rectPanel = panelS.GetComponent<RectTransform> ();
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + 
+			(thumb.GetComponent<RectTransform>().sizeDelta.x * 0.10f)), rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f))*x), thumb.transform.position.y);
+			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.10f))*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
 			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
 			//agregar
@@ -55,9 +56,9 @@ public class CambiarImagen : MonoBehaviour {
 
 	public void Avanza () {
 		if (indice < thumbs.Length-1) {
-			//fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
-			fondo.transform.position = images[indice].transform.position;
 			indice++;
+			fondo.transform.position = images[indice].transform.position;
+			//indice++;
 		} 
 
 		if (indice < thumbs.Length) {
@@ -81,9 +82,8 @@ public class CambiarImagen : MonoBehaviour {
 	
 	public void Retrocede() {
 		if (indice > 0) {
-			//fondo.transform.position = new Vector2 (fondo.transform.position.x-66, fondo.transform.position.y);
-			fondo.transform.position = images[indice].transform.position;
 			indice--;
+			fondo.transform.position = images[indice].transform.position;
 		}
 		if (i == thumbs.Length / 4) {
 			barra.value -= 0.25f;
