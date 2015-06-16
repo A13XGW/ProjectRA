@@ -57,8 +57,6 @@ public class Clonar : MonoBehaviour {
 		}
 
 		Image itmp = Instantiate(ejemplo);
-		Vector2 v = new Vector2 (0.5f, 0.5f);
-		Rect r = new Rect (Seleccion.seleccion.transform.position.x, Seleccion.seleccion.transform.position.y,nancho,nalto);
 		//itmp.sprite = Sprite.Create (tmp,r,v);
 		itmp.transform.SetParent (lienzo.transform);
 

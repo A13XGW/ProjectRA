@@ -10,7 +10,6 @@ public class CambiarImagen : MonoBehaviour {
 	public Scrollbar barra;
 	public int i = 0;
 	public Canvas area;
-	public GameObject panelS;
 	public RectTransform rectPanel;
 	public GameObject ImagenS;
 	public RectTransform rectImagen;
@@ -34,31 +33,25 @@ public class CambiarImagen : MonoBehaviour {
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 		//Emmanuel
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
-
 		//Alex
 		images = new Image[thumbs.Length];
-		//Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
-			rectPanel = panelS.GetComponent<RectTransform> ();
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + 
-			(thumb.GetComponent<RectTransform>().sizeDelta.x * 0.10f)), rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.10f))*x), thumb.transform.position.y);
-			images[x].transform.SetParent(panel.transform);
-			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
+			images[x].transform.SetParent(panel.transform);	
 			//agregar
 			images[x].GetComponent<CambiaImgClick>().ind=x;
 		}
+		fondo.transform.position = new Vector2(thumb.transform.position.x,thumb.transform.position.y);
 	}
 	//Alex
 
 	public void Avanza () {
 		if (indice < thumbs.Length-1) {
+			fondo.transform.position = images[indice+1].transform.position;
 			indice++;
-			fondo.transform.position = images[indice].transform.position;
-			//indice++;
 		} 
 
 		if (indice < thumbs.Length) {
@@ -81,9 +74,9 @@ public class CambiarImagen : MonoBehaviour {
 	}
 	
 	public void Retrocede() {
-		if (indice > 0) {
-			indice--;
+		if (indice >= 0) {
 			fondo.transform.position = images[indice].transform.position;
+			indice--;
 		}
 		if (i == thumbs.Length / 4) {
 			barra.value -= 0.25f;

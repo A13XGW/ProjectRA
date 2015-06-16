@@ -5,8 +5,7 @@ public class CargarImagenes : MonoBehaviour {
 	public Image thumb;
 	private Texture2D[] thumbs;
 	public Image panel;
-	public GameObject panelS;
-	public RectTransform rectPanel;
+		public RectTransform rectPanel;
 	public int imagenesCarrete=0;
 	public GameObject guardar;
 	// Use this for initialization
@@ -21,7 +20,6 @@ public class CargarImagenes : MonoBehaviour {
 		Image[] images = new Image[thumbs.Length];
 		//bucle para instancia iamgenes.
 		for (int x=1; x<thumbs.Length; x++) {
-			rectPanel = panelS.GetComponent<RectTransform> ();
 			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
 			imagenesCarrete++;
