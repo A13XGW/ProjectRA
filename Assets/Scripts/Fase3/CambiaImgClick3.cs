@@ -33,7 +33,8 @@ public class CambiaImgClick3 : MonoBehaviour {
 			A [1].gameObject.SetActive (false);
 			A [2].gameObject.SetActive (false);
 			A [3].gameObject.SetActive (false);
-
+			A [4].gameObject.SetActive (false);
+			A [5].gameObject.SetActive (false);
 			}
 		if (ind == 1)
 		{
@@ -41,7 +42,8 @@ public class CambiaImgClick3 : MonoBehaviour {
 			A [1].gameObject.SetActive (true);
 			A [2].gameObject.SetActive (false);
 			A [3].gameObject.SetActive (false);
-
+			A [4].gameObject.SetActive (false);
+			A [5].gameObject.SetActive (false);
 
 		}
 			if (ind == 2) 
@@ -50,14 +52,16 @@ public class CambiaImgClick3 : MonoBehaviour {
 			A [1].gameObject.SetActive (false);
 			A [2].gameObject.SetActive (true);
 			A [3].gameObject.SetActive (false);
-
-
+			A [4].gameObject.SetActive (false);
+			A [5].gameObject.SetActive (false);
 			}
 			if (ind == 3) {
 			A [0].gameObject.SetActive (false);
 			A [1].gameObject.SetActive (false);
 			A [2].gameObject.SetActive (false);
 			A [3].gameObject.SetActive (true);
+			A [4].gameObject.SetActive (false);
+			A [5].gameObject.SetActive (false);
 
 		}
 			if (ind == 4) {
@@ -65,6 +69,8 @@ public class CambiaImgClick3 : MonoBehaviour {
 			A [1].gameObject.SetActive (false);
 			A [2].gameObject.SetActive (false);
 			A [3].gameObject.SetActive (false);
+			A [4].gameObject.SetActive (true);
+			A [5].gameObject.SetActive (false);
 
 		}
 			if (ind == 5) {
@@ -72,6 +78,10 @@ public class CambiaImgClick3 : MonoBehaviour {
 			A [1].gameObject.SetActive (false);
 			A [2].gameObject.SetActive (false);
 			A [3].gameObject.SetActive (false);
+			A [4].gameObject.SetActive (false);
+			A [5].gameObject.SetActive (true);
+
+			//area.GetComponent<CapturarText>().ActivarTexto();
 
 		}
 

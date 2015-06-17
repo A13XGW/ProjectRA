@@ -13,7 +13,9 @@ public class GuardarDatos : MonoBehaviour {
 		ruta += "/Resources/Fase5/";
 		Directory.CreateDirectory (ruta);
 		ruta += "Evaluacion.rtf";
-		File.Create (ruta);
+		if (File.Exists (ruta) == false) {
+			File.Create (ruta);
+		}
 
 	}
 

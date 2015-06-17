@@ -18,14 +18,10 @@ public class Drop_1 : MonoBehaviour, IDropHandler {
 	public void OnDrop (PointerEventData eventData)	{
 	
 		if (!item) {
-			if(DragHand_1.itemBeingDragged!=null)
-			{
-				if (DragHand_1.itemBeingDragged.transform.name == transform.name){
-					DragHand_1.itemBeingDragged.transform.SetParent(transform);
-					DragHand_1.startParent.GetComponent<Contador>().contadorR +=1;
-				}
-			}
-		
+
+			if (DragHand_1.itemBeingDragged.transform.name == transform.name)
+				DragHand_1.itemBeingDragged.transform.SetParent(transform);
+				DragHand_1.startParent.GetComponent<Contador>().contadorR +=1;
 		}
 
 	}

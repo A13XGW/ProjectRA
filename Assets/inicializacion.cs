@@ -38,7 +38,7 @@ public class inicializacion : MonoBehaviour {
 	
 	public void OnButtonDown(int lado){
 
-		Debug.Log (lado);
+	//	Debug.Log (lado);
 		if (lado ==0) {
 			if (imageI.tag=="surrealista") {
 				imagICorrecta.SetActive(true);
@@ -68,7 +68,7 @@ public class inicializacion : MonoBehaviour {
 	IEnumerator Cambia(float waitTime) {
 		int aleatorio;
 		aleatorio =  Random.Range (1,6) ;
-		Debug.Log(aleatorio);
+		//Debug.Log(aleatorio);
 
 
 		yield return new WaitForSeconds(waitTime);
@@ -106,6 +106,11 @@ public class inicializacion : MonoBehaviour {
 		
 
 		
+	}
+
+	public void EvaluacionFase6() {
+		PlayerPrefs.SetInt ("FaseFinal", 6);
+		Application.LoadLevel ("iniciar");
 	}
 
 }

@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Fase 2\GuardarImg.js" />
+     <None Include="Assets\Resources\Tutorial\Fase3.txt" />
      <None Include="Assets\Resources\Tutorial\Fase1.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase6.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase5.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase4.txt" />
      <None Include="Assets\Resources\Tutorial\Fase2.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

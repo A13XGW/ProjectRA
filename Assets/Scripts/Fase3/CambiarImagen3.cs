@@ -40,11 +40,11 @@ public class CambiarImagen3 : MonoBehaviour {
 		Image[] images = new Image[thumbs.Length];
 		for (int x=1; x<thumbs.Length; x++) {
 			rectPanel = panelS.GetComponent<RectTransform> ();
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f))/*+84*/, rectPanel.sizeDelta.y);
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.80f))/*+84*/, rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.2f))*x), thumb.transform.position.y);
+			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.4831f))*x), thumb.transform.position.y);
 			images[x].transform.SetParent(panel.transform);
 			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
 			//agregar
@@ -93,6 +93,8 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
 
 		}
 		if (indice == 1) 
@@ -101,6 +103,8 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (true);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
 
 		}
 		if (indice == 2) 
@@ -109,6 +113,8 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (true);
 			imges [3].gameObject.SetActive (false);
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
 
 		}
 		if (indice == 3) 
@@ -117,6 +123,8 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (true);
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
 
 		}
 		if (indice == 4) 
@@ -125,15 +133,20 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
+			imges [4].gameObject.SetActive (true);
+			imges [5].gameObject.SetActive (false);
 
 		}
 		if (indice == 5) 
 		{
 			imges [0].gameObject.SetActive (false);
-			imges [1].gameObject.SetActive (true);
+			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (true);
 
+			area.GetComponent<CapturarText>().ActivarTexto();
 		}
 
 	
@@ -162,11 +175,14 @@ public class CambiarImagen3 : MonoBehaviour {
 
 		if (indice == 0) 
 		{
+			
 			imges [0].gameObject.SetActive (true);
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
-
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
+			
 		}
 		if (indice == 1) 
 		{
@@ -174,7 +190,9 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (true);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
-
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
+			
 		}
 		if (indice == 2) 
 		{
@@ -182,7 +200,9 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (true);
 			imges [3].gameObject.SetActive (false);
-		
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
+			
 		}
 		if (indice == 3) 
 		{
@@ -190,7 +210,9 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (true);
-
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (false);
+			
 		}
 		if (indice == 4) 
 		{
@@ -198,7 +220,9 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
-
+			imges [4].gameObject.SetActive (true);
+			imges [5].gameObject.SetActive (false);
+			
 		}
 		if (indice == 5) 
 		{
@@ -206,7 +230,9 @@ public class CambiarImagen3 : MonoBehaviour {
 			imges [1].gameObject.SetActive (false);
 			imges [2].gameObject.SetActive (false);
 			imges [3].gameObject.SetActive (false);
-		
+			imges [4].gameObject.SetActive (false);
+			imges [5].gameObject.SetActive (true);
+			
 		}
 
 

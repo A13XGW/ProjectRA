@@ -83,10 +83,17 @@
      <Compile Include="Assets\Scripts\GeneraNuevasFotos.cs" />
      <Compile Include="Assets\Scripts\GuardadNuevaImagen.cs" />
      <Compile Include="Assets\Scripts\MosOcu.cs" />
+     <Compile Include="Assets\Scripts\MostrarIns.cs" />
+     <Compile Include="Assets\Scripts\MoverRotarObjeto3d.cs" />
+     <Compile Include="Assets\Scripts\SeleccionObj3d.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
      <Compile Include="Assets\Scripts\inciar.cs" />
      <Compile Include="Assets\inicializacion.cs" />
+     <None Include="Assets\Resources\Tutorial\Fase3.txt" />
      <None Include="Assets\Resources\Tutorial\Fase1.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase6.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase5.txt" />
+     <None Include="Assets\Resources\Tutorial\Fase4.txt" />
      <None Include="Assets\Resources\Tutorial\Fase2.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -21,7 +21,7 @@ public class CambiarImagen : MonoBehaviour {
 	public Texture2D[] thumbs;
 	public Image panel;
 	public Image[] images;
-	
+	public GameObject panelS;
 	//Alex
 	
 	// Use this for initialization
@@ -33,18 +33,23 @@ public class CambiarImagen : MonoBehaviour {
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 		//Emmanuel
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
+		
 		//Alex
 		images = new Image[thumbs.Length];
+		//Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
+			rectPanel = panelS.GetComponent<RectTransform> ();
+			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.25f)), rectPanel.sizeDelta.y);
 			images[x] = Instantiate(thumb);
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x+(thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
 			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
 			images[x].sprite = Sprite.Create (thumbs [x], rec, vec);
-			images[x].transform.SetParent(panel.transform);	
+			images[x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform>().sizeDelta.x + (thumb.GetComponent<RectTransform>().sizeDelta.x * 0.25f))*x), thumb.transform.position.y);
+			images[x].transform.SetParent(panel.transform);
+			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
 			//agregar
 			images[x].GetComponent<CambiaImgClick>().ind=x;
 		}
-		fondo.transform.position = new Vector2(thumb.transform.position.x,thumb.transform.position.y);
+		fondo.transform.position = thumb.transform.position;
 	}
 	//Alex
 
@@ -74,19 +79,31 @@ public class CambiarImagen : MonoBehaviour {
 	}
 	
 	public void Retrocede() {
-		if (indice >= 0) {
-			fondo.transform.position = images[indice].transform.position;
-			indice--;
+		indice--;
+		if (indice > 0) {
+			fondo.transform.position = images [indice].transform.position;
+			thumb.GetComponent<CambiaImgClick> ().ind = indice;
+			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
+			Vector2 vec = new Vector2 (0.5f, 0.5f);
+			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
+
+		} else {
+			indice=0;
+			fondo.transform.position = thumb.transform.position;
+			thumb.GetComponent<CambiaImgClick> ().ind = indice;
+			Rect rec = new Rect (0, 0, thumb.mainTexture.width, thumb.mainTexture.height);
+			Vector2 vec = new Vector2 (0.5f, 0.5f);
+			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
 		}
 		if (i == thumbs.Length / 4) {
 			barra.value -= 0.25f;
 			i = 1;
 		}
 		i++;
-		thumb.GetComponent<CambiaImgClick> ().ind = indice;
+		/*thumb.GetComponent<CambiaImgClick> ().ind = indice;
 		Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
-		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
+		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); */
 		
 	}
 }

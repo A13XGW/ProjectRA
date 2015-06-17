@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+
 public class Guardad : MonoBehaviour {
 	int contador=0;
 	string ruta;
@@ -15,6 +16,15 @@ public class Guardad : MonoBehaviour {
 		Debug.Log (ruta);
 		Application.CaptureScreenshot(ruta);
 		//Agregar timer
-		Comentarios.SetActive (true);
+		//Thread.Sleep (20000);
+		StartCoroutine(Espera(1.25F));
+	//	Comentarios.SetActive (true);
 	}
+
+
+IEnumerator Espera(float waitTime) {
+	yield return new WaitForSeconds(waitTime);
+	Comentarios.SetActive (true);
+}
+
 }
