@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class inciar : MonoBehaviour {
-
+	public GameObject Registro;
 	public GameObject botonEval;
 	public void OnButtonDown(){
-		Application.LoadLevel ("Fase1");
+		Registro.SetActive (true);
 	}
 	public void OnButtonDown2(){
 		Application.LoadLevel ("Fase6");

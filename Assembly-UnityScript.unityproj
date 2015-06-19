@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Fase 2\GuardarImg.js" />
+     <Compile Include="Assets\Scripts\Fase2\GuardarImg.js" />
      <None Include="Assets\Resources\Tutorial\Fase3.txt" />
      <None Include="Assets\Resources\Tutorial\Fase1.txt" />
      <None Include="Assets\Resources\Tutorial\Fase6.txt" />

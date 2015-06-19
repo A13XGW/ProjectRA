@@ -46,18 +46,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GuardarDatos.cs" />
-     <Compile Include="Assets\Scripts\CambiaImgClick.cs" />
-     <Compile Include="Assets\Scripts\CambiarImagen.cs" />
-     <Compile Include="Assets\Scripts\CambiarObj.cs" />
-     <Compile Include="Assets\Scripts\CapturarText.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\CargarImgs.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\Clonar.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\DragHandeler.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\GuardarImg.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\Seleccion.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\Slot.cs" />
-     <Compile Include="Assets\Scripts\Fase 2\finalizar.cs" />
+     <Compile Include="Assets\Scripts\Fase1\CambiaImgClick.cs" />
+     <Compile Include="Assets\Scripts\Fase1\CambiarImagen.cs" />
+     <Compile Include="Assets\Scripts\Fase1\CambiarObj.cs" />
+     <Compile Include="Assets\Scripts\Fase1\CapturarText.cs" />
+     <Compile Include="Assets\Scripts\Fase1\GeneraNuevasFotos.cs" />
+     <Compile Include="Assets\Scripts\Fase1\GuardadNuevaImagen.cs" />
+     <Compile Include="Assets\Scripts\Fase1\MosOcu.cs" />
+     <Compile Include="Assets\Scripts\Fase1\MoverRotarObjeto3d.cs" />
+     <Compile Include="Assets\Scripts\Fase1\SeleccionObj3d.cs" />
+     <Compile Include="Assets\Scripts\Fase2\CargarImgs.cs" />
+     <Compile Include="Assets\Scripts\Fase2\Clonar.cs" />
+     <Compile Include="Assets\Scripts\Fase2\DragHandeler.cs" />
+     <Compile Include="Assets\Scripts\Fase2\GuardarImg.cs" />
+     <Compile Include="Assets\Scripts\Fase2\Seleccion.cs" />
+     <Compile Include="Assets\Scripts\Fase2\Slot.cs" />
+     <Compile Include="Assets\Scripts\Fase2\finalizar.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiaImgClick3.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiarImagen3.cs" />
      <Compile Include="Assets\Scripts\Fase3\Contador.cs" />
@@ -80,15 +84,14 @@
      <Compile Include="Assets\Scripts\Fase4\Guardad.cs" />
      <Compile Include="Assets\Scripts\Fase4\NuevoGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
-     <Compile Include="Assets\Scripts\GeneraNuevasFotos.cs" />
-     <Compile Include="Assets\Scripts\GuardadNuevaImagen.cs" />
+     <Compile Include="Assets\Scripts\Fase5\GuardarDatos.cs" />
      <Compile Include="Assets\Scripts\Inicio\CargarEscena.cs" />
      <Compile Include="Assets\Scripts\Inicio\EscenaFases.cs" />
+     <Compile Include="Assets\Scripts\Inicio\Examinar.cs" />
+     <Compile Include="Assets\Scripts\Inicio\ImgAvatarGrupo.cs" />
+     <Compile Include="Assets\Scripts\Inicio\Integrantes.cs" />
      <Compile Include="Assets\Scripts\Inicio\inciar.cs" />
-     <Compile Include="Assets\Scripts\MosOcu.cs" />
      <Compile Include="Assets\Scripts\MostrarIns.cs" />
-     <Compile Include="Assets\Scripts\MoverRotarObjeto3d.cs" />
-     <Compile Include="Assets\Scripts\SeleccionObj3d.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
      <Compile Include="Assets\inicializacion.cs" />
      <None Include="Assets\Resources\Tutorial\Fase3.txt" />
