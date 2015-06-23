@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DeleteAlert.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiaImgClick.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiarImagen.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiarObj.cs" />
@@ -73,14 +74,13 @@
      <Compile Include="Assets\Scripts\Fase3\Slots\DragHand_1.cs" />
      <Compile Include="Assets\Scripts\Fase3\Slots\Drop_1.cs" />
      <Compile Include="Assets\Scripts\Fase3\TExto.cs" />
-     <Compile Include="Assets\Scripts\Fase4\ArregloInicio.cs" />
      <Compile Include="Assets\Scripts\Fase4\CargarImagenes.cs" />
-     <Compile Include="Assets\Scripts\Fase4\DeleteAlert.cs" />
      <Compile Include="Assets\Scripts\Fase4\DragGroup.cs" />
      <Compile Include="Assets\Scripts\Fase4\DragHand.cs" />
      <Compile Include="Assets\Scripts\Fase4\Drop.cs" />
      <Compile Include="Assets\Scripts\Fase4\DropGroup.cs" />
      <Compile Include="Assets\Scripts\Fase4\EliminarGrupo.cs" />
+     <Compile Include="Assets\Scripts\Fase4\Faltantes.cs" />
      <Compile Include="Assets\Scripts\Fase4\Guardad.cs" />
      <Compile Include="Assets\Scripts\Fase4\NuevoGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\Inicio\Examinar.cs" />
      <Compile Include="Assets\Scripts\Inicio\ImgAvatarGrupo.cs" />
      <Compile Include="Assets\Scripts\Inicio\Integrantes.cs" />
+     <Compile Include="Assets\Scripts\Inicio\SiguienteReg.cs" />
      <Compile Include="Assets\Scripts\Inicio\inciar.cs" />
      <Compile Include="Assets\Scripts\MostrarIns.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />

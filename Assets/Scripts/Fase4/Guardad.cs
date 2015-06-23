@@ -6,6 +6,7 @@ public class Guardad : MonoBehaviour {
 	int contador=0;
 	string ruta;
 	public GameObject Comentarios;
+	public GameObject Panelcomentarios;
 	public void OnButtonDown(){
 		contador ++;
 		ruta = Application.persistentDataPath;
@@ -24,6 +25,7 @@ public class Guardad : MonoBehaviour {
 
 IEnumerator Espera(float waitTime) {
 	yield return new WaitForSeconds(waitTime);
+	
 	Comentarios.SetActive (true);
 }
 

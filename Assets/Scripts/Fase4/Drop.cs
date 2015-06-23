@@ -24,40 +24,34 @@ public class Drop : MonoBehaviour, IDropHandler {
 	public void OnDrop (PointerEventData eventData)	{
 		if (!item) {
 
-				if(slots <= 5){//|| slots < 10 || slots < 15 || slots < 20 || slots < 25
+				if(slots < 5){//|| slots < 10 || slots < 15 || slots < 20 || slots < 25
 					grupoPrin.sizeDelta = new Vector2 (grupoPrin.sizeDelta.x+(referencia.GetComponent<RectTransform>().sizeDelta.x + (referencia.GetComponent<RectTransform>().sizeDelta.x * 0.20f)), grupoPrin.sizeDelta.y);
 				}
 
-				if(slots == 5 || slots == 10 || slots == 15){
+				if(slots == 5 || slots == 10 ){
 					grupoPrin.sizeDelta = new Vector2 (grupoPrin.sizeDelta.x, grupoPrin.sizeDelta.y+(referencia.GetComponent<RectTransform>().sizeDelta.y + (referencia.GetComponent<RectTransform>().sizeDelta.y * 0.20f)));
-					//transform.GetComponentInParent<DragGroup>().slots++;
-					//slots++;
 				}
+			panel.GetComponent<RectTransform>().sizeDelta = new Vector2 (panel.GetComponent<RectTransform>().sizeDelta.x - DragHand.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x - (DragHand.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x * 0.20f), panel.GetComponent<RectTransform>().sizeDelta.y);
 			slots++;
 			transform.GetComponentInParent<DragGroup>().slots++;
 				GameObject tmp = Instantiate(slot);
 				tmp.transform.SetParent(panelGrid.transform);
+			tmp.transform.localScale = new Vector3(1f,1f,1f);
 			if(DragHand.itemBeingDragged!=null)
 			{
-				DragHand.itemBeingDragged.transform.SetParent(transform);
-				canvas.GetComponent<CargarImagenes>().imagenesCarrete -= 1;
-				if(DragHand.startParent != transform && DragHand.startParent != panel.transform)
+				if(transform != null)
 				{
-					if(DragHand.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
-						DragHand.startParent.GetComponentInParent<DragGroup>().slots -= 1;
-						Destroy(DragHand.startParent.gameObject);
+					DragHand.itemBeingDragged.transform.SetParent(transform);
+					canvas.GetComponent<CargarImagenes>().imagenesCarrete -= 1;
+					if(DragHand.startParent != transform && DragHand.startParent != panel.transform)
+					{
+						if(DragHand.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
+							DragHand.startParent.GetComponentInParent<DragGroup>().slots -= 1;
+							Destroy(DragHand.startParent.gameObject);
+						}
 					}
 				}
 			}
-			/*DragHand.itemBeingDragged.transform.SetParent(transform);
-			canvas.GetComponent<CargarImagenes>().imagenesCarrete -= 1;
-			if(DragHand.startParent != transform && DragHand.startParent != panel.transform)
-			{
-				if(DragHand.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
-					DragHand.startParent.GetComponentInParent<DragGroup>().slots -= 1;
-					Destroy(DragHand.startParent.gameObject);
-				}
-			}*/
 		}
 	}
 

@@ -26,6 +26,7 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnDrag (PointerEventData eventData)
 	{
 		transform.position = Input.mousePosition;
+		transform.parent = canvas.transform;
 	}
 	
 	#endregion
