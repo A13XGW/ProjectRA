@@ -41,12 +41,12 @@ public class SiguienteReg : MonoBehaviour {
 					temp[i].transform.position = new Vector2(Textintegrante.transform.position.x, Textintegrante.transform.position.y - 20f*i);
 					temp[i].GetComponent<Text>().text = "Integrante " + (i+1) + ":"; 
 
-					Ava[i]= Instantiate(AvaIntegrantes);
+					/*Ava[i]= Instantiate(AvaIntegrantes);
 					Ava[i].transform.SetParent(PanelIntegrantes.transform);
 					Ava[i].transform.localScale = new Vector3 (1f,1f,1f);
 					Ava[i].transform.position = new Vector2(AvaIntegrantes.transform.position.x, AvaIntegrantes.transform.position.y);
 					Ava[i].transform.position = new Vector2(AvaIntegrantes.transform.position.x, AvaIntegrantes.transform.position.y - 20f*i);
-
+					Ava[i].tag = "AvatarI";*/
 
 					if( i > 5){
 						Debug.Log(i);

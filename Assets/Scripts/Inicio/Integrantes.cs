@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System;
 public class Integrantes : MonoBehaviour {
 	int integrantes;
-	public InputField TotalIntegrantes;
+	public Text TotalIntegrantes;
 	public InputField Integrante;
 	void Start(){
 		integrantes = Convert.ToInt32 (TotalIntegrantes.text);

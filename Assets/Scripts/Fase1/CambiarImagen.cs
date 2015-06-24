@@ -13,6 +13,8 @@ public class CambiarImagen : MonoBehaviour {
 	public RectTransform rectPanel;
 	public GameObject ImagenS;
 	public RectTransform rectImagen;
+	public Image Difuminado;
+	public Image[] Difinsta;
 //	Vector3 diferencia = new Vector3(1,1,1);
 	//Emmanuel
 	//Alex
@@ -36,6 +38,7 @@ public class CambiarImagen : MonoBehaviour {
 		
 		//Alex
 		images = new Image[thumbs.Length];
+		Difinsta = new Image[thumbs.Length];
 		//Debug.Log (images);
 		for (int x=1; x<thumbs.Length; x++) {
 			rectPanel = panelS.GetComponent<RectTransform> ();
@@ -48,8 +51,17 @@ public class CambiarImagen : MonoBehaviour {
 			images[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);
 			//agregar
 			images[x].GetComponent<CambiaImgClick>().ind=x;
+
+			/*Difinsta[x] = Instantiate(Difuminado);
+			rec = new Rect (0, 0, thumbs [x].width, thumbs [x].height);
+			Difinsta[x].transform.position = new Vector2 (images[x].transform.position.x,images[x].transform.position.y);
+			Difinsta[x].transform.SetParent(images[x].transform);
+			//Difinsta[x].transform.SetParent(panel.transform);
+			Difinsta[x].gameObject.GetComponent<RectTransform>().localScale = new Vector3(1.0f,1.0f,1.0f);*/
+
 		}
 		fondo.transform.position = thumb.transform.position;
+		Difuminado.gameObject.SetActive (false);
 	}
 	//Alex
 
@@ -58,10 +70,13 @@ public class CambiarImagen : MonoBehaviour {
 			fondo.transform.position = images[indice+1].transform.position;
 			indice++;
 		} 
-
+		if(indice < thumbs.Length){
+			images[indice].GetComponent<CambiaImgClick>().difuminado.SetActive(false);
+		}
 		if (indice < thumbs.Length) {
 			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
+
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
 		if (indice == thumbs.Length-1) {
@@ -86,6 +101,8 @@ public class CambiarImagen : MonoBehaviour {
 			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
+			images[indice].GetComponent<CambiaImgClick>().difuminado.SetActive(false);
+
 
 		} else {
 			indice=0;

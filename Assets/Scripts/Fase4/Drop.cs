@@ -34,22 +34,28 @@ public class Drop : MonoBehaviour, IDropHandler {
 			panel.GetComponent<RectTransform>().sizeDelta = new Vector2 (panel.GetComponent<RectTransform>().sizeDelta.x - DragHand.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x - (DragHand.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x * 0.20f), panel.GetComponent<RectTransform>().sizeDelta.y);
 			slots++;
 			transform.GetComponentInParent<DragGroup>().slots++;
+			if(slots<=15){
 				GameObject tmp = Instantiate(slot);
 				tmp.transform.SetParent(panelGrid.transform);
-			tmp.transform.localScale = new Vector3(1f,1f,1f);
+				tmp.transform.localScale = new Vector3(1f,1f,1f);
+			}
 			if(DragHand.itemBeingDragged!=null)
 			{
 				if(transform != null)
 				{
 					DragHand.itemBeingDragged.transform.SetParent(transform);
 					canvas.GetComponent<CargarImagenes>().imagenesCarrete -= 1;
-					if(DragHand.startParent != transform && DragHand.startParent != panel.transform)
-					{
-						if(DragHand.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
-							DragHand.startParent.GetComponentInParent<DragGroup>().slots -= 1;
-							Destroy(DragHand.startParent.gameObject);
+					if(DragHand.startParent != null){
+						if(DragHand.startParent != transform && DragHand.startParent != panel.transform)
+						{
+							if(DragHand.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
+								DragHand.startParent.GetComponentInParent<DragGroup>().slots -= 1;
+								Destroy(DragHand.startParent.gameObject);
+							}
 						}
+
 					}
+
 				}
 			}
 		}

@@ -6,7 +6,7 @@ public class Guardad : MonoBehaviour {
 	int contador=0;
 	string ruta;
 	public GameObject Comentarios;
-	public GameObject Panelcomentarios;
+	public GameObject CapturoPantalla;
 	public void OnButtonDown(){
 		contador ++;
 		ruta = Application.persistentDataPath;
@@ -19,7 +19,8 @@ public class Guardad : MonoBehaviour {
 		//Agregar timer
 		//Thread.Sleep (20000);
 		StartCoroutine(Espera(1.25F));
-	//	Comentarios.SetActive (true);
+		CapturoPantalla.SetActive (true);
+
 	}
 
 

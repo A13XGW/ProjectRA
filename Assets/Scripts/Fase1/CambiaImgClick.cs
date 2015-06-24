@@ -8,7 +8,7 @@ public class CambiaImgClick : MonoBehaviour {
 	public Image img;
 	public int ind;
 	public GameObject canvasImg;
-
+	public GameObject difuminado;
 
 	void Start() {
 		img =gameObject.GetComponent<Image> ();
@@ -17,7 +17,7 @@ public class CambiaImgClick : MonoBehaviour {
 	public void Clickea() {
 			imgPrincipal.sprite = img.sprite;
 			canvasImg.GetComponent<CambiarImagen> ().indice = ind;
-
+		difuminado.SetActive (false);
 			Image N = canvasImg.GetComponent<CambiarImagen> ().fondo;
 
 			N.transform.position = new Vector2 (img.transform.position.x, img.transform.position.y);

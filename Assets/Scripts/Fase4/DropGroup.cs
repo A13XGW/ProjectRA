@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DropGroup : MonoBehaviour, IDropHandler {
-	public Image lienzo;
-	public Transform canvas;
+	public Transform lienzo;
 	
 	#region IDropHandler implementation
 	
@@ -16,7 +15,7 @@ public class DropGroup : MonoBehaviour, IDropHandler {
 		if (DragGroup.itemBeingDragged == null) {
 		}
 		else
-		if (DragGroup.startParent == canvas) {
+		if (DragGroup.startParent == lienzo) {
 			DragGroup.itemBeingDragged.transform.SetParent (transform);
 			DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
 		} else {
