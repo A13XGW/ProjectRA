@@ -26,7 +26,7 @@ public class CargarImagenes : MonoBehaviour {
 		for(int x=1; x<thumbs.Length; x++)
 		{
 			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x + wid + wid*0.28f , rectPanel.sizeDelta.y);
-			rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
+			//rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
 			//Debug.Log(rectPanel.sizeDelta);
 		}
 		for (int x=1; x<thumbs.Length; x++) {

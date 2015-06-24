@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
      <Compile Include="Assets\Scripts\Fase5\GuardarDatos.cs" />
      <Compile Include="Assets\Scripts\Inicio\CargarEscena.cs" />
+     <Compile Include="Assets\Scripts\Inicio\Equipo.cs" />
      <Compile Include="Assets\Scripts\Inicio\EscenaFases.cs" />
      <Compile Include="Assets\Scripts\Inicio\Examinar.cs" />
      <Compile Include="Assets\Scripts\Inicio\ImgAvatarGrupo.cs" />
