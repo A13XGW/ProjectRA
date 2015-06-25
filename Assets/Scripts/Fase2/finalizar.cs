@@ -6,5 +6,6 @@ public class finalizar : MonoBehaviour {
 	// Update is called once per frame
 	public void OnButtonDown(){
 		texto.SetActive (true);
+		//Application.LoadLevel ("Fase2");
 	}
 }

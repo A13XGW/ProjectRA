@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AvanzarFase.cs" />
+     <Compile Include="Assets\Scripts\AvanzarFase.cs" />
      <Compile Include="Assets\Scripts\DeleteAlert.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiaImgClick.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiarImagen.cs" />
@@ -86,18 +86,21 @@
      <Compile Include="Assets\Scripts\Fase4\NuevoGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
      <Compile Include="Assets\Scripts\Fase5\GuardarDatos.cs" />
+     <Compile Include="Assets\Scripts\ImagePanelViewer.cs" />
      <Compile Include="Assets\Scripts\Inicio\CargarEscena.cs" />
      <Compile Include="Assets\Scripts\Inicio\Equipo.cs" />
      <Compile Include="Assets\Scripts\Inicio\EscenaFases.cs" />
      <Compile Include="Assets\Scripts\Inicio\Examinar.cs" />
      <Compile Include="Assets\Scripts\Inicio\ImgAvatarGrupo.cs" />
      <Compile Include="Assets\Scripts\Inicio\Integrantes.cs" />
+     <Compile Include="Assets\Scripts\Inicio\Salvar.cs" />
      <Compile Include="Assets\Scripts\Inicio\SiguienteReg.cs" />
+     <Compile Include="Assets\Scripts\Inicio\finaliza.cs" />
      <Compile Include="Assets\Scripts\Inicio\inciar.cs" />
      <Compile Include="Assets\Scripts\MostrarIns.cs" />
+     <Compile Include="Assets\Scripts\SituarAvatar.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
-     <Compile Include="Assets\finaliza.cs" />
-     <Compile Include="Assets\inicializacion.cs" />
+     <Compile Include="Assets\Scripts\inicializacion.cs" />
      <None Include="Assets\Resources\Tutorial\Fase3.txt" />
      <None Include="Assets\Resources\Tutorial\Fase1.txt" />
      <None Include="Assets\Resources\Tutorial\Fase6.txt" />

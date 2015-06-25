@@ -11,6 +11,7 @@ public class CargarImagenes : MonoBehaviour {
 	public int imagenesCarrete=0;
 	public GameObject guardar;
 	public Scrollbar barra;
+	public int ind;
 	// Use this for initialization
 	void Start () {
 		//carga la imagenes
@@ -37,6 +38,7 @@ public class CargarImagenes : MonoBehaviour {
 			images [x].transform.position = new Vector2 (thumb.transform.position.x + ((thumb.GetComponent<RectTransform> ().sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x * 0.20f)) * x), thumb.transform.position.y);
 			images [x].transform.SetParent (panel.transform);
 			images [x].gameObject.GetComponent<RectTransform> ().localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			images[x].GetComponent<ImagePanelViewer>().i = x;
 
 		}
 		imagenesCarrete++;

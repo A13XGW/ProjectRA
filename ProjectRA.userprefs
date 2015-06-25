@@ -2,12 +2,8 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase1\CapturarText.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fase4\Guardad.cs" Line="22" Column="3" />
-      <File FileName="Assets\Scripts\Fase4\Drop.cs" Line="51" Column="47" />
-      <File FileName="Assets\finaliza.cs" Line="11" Column="1" />
-      <File FileName="Assets\Scripts\Inicio\SiguienteReg.cs" Line="49" Column="31" />
-      <File FileName="Assets\Scripts\Fase4\DropGroup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Fase1\CapturarText.cs" Line="35" Column="47" />
+      <File FileName="Assets\Scripts\Fase1\CapturarText.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\AvanzarFase.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

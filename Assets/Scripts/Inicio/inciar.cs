@@ -12,6 +12,7 @@ public class inciar : MonoBehaviour {
 	}
 
 	void Start() {
+		PlayerPrefs.SetInt ("FaseFinal", 0);
 		if (PlayerPrefs.GetInt ("FaseFinal") == 6) {
 			botonEval.SetActive(true);
 		}

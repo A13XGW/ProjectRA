@@ -28,6 +28,7 @@ public class CambiarImagen : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start() {
+		DontDestroyOnLoad (GameObject.FindGameObjectWithTag("AvatarI"));
 		thumbs = Resources.LoadAll<Texture2D>("Fase1");
 		
 		Rect rec = new Rect (0, 0, thumbs [0].width, thumbs [0].height);
