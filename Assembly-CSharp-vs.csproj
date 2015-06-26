@@ -86,6 +86,9 @@
      <Compile Include="Assets\Scripts\Fase4\NuevoGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
      <Compile Include="Assets\Scripts\Fase5\GuardarDatos.cs" />
+     <Compile Include="Assets\Scripts\Fase6\Carga.cs" />
+     <Compile Include="Assets\Scripts\Fase6\Init.cs" />
+     <Compile Include="Assets\Scripts\Fase6\Modal.cs" />
      <Compile Include="Assets\Scripts\ImagePanelViewer.cs" />
      <Compile Include="Assets\Scripts\Inicio\CargarEscena.cs" />
      <Compile Include="Assets\Scripts\Inicio\Equipo.cs" />
@@ -99,6 +102,7 @@
      <Compile Include="Assets\Scripts\Inicio\inciar.cs" />
      <Compile Include="Assets\Scripts\MostrarIns.cs" />
      <Compile Include="Assets\Scripts\SituarAvatar.cs" />
+     <Compile Include="Assets\Scripts\Teclado.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
      <Compile Include="Assets\Scripts\inicializacion.cs" />
      <None Include="Assets\Resources\Tutorial\Fase3.txt" />

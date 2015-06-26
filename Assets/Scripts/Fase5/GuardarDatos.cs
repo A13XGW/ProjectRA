@@ -6,13 +6,13 @@ public class GuardarDatos : MonoBehaviour {
 	public GameObject correcta;
 	// Use this for initialization
 	public string ruta;
-	public string texto="";
+	public string  texto="";
 
 	void Start(){
 		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase5/";
 		Directory.CreateDirectory (ruta);
-		ruta += "Evaluacion.txt";
+		ruta += "Evaluacion.rtf";
 		if (File.Exists (ruta) == false) {
 			File.Create (ruta);
 		}
@@ -20,7 +20,7 @@ public class GuardarDatos : MonoBehaviour {
 	}
 
 	public void GuardaValores() {
-		File.WriteAllText (ruta, texto);
+		File.WriteAllText ("Evaluacion.rtf", texto);
 
 	}
 }
