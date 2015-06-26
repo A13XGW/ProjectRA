@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class Drop_1 : MonoBehaviour, IDropHandler {
+public class Soltar : MonoBehaviour, IDropHandler {
 	public int padre;
 	public GameObject item 	{
 		get	{
@@ -13,15 +13,17 @@ public class Drop_1 : MonoBehaviour, IDropHandler {
 		}
 	}
 
-	#region IDropHandler implementation
+	#region ArrastrarGrupo implementation
 
 	public void OnDrop (PointerEventData eventData)	{
 	
 		if (!item) {
 
-			if (DragHand_1.itemBeingDragged.transform.name == transform.name)
-				DragHand_1.itemBeingDragged.transform.SetParent(transform);
-				DragHand_1.startParent.GetComponent<Contador>().contadorR +=1;
+			if (ArrastraMano.itemBeingDragged.transform.name == transform.name){
+				ArrastraMano.itemBeingDragged.transform.SetParent(transform);
+				ArrastraMano.startParent.GetComponent<Contador>().contadorR +=1;
+		
+			}
 		}
 
 	}

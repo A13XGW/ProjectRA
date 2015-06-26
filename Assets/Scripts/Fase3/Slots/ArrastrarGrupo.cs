@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DragGroup_1 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class ArrastrarGrupo : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 	public static GameObject itemBeingDragged;
 	static Vector3 startPosition;
 	public static Transform startParent;
