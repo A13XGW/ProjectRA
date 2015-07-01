@@ -1,8 +1,11 @@
-﻿		Etapa  1
-			Instrucciones:
-			Observen cada una de las siguientes  
-			imágenes y reflexionen acerca de sus 
-			características.  
-			Al terminar accedan al teclado digital  
-			y escriban esas características en el  
-			archivo llamado Criterios. 
+﻿Etapa  1
+   Instrucciones:
+
+	Observen cada una de las siguientes imágenes y reflexionen
+	acerca de sus características en común.  
+
+	Al terminar, de manera individual accedan al teclado digital
+	y escriban esas características en el archivo llamado "Criterios".  
+	
+	Recuerden incluir su código de participante (A1,B2,...) al principio
+	de cada aportación. 

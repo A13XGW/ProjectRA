@@ -1,19 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.UI;
 
 public class GirarImagen : MonoBehaviour 
 {
-	public float Velocidadx = 0.005F;
-	public float Velocidady = 0.005F;
+	public float Velocidadx = 0.0025F;
+	public float Velocidady = 0.0025F;
+
+	public Transform padre;
+
+	public bool girarObj=true;
+
 	void Start()
 	{
-
+		padre = gameObject.transform;
 
 	}
 	void Update () 
 	{
-		girar ();
+		//if (transform.parent != padre){
+			girar ();
+		//}
 	}
 	public void girar()
 	{
@@ -28,10 +36,7 @@ public class GirarImagen : MonoBehaviour
 
 	
 	public void acomodar(){
-
 	//	transform.rotation =  Quaternion.Euler(0, 0, 0);
-
-
-		transform.localScale += new Vector3(Velocidadx, Velocidady , 0);
+		transform.localScale += new Vector3(0, 0 , 0);
 	}
 }

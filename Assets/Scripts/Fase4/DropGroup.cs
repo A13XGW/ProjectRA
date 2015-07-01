@@ -14,18 +14,19 @@ public class DropGroup : MonoBehaviour, IDropHandler {
 	{
 		if (DragGroup.itemBeingDragged == null) {
 		}
-		else
-		if (DragGroup.startParent == lienzo) {
-			DragGroup.itemBeingDragged.transform.SetParent (transform);
-			DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
-		} else {
-			GameObject tmp = Instantiate(DragGroup.itemBeingDragged);
-			//tmp.transform.position = DragGroup.startPosition;
-			tmp.transform.SetParent(DragGroup.startParent);
-			tmp.transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
-			
-			DragGroup.itemBeingDragged.transform.SetParent (transform);
-			DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
+		else {
+			if (DragGroup.startParent == lienzo) {
+				DragGroup.itemBeingDragged.transform.SetParent (transform);
+				DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
+			} else {
+				GameObject tmp = Instantiate(DragGroup.itemBeingDragged);
+				//tmp.transform.position = DragGroup.startPosition;
+				tmp.transform.SetParent(DragGroup.startParent);
+				tmp.transform.GetComponent<CanvasGroup>().blocksRaycasts = true;
+				
+				DragGroup.itemBeingDragged.transform.SetParent (transform);
+				DragGroup.itemBeingDragged.transform.position = Input.mousePosition;
+			}
 		}
 	}
 	

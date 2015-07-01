@@ -6,6 +6,7 @@ using System.Collections;
 public class CambiarImagen3 : MonoBehaviour {
 
 	public Image objetoImagen;
+	public Image objetoImagen2;
 	public int indice=0;
 	public Scrollbar barra;
 	public int i = 0;
@@ -17,6 +18,7 @@ public class CambiarImagen3 : MonoBehaviour {
 
 
 	public Image fondo;
+	public Image frente;
 	public Image thumb;
 	public Texture2D[] thumbs;
 	public Image thumbF;
@@ -35,6 +37,7 @@ public class CambiarImagen3 : MonoBehaviour {
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);
 
 		objetoImagen.sprite = Sprite.Create (thumbs [0], rec, vec);
+		objetoImagen2.sprite = Sprite.Create (thumbs [0], rec, vec);
 
 
 		Image[] images = new Image[thumbs.Length];
@@ -63,13 +66,16 @@ public class CambiarImagen3 : MonoBehaviour {
 		if (indice < thumbs.Length-1) 
 		{
 			fondo.transform.position = new Vector2 (fondo.transform.position.x + 66, fondo.transform.position.y);
+
 			indice++;
+
 		} 
 
 		if (indice < thumbs.Length) {
 			Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 			Vector2 vec = new Vector2 (0.5f, 0.5f);
 			objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec);
+			objetoImagen2.sprite = Sprite.Create (thumbs [indice], rec, vec);
 		}
 		if (indice == thumbs.Length-1) {
 //			area.GetComponent<CapturarText>().ActivarTexto();
@@ -171,6 +177,7 @@ public class CambiarImagen3 : MonoBehaviour {
 		Rect rec = new Rect (0, 0, thumbs [indice].width, thumbs [indice].height);
 		Vector2 vec = new Vector2 (0.5f, 0.5f);
 		objetoImagen.sprite = Sprite.Create (thumbs [indice], rec, vec); 
+		objetoImagen2.sprite = Sprite.Create (thumbs [indice], rec, vec); 
 
 
 		if (indice == 0) 

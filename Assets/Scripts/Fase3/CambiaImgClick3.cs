@@ -4,7 +4,7 @@ using System.Collections;
 
 public class CambiaImgClick3 : MonoBehaviour {
 	public Canvas area;
-	public Image imgPrincipal;
+	public Image imgPrincipal, imgSecundario;
 	public Image img;
 	public int ind;
 	public GameObject canvasImg;
@@ -21,6 +21,8 @@ public class CambiaImgClick3 : MonoBehaviour {
 
 
 			imgPrincipal.sprite = img.sprite;
+		imgSecundario.sprite = img.sprite;
+			
 			canvasImg.GetComponent<CambiarImagen3> ().indice = ind;
 			
 			

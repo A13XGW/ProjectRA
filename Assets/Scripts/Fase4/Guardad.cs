@@ -19,13 +19,17 @@ public class Guardad : MonoBehaviour {
 		//Agregar timer
 		//Thread.Sleep (20000);
 		StartCoroutine(Espera(1.25F));
-		CapturoPantalla.SetActive (true);
+		//CapturoPantalla.SetActive (true);
 
 	}
 
 
 IEnumerator Espera(float waitTime) {
 	yield return new WaitForSeconds(waitTime);
+	//LA LINEA SIGUIENTE SE DEBE QUITAR CUANDO HAYA COMENTARIOS ACTIVADOS Y LA PANTALLA QUE SE DEBE ENVIAR
+	//SERA LA DE COMENTARIOS
+	CapturoPantalla.SetActive (true);
+	CapturoPantalla.SetActive (false);
 	
 	Comentarios.SetActive (true);
 }

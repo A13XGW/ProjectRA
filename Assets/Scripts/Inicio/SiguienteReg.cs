@@ -54,7 +54,8 @@ public class SiguienteReg : MonoBehaviour {
 				AlertMenor.SetActive(true);
 			}
 		} else {
-			AlertNada.SetActive(true);
+			if (AlertNada!=null)
+				AlertNada.SetActive(true);
 		}
 	}
 }

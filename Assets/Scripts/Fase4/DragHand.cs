@@ -8,7 +8,7 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public static Transform startParent;
 	public GameObject panel;
 	public GameObject canvas;
-
+	public int validar=0;
 	#region IBeginDragHandler implementation
 	
 	public void OnBeginDrag (PointerEventData eventData)
@@ -26,7 +26,13 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnDrag (PointerEventData eventData)
 	{
 		transform.position = Input.mousePosition;
-		transform.parent = canvas.transform;
+		if (transform.parent.tag == "slot") {
+			validar =1;
+		}
+		transform.SetParent(canvas.transform);
+
+
+		//transform.parent = canvas.transform;
 	}
 	
 	#endregion
@@ -44,6 +50,8 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 		if (transform.parent == panel.transform || transform.parent == canvas.transform) {
 			transform.position = startPosition;
 		}
+		validar = 0;
+
 	}
 	
 	#endregion

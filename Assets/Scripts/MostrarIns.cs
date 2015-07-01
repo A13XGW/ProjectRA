@@ -17,4 +17,12 @@ public class MostrarIns : MonoBehaviour {
 		pantalla.SetActive (false);
 	}
 
+	public void MenuNavegar(int nivel) {
+		if (nivel==0) {
+			Application.LoadLevel("iniciar");
+		} else {
+			Application.LoadLevel("Fase" + nivel);
+		}
+	}
+
 }

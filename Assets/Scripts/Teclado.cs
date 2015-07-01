@@ -4,6 +4,8 @@ using System.Collections;
 public class Teclado : MonoBehaviour {
 	public int mostrar=0;
 	public void teclado(){
+		System.Diagnostics.Process.Start ("osk");
+		/*
 		if (mostrar == 0) {
 			System.Diagnostics.Process.Start ("osk");
 			mostrar = 1;
@@ -14,5 +16,6 @@ public class Teclado : MonoBehaviour {
 			myProcess.Start();
 			mostrar = 0;
 		}
+		*/
 	}
 }

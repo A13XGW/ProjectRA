@@ -9,6 +9,7 @@ public class Equipo : MonoBehaviour
 	public void OnButtonDown(){
 		PlayerPrefs.SetString ("NombreEquipo", NEquipo.text);
 		PlayerPrefs.SetInt ("ImagenEquipo", AEquipo);
+	//	Debug.Log("nombreEq");
 	}
 }
 

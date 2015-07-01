@@ -26,12 +26,13 @@ public class inicializacion : MonoBehaviour {
 		
 		panelIzq = Resources.LoadAll<Sprite> ("Fase5/normal");
 		panelDer = Resources.LoadAll<Sprite> ("Fase5/ImagenesSurr");
-		
-		imageI.sprite = panelIzq [0];
-		imageD.sprite = panelDer [0];
-		imageI.tag="normal";
-		imageD.tag="surrealista";
-		
+
+		if (panelDer.Length>0) {
+			imageI.sprite = panelIzq [0];
+			imageD.sprite = panelDer [0];
+			imageI.tag="normal";
+			imageD.tag="surrealista";
+		}
 		guardaValores = objetoGuarda.GetComponent<GuardarDatos> ();
 		
 	}

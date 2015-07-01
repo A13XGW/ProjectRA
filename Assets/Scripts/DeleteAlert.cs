@@ -5,6 +5,7 @@ public class DeleteAlert : MonoBehaviour {
 	public GameObject alerta;
 
 	public void OnMouseDown(){
+		alerta.SetActive (false);
 		Destroy (alerta);
 	}
 }

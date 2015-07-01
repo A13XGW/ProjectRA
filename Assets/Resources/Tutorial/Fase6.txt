@@ -1,9 +1,8 @@
-﻿		Etapa 6
+﻿Etapa 6
+	Instrucciones:
+	
+	Evalúen individualmente las imágenes de los otros equipos 
+	utilizando las escalas "flexibilidad" y "originalidad", 
+	donde "0" es el mínimo y "12" es el máximo.
 
-			Instrucciones:
-			Evalúa el nivel de creatividad de las obras creadas utilizando
-			las escalas siguientes:
-			Flexibilidad (0-12): Habilidad para adaptar, redefinir, reinterpretar o tomar
-			una nueva táctica para llegar a una solución.
-			Originalidad (0-12): Aptitud o disposición para producir de forma poca usual
-			respuestas raras, remotas, ingeniosas o novedosas.
+	Lean las definiciones de las escalas en la pantalla de evaluación.

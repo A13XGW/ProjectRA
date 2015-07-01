@@ -4,6 +4,7 @@ using System.Collections;
 public class inciar : MonoBehaviour {
 	public GameObject Registro;
 	public GameObject botonEval;
+
 	public void OnButtonDown(){
 		Registro.SetActive (true);
 	}
@@ -12,7 +13,7 @@ public class inciar : MonoBehaviour {
 	}
 
 	void Start() {
-		PlayerPrefs.SetInt ("FaseFinal", 0);
+		//PlayerPrefs.SetInt ("FaseFinal", 0);
 		if (PlayerPrefs.GetInt ("FaseFinal") == 6) {
 			botonEval.SetActive(true);
 		}

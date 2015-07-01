@@ -10,18 +10,21 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public GameObject canvas;
 	public GameObject panelPadre;
 
+
+	public Image imagen;
+
 	#region IBeginDragHandler implementation
 	
 	public void OnBeginDrag (PointerEventData eventData)
 	{
 
-
+		imagen.gameObject.SetActive (false);
 
 
 		itemBeingDragged = gameObject;
 		startPosition = transform.position;
 		startParent = transform.parent;
-		GetComponent<CanvasGroup> ().blocksRaycasts = false;
+
 
 	}
 	
@@ -33,9 +36,10 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	{
 		transform.position = Input.mousePosition;
 
+			
 			GetComponent<GirarImagen> ().Velocidadx = 0;
-			GetComponent<GirarImagen> ().Velocidady = 0;
-		
+			GetComponent<GirarImagen> ().Velocidady = 0;		
+			
 	}
 	
 	#endregion
@@ -46,21 +50,31 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	{
 		itemBeingDragged = null;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
-		if(transform.parent == startParent)
-		{
-
+		if (transform.parent == startParent) {
+		
 			transform.position = startPosition;
 
-			if(transform.parent== panelPadre){
-				GetComponent<GirarImagen>().Velocidadx=0.005F;
-				GetComponent<GirarImagen>().Velocidady=0.005F;
-			}
-		}
-		if (transform.parent == panel.transform || transform.parent == canvas.transform) {
-
+			/*	if (transform.parent == panelPadre) {
+				GetComponent<GirarImagen> ().Velocidadx = 0.005F;
+				GetComponent<GirarImagen> ().Velocidady = 0.005F;
+			}*/
+		} 
+		if (transform.parent == panel.transform || transform.parent == canvas.transform) 
+		{		
+			Debug.Log ("Entra");
 			transform.position = startPosition;
 	
-		} 
+		}
+		if (GetComponent<GirarImagen> ().girarObj) {
+			GetComponent<GirarImagen> ().Velocidadx = 0.005F;
+			GetComponent<GirarImagen> ().Velocidady = 0.005F;
+			imagen.gameObject.SetActive (true);
+		} else {
+			GetComponent<GirarImagen> ().Velocidadx = 0;
+			GetComponent<GirarImagen> ().Velocidady = 0;
+		}
+
+
 	}
 
 	

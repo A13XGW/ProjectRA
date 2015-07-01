@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AvanzarFase.cs" />
+     <Compile Include="Assets\Scripts\CuadroDialogo.cs" />
      <Compile Include="Assets\Scripts\DeleteAlert.cs" />
+     <Compile Include="Assets\Scripts\Evaluador.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiaImgClick.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiarImagen.cs" />
      <Compile Include="Assets\Scripts\Fase1\CambiarObj.cs" />
@@ -64,7 +66,6 @@
      <Compile Include="Assets\Scripts\Fase2\Seleccion.cs" />
      <Compile Include="Assets\Scripts\Fase2\Slot.cs" />
      <Compile Include="Assets\Scripts\Fase2\finalizar.cs" />
-     <Compile Include="Assets\Scripts\Fase3\ButtonZoom.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiaImgClick3.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiarImagen3.cs" />
      <Compile Include="Assets\Scripts\Fase3\Contador.cs" />
@@ -77,7 +78,6 @@
      <Compile Include="Assets\Scripts\Fase3\Slots\ArrastrarGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase3\Slots\Soltar.cs" />
      <Compile Include="Assets\Scripts\Fase3\TExto.cs" />
-     <Compile Include="Assets\Scripts\Fase3\ZoomImagen.cs" />
      <Compile Include="Assets\Scripts\Fase3\frente.cs" />
      <Compile Include="Assets\Scripts\Fase4\CargarImagenes.cs" />
      <Compile Include="Assets\Scripts\Fase4\DragGroup.cs" />

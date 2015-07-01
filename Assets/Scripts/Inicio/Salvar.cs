@@ -3,13 +3,19 @@ using System.Collections;
 
 public class Salvar : MonoBehaviour {
 
+	public GameObject objeto;
 	// Use this for initialization
 	void Awake () {
 		DontDestroyOnLoad (gameObject);
+		objeto=gameObject;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnLevelWasLoaded(int level) {
+		if(level>0) {
+			Debug.Log ("Entra a cargar");
+			GameObject clonObj = Instantiate(objeto);
+			DontDestroyOnLoad (clonObj);
+
+		}
 	}
 }
