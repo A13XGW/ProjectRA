@@ -8,6 +8,7 @@ public class Drop : MonoBehaviour, IDropHandler {
 	public RectTransform panelGrid;
 	public Image referencia;
 	public RectTransform grupoPrin;
+	GameObject tmp;
 	public  int slots = 1;
 	public GameObject canvas;
 	public GameObject item 	{
@@ -39,7 +40,7 @@ public class Drop : MonoBehaviour, IDropHandler {
 			transform.GetComponentInParent<DragGroup>().slots++;
 			
 			if(slots<=15){
-				GameObject tmp = Instantiate(slot);
+				tmp = Instantiate(slot);
 				tmp.transform.SetParent(panelGrid.transform);
 				tmp.transform.localScale = new Vector3(1f,1f,1f);
 			}
@@ -58,13 +59,12 @@ public class Drop : MonoBehaviour, IDropHandler {
 							if (DragHand.startParent.GetComponentInParent<DragGroup>()!=null) {
 								if(DragHand.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
 									DragHand.startParent.GetComponentInParent<DragGroup>().slots -= 1;
+									tmp.GetComponent<Drop>().slots -=1;
 									Destroy(DragHand.startParent.gameObject);
 								}
 							}
 						}
-						
 					}
-					
 				}
 			}
 		}
