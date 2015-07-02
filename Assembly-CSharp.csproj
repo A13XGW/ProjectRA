@@ -89,7 +89,8 @@
      <Compile Include="Assets\Scripts\Fase4\Guardad.cs" />
      <Compile Include="Assets\Scripts\Fase4\NuevoGrupo.cs" />
      <Compile Include="Assets\Scripts\Fase4\ResaltarSemantica.cs" />
-     <Compile Include="Assets\Scripts\Fase4B\DraglerSlot.cs" />
+     <Compile Include="Assets\Scripts\Fase4B\Dragler.cs" />
+     <Compile Include="Assets\Scripts\Fase4B\DropItGroup.cs" />
      <Compile Include="Assets\Scripts\Fase4B\DropItSlot.cs" />
      <Compile Include="Assets\Scripts\Fase5\GuardarDatos.cs" />
      <Compile Include="Assets\Scripts\Fase6\Carga.cs" />

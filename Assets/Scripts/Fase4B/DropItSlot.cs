@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DropItSlot : MonoBehaviour, IDropHandler {
 
+	public GameObject canvas;
 	GameObject tmp;
 	public GameObject slot;
 	public RectTransform panelGrid;
@@ -25,15 +26,20 @@ public class DropItSlot : MonoBehaviour, IDropHandler {
 	public void OnDrop (PointerEventData eventData)
 	{
 		if (!item) {
-			if(DraglerSlot.itemBeingDragged.transform.parent != transform.parent){
+			//Debug.Log(Dragler.itemBeingDragged.transform.parent.parent.name);
+			//Debug.Log(transform.parent.name);
+			if(Dragler.itemBeingDragged.transform.parent.parent != transform.parent){//Si el padre del slot es el mismo no hacer nada
 				if (slots < 5) {//Crece el grupo a lo ancho
 					grupoPrin.sizeDelta = new Vector2 (grupoPrin.sizeDelta.x + (referencia.GetComponent<RectTransform> ().sizeDelta.x + (referencia.GetComponent<RectTransform> ().sizeDelta.x * 0.20f)), grupoPrin.sizeDelta.y);
 				}
 				if(slots == 5 || slots == 10 ){//Crece el grupo a lo alto
 					grupoPrin.sizeDelta = new Vector2 (grupoPrin.sizeDelta.x, grupoPrin.sizeDelta.y+(referencia.GetComponent<RectTransform>().sizeDelta.y + (referencia.GetComponent<RectTransform>().sizeDelta.y * 0.20f)));
 				}
-				if (DraglerSlot.itemBeingDragged.transform.parent.tag == "carrete" ){//Reduce el carrete de imagenes
-					panel.GetComponent<RectTransform>().sizeDelta = new Vector2 (panel.GetComponent<RectTransform>().sizeDelta.x - DragHand.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x - (DragHand.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x * 0.20f), panel.GetComponent<RectTransform>().sizeDelta.y);
+				if (Dragler.itemBeingDragged.transform.parent.tag == "carrete" ){//Reduce el carrete de imagenes
+					canvas.GetComponent<CargarImagenes>().imagenesCarrete -= 1;//Reduce el contador 
+					if(canvas.GetComponent<CargarImagenes>().imagenesCarrete <=11){
+						panel.GetComponent<RectTransform>().sizeDelta = new Vector2 (panel.GetComponent<RectTransform>().sizeDelta.x - Dragler.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x - (Dragler.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x * 0.20f), panel.GetComponent<RectTransform>().sizeDelta.y);
+					}
 				}
 				slots++;
 				if(slots<=15){
@@ -42,16 +48,17 @@ public class DropItSlot : MonoBehaviour, IDropHandler {
 					tmp.transform.localScale = new Vector3(1f,1f,1f);
 				}
 
-				DraglerSlot.itemBeingDragged.transform.SetParent(transform);
+				Dragler.itemBeingDragged.transform.SetParent(transform);
 
-				/*if (DraglerSlot.startParent.GetComponentInParent<DragGroup>()!=null && DraglerSlot.startParent != panel.transform)
+				if (Dragler.startParent.GetComponentInParent<DragGroup>()!=null && Dragler.startParent != panel.transform)
 				{
-					if(DraglerSlot.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
-						DraglerSlot.startParent.GetComponentInParent<DragGroup>().slots -= 1;
+					if(Dragler.startParent.GetComponentInParent<DragGroup>().slots>=2 ){
+						Dragler.startParent.GetComponentInParent<DragGroup>().slots -= 1;
 						//tmp.GetComponent<Drop>().slots -=1;
-						Destroy(DraglerSlot.startParent.gameObject);
+						Destroy(Dragler.startParent.gameObject);
+						//Agregar reduccion del panel
 					}
-				}*/
+				}
 			}
 		}
 	}

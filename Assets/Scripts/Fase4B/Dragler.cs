@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class DraglerSlot : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler {
 	
-	public GameObject panel;
+
 	public GameObject canvas;
 
 	public static GameObject itemBeingDragged;
@@ -49,10 +49,13 @@ public class DraglerSlot : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDr
 	{
 		itemBeingDragged = null;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
-		if(transform.parent == startParent)
-		{
-			transform.position = startPosition;
+		if(transform.tag != "grupo"){
+			if(transform.parent == startParent)
+			{
+				transform.position = startPosition;
+			}
 		}
+
 
 	}
 
