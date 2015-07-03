@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class EliminarGrupo : MonoBehaviour {
+public class EliminarGrupo : MonoBehaviour 
+{
 	public GameObject grupo;
-	public GameObject panelGrid;
 	public GameObject alerta;
 	public GameObject canvas;
 	public void OnButtonDown(){
-		if (grupo.GetComponent<DragGroup> ().slots == 1) {
+		if (grupo.GetComponent<Dragler> ().slots == 1) 
+		{
 			Destroy (grupo);
-		} else {
+		} 
+		else 
+		{
 			alerta.SetActive(true);
 			GameObject tmp = Instantiate(alerta);
 			alerta.SetActive(false);
