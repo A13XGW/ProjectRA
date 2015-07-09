@@ -1,11 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase4B\Dragler.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase2\3D\MoverRotarObjeto3d.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fase4B\Dragler.cs" Line="57" Column="49" />
-      <File FileName="Assets\Scripts\Fase4\CargarImagenes.cs" Line="35" Column="28" />
-      <File FileName="Assets\Scripts\Fase4\EliminarGrupo.cs" Line="10" Column="33" />
-      <File FileName="Assets\Scripts\Fase4B\DropItSlot.cs" Line="7" Column="1" />
+      <File FileName="Assets\Scripts\Fase2\3D\SeleccionObj3d.cs" Line="18" Column="40" />
+      <File FileName="Assets\Scripts\Fase2\3D\InstanciaObjetos.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\Fase2\3D\MoverRotarObjeto3d.cs" Line="44" Column="20" />
+      <File FileName="Assets\Scripts\Fase4\Guardad.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase2\3D\SeleccionDeColor.cs" Line="25" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
