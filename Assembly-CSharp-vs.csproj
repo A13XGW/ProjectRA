@@ -59,6 +59,9 @@
      <Compile Include="Assets\Scripts\Fase1\MosOcu.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\InstanciaObjetos.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\MoverRotarObjeto3d.cs" />
+     <Compile Include="Assets\Scripts\Fase2\3D\RotarX.cs" />
+     <Compile Include="Assets\Scripts\Fase2\3D\RotarY.cs" />
+     <Compile Include="Assets\Scripts\Fase2\3D\RotarZ.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\SeleccionDeColor.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\SeleccionObj3d.cs" />
      <Compile Include="Assets\Scripts\Fase2\CargarImgs.cs" />
