@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MoverRotarObjeto3d : MonoBehaviour {
-	public GameObject objeto, flecha, flechas;
+	public GameObject objeto, flechas, MenuRotar;
 
 
 	// Use this for initialization
@@ -44,17 +44,18 @@ public class MoverRotarObjeto3d : MonoBehaviour {
 	}
 
 	public void Rotar() {
-		//flecha.SetActive (true);
-		flechas.transform.position = new Vector3(objeto.transform.position.x,objeto.transform.position.y,objeto.transform.position.z-0.3f);
-		//objeto.GetComponentInChildren<Transform> ().gameObject.SetActive (true);
-		//Debug.Log ("Rotar");
-		//objeto.transform.rotation = Quaternion.Euler (0, 45, 0);
-		//objeto.transform.Rotate(Vector3.right * Time.deltaTime*75);
-		//objeto.transform.Rotate(Vector3.forward * Time.deltaTime*-75);
+		flechas.transform.position = new Vector3(objeto.transform.position.x,objeto.transform.position.y,objeto.transform.position.z-0.5f);
+		MenuRotar.SetActive (true);
 	}
 
+	public void Reset(){
+		objeto.transform.rotation = Quaternion.identity;
+	}
 	public void borrar(){
 		Destroy (objeto);
+	}
+	public void desactivarMenu(){
+		MenuRotar.SetActive (false);
 	}
 	void Update() {
 

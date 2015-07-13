@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System;
 public class RotarY : MonoBehaviour {
-
+	public GameObject objeto;
 	void OnMouseUp() {
-		transform.GetComponent<MoverRotarObjeto3d>().objeto.transform.rotation = Quaternion.Euler (GetComponent<MoverRotarObjeto3d>().objeto.transform.rotation.x+1, GetComponent<MoverRotarObjeto3d>().objeto.transform.rotation.y, GetComponent<MoverRotarObjeto3d>().objeto.transform.rotation.z);		
+		objeto.transform.Rotate (Vector3.right*-1);
 	}
 }

@@ -18,7 +18,7 @@ public GameObject objeto;
 		objeto.GetComponent<Renderer> ().material.color = Color.white;
 	}
 	public void Rojo(){
-		objeto.GetComponent<Renderer> ().material.color = Color.gray;
+		objeto.GetComponent<Renderer> ().material.color = Color.red;
 	}
 	public void GrisC(){
 		objeto.GetComponent<Renderer> ().material.color = new Color(0.7843137254901961f,0.7843137254901961f,0.7843137254901961f);
