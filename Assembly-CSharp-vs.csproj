@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Fase1\GeneraNuevasFotos.cs" />
      <Compile Include="Assets\Scripts\Fase1\GuardadNuevaImagen.cs" />
      <Compile Include="Assets\Scripts\Fase1\MosOcu.cs" />
+     <Compile Include="Assets\Scripts\Fase2\3D\Gestos.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\InstanciaObjetos.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\MoverRotarObjeto3d.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\RotarX.cs" />
