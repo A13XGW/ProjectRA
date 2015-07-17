@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\Fase2\DragHandeler.cs" />
      <Compile Include="Assets\Scripts\Fase2\GuardarImg.cs" />
      <Compile Include="Assets\Scripts\Fase2\Seleccion.cs" />
+     <Compile Include="Assets\Scripts\Fase2\SelecionImg.cs" />
      <Compile Include="Assets\Scripts\Fase2\Slot.cs" />
      <Compile Include="Assets\Scripts\Fase2\finalizar.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiaImgClick3.cs" />

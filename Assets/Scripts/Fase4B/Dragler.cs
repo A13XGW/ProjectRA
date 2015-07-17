@@ -7,7 +7,6 @@ public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHa
 {
 	
 
-	public GameObject canvas;
 	public int slots = 1;
 	public static GameObject itemBeingDragged;
 	public static Vector3 startPosition;
@@ -37,13 +36,11 @@ public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHa
 			{
 				Vector2 tch = Input.GetTouch(0).deltaPosition;
 				transform.position = new Vector2 (tch.x,tch.y);
-				//transform.SetParent(canvas.transform);
 			}
 		} 
 		else 
 		{
 			transform.position = Input.mousePosition;
-			//transform.SetParent(canvas.transform);
 		}
 	}
 

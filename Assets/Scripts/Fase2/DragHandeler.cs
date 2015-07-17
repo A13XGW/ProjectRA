@@ -9,7 +9,8 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public static GameObject itemBeingDragged;
 	public static Vector3 startPosition;
 	public static Transform startParent;
-
+	public  GameObject AreaDeTrabajo, AreaFondo, panel;
+	GameObject tmp;
 	#region IBeginDragHandler implementation
 
 	public void OnBeginDrag (PointerEventData eventData)
@@ -18,6 +19,19 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		startPosition = transform.position;
 		startParent = transform.parent;
 		GetComponent<CanvasGroup> ().blocksRaycasts = false;
+		if(startParent.tag != "Area De Trabajo")
+		{
+			tmp = Instantiate(DragHandeler.itemBeingDragged);
+			tmp.GetComponent<CanvasGroup>().blocksRaycasts = true;
+			tmp.transform.position = DragHandeler.startPosition;
+			tmp.transform.SetParent(DragHandeler.startParent);
+			tmp.transform.localScale = new Vector3(1,1,1);
+			tmp.GetComponent<CanvasGroup> ().blocksRaycasts = false;
+			
+			itemBeingDragged = tmp;
+		}
+
+
 	}
 
 	#endregion
@@ -26,7 +40,18 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
 	public void OnDrag (PointerEventData eventData)
 	{
-		transform.position = Input.mousePosition;
+		if (Input.touchSupported == true) 
+		{
+			if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+			{
+				Vector2 tch = Input.GetTouch(0).deltaPosition;
+				itemBeingDragged.transform.position = new Vector2 (tch.x,tch.y);
+			}
+		} 
+		else 
+		{
+			itemBeingDragged.transform.position = Input.mousePosition;
+		}
 	}
 
 	#endregion
@@ -35,8 +60,17 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
 	public void OnEndDrag (PointerEventData eventData)
 	{
-		itemBeingDragged = null;
+
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
+		if (startParent.tag != "Area De Trabajo") 
+		{
+			tmp.GetComponent<CanvasGroup> ().blocksRaycasts = true;
+		}
+		if(itemBeingDragged.transform.parent == panel)
+		{
+			itemBeingDragged.transform.position = startPosition;
+		}
+		itemBeingDragged = null;
 	}
 
 	#endregion
