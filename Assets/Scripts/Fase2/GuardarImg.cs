@@ -6,12 +6,12 @@ using System.IO;
 using UnityEngine.UI;
 
 public class GuardarImg : MonoBehaviour {
-	public Texture2D textura;
+	Texture2D textura;
 	Texture2D tmp;
 	public Image imagen;
 
 	public Image lienzo;
-	public Canvas kanvas;
+	public GameObject kanvas;
 
 	public int capturas;
 
