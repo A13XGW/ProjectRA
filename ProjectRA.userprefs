@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase2\GuardarImg.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase2\3D\Gestos.cs">
     <Files>
-      <File FileName="Assets\Scripts\Fase2\GuardarImg.cs" Line="89" Column="7" />
+      <File FileName="Assets\Scripts\Fase2\3D\Gestos.cs" Line="257" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
