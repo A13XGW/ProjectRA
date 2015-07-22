@@ -36,7 +36,7 @@ public class GuardarImg : MonoBehaviour {
 		for (int x=0; x<ancho; x++) {
 			for (int y=0;y<alto;y++) {
 				//textura.SetPixel(x, y, new Color(255, 0, 255));
-				textura.SetPixel(x, y, Color.white);
+//				textura.SetPixel(x, y, Color.white);
 
 				//textura.SetPixel(x, y, lienzo.sprite.texture.GetPixel(0,0));
 			}
