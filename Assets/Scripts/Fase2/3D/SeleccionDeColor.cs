@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SeleccionDeColor : MonoBehaviour {
 
-public GameObject objeto;
+public GameObject objeto, fondo;
 
 	public void Azul(){
 		objeto.GetComponent<Renderer> ().material.color = Color.blue;
