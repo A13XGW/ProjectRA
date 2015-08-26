@@ -53,6 +53,7 @@ public class CargarImgs : MonoBehaviour
 		thumbs = Resources.LoadAll<Texture2D> ("Face2/Objetos");
 		//asigna imagenes al objeto
 		thumb = obj;
+		//
 		thumb.sprite = Sprite.Create (thumbs [0], rec, vec);//asignacion de la imagen inicial al objeto imagen
 		Image[] imagesO = new Image[thumbs.Length];
 		//bucle para instancia iamgenes.
@@ -101,7 +102,7 @@ public class CargarImgs : MonoBehaviour
 		StartCoroutine(Espera(0.01F));
 	}
 	IEnumerator Espera(float waitTime) {
-		yield return new WaitForSeconds(waitTime);
+		yield return new WaitForSeconds(waitTime);//ScrollBars a posicion inicial
 		barra.value = 0;
 		barraO.value = 0;
 		barraP.value = 0;

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using UnityEngine.UI;
-using UnityEditor;
+//using UnityEditor;
 public class Zoom : MonoBehaviour 
 {
 	float CoorInicial, CoorFinal, diferenciaX, diferenciaY, CoorInicial1, CoorFinal1, diferenciaX1, diferenciaY1;
@@ -303,13 +303,13 @@ public class Zoom : MonoBehaviour
 						{
 							Sector[i]=0;
 						}
-						string MiNombre = objeto.mainTexture.name;
+						/*string MiNombre = objeto.mainTexture.name;
 						TextureImporter tImporter = AssetImporter.GetAtPath("Assets/Resources/Face2/"+MiNombre+".png") as TextureImporter;
 						tImporter.mipmapEnabled = true;
 						tImporter.isReadable = true;
 						tImporter.maxTextureSize = h;
 						AssetDatabase.ImportAsset( "Assets/Resources/Face2/"+MiNombre+".png", ImportAssetOptions.ForceUpdate );
-						return h;
+						return h;*/
 					}
 				}
 			}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine.UI;
 public class metas : MonoBehaviour {
 	public Image img;

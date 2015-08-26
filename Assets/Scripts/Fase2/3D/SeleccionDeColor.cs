@@ -4,7 +4,7 @@ using System.Collections;
 public class SeleccionDeColor : MonoBehaviour {
 
 public GameObject objeto, fondo;
-
+	//Cambia color de los objetos 3D
 	public void Azul(){
 		objeto.GetComponent<Renderer> ().material.color = Color.blue;
 	}

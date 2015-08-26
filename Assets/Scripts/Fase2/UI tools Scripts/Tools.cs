@@ -12,6 +12,8 @@ public class Tools : MonoBehaviour
 	public GameObject panelPadre;
 	public botones opcionPanel;
 	public Image[] imagenAEditar;
+
+	public GameObject tmp;
 	// Use this for initialization
 	EventTrigger eventTrigger = null;
 	
@@ -27,7 +29,8 @@ public class Tools : MonoBehaviour
 		panelBotonesOperaciones = GameObject.Find("PanelBotones");
 		panelEditar = GameObject.Find("Area de Trabajo");
 		panelPadre = GameObject.Find("Canvas");
-		
+		tmp = GameObject.Find("Grupo");
+
 		opcionPanel = panelBotonesOperaciones.GetComponent<botones>();
 
 		imagenAEditar = transform.GetComponentsInParent<Image>(); //El indice 1 es el que editara
@@ -101,18 +104,30 @@ public class Tools : MonoBehaviour
 		//textField.text = "OnPointerClick " + data.selectedObject;
 		
 		// es frente
-		if (opcionPanel.opcion==1) {  
+		if (opcionPanel.opcion == 1) {  
 			imagenAEditar[0].gameObject.transform.SetParent(panelPadre.transform);
 			imagenAEditar[0].gameObject.transform.SetParent(panelEditar.transform);
 		}
 		//cortar
-		if (opcionPanel.opcion==2) {
+		if (opcionPanel.opcion == 2) {
 			//imagenAEditar[0].fillMethod = Image.FillMethod.Radial90;
 			imagenAEditar[0].fillAmount -=0.05f;
 		}
 		//rotar
-		if (opcionPanel.opcion==3) {
+		if (opcionPanel.opcion == 3) {
 			imagenAEditar[0].rectTransform.Rotate (Vector3.back);
+		}
+		if (opcionPanel.opcion == 4) {
+			imagenAEditar[0].transform.SetParent(tmp.transform);
+		}
+		if (opcionPanel.opcion == 5) {
+			if(imagenAEditar[0].transform.rotation.y == 180)
+			{
+				imagenAEditar[0].transform.eulerAngles = new Vector3(0f,0f,0f);
+			}else
+			{
+				imagenAEditar[0].transform.eulerAngles = new Vector3(0f,180f,0f);
+			}
 		}
 		Debug.Log("OnPointerClick ");
 	}

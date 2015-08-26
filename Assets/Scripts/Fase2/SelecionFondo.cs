@@ -18,4 +18,7 @@ public class SelecionFondo : MonoBehaviour {
 			Panelfondo.SetActive(true);
 		}
 	}
+	public void Cerrar(){
+		Panelfondo.SetActive (false);
+	}
 }

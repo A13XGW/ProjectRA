@@ -44,7 +44,7 @@ public class DropItSlot : MonoBehaviour, IDropHandler
 				if (Dragler.itemBeingDragged.transform.parent.tag == "carrete" )
 				{//Reduce el carrete de imagenes
 					canvas.GetComponent<CargarImagenes>().imagenesCarrete -= 1;//Reduce el contador 
-					if(canvas.GetComponent<CargarImagenes>().imagenesCarrete <=10)
+					if(canvas.GetComponent<CargarImagenes>().imagenesCarrete <= canvas.GetComponent<CargarImagenes>().thumbs.Length)
 					{
 						panel.GetComponent<RectTransform>().sizeDelta = new Vector2 (panel.GetComponent<RectTransform>().sizeDelta.x - Dragler.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x - (Dragler.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x * 0.20f), panel.GetComponent<RectTransform>().sizeDelta.y);
 					}

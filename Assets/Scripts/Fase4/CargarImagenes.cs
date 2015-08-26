@@ -5,7 +5,7 @@ public class CargarImagenes : MonoBehaviour {
 	public Image deacticvated;//Al agregar el grid layout al panel se vuelve imposible obtener el ancho y alto de la imagen contenida en este
 	//por eso se crea esta imagen, bien podria buscar obtenerlos del grid layout pero da la misma
 	public Image thumb;//Imagen de la cual se instancia las demas
-	private Texture2D[] thumbs;//Arreglo donde se carga las imagenes
+	public Texture2D[] thumbs;//Arreglo donde se carga las imagenes
 	public Image panel;//Panel padre de las imagenes
 	public RectTransform rectPanel;//mismo que el panel
 	public int imagenesCarrete=0;
@@ -25,9 +25,9 @@ public class CargarImagenes : MonoBehaviour {
 		wid = deacticvated.GetComponent<RectTransform> ().sizeDelta.x;
 		for(int x=1; x<thumbs.Length; x++)
 		{
-			if(x<=10){//Crece el panel de las imagenes
+			//if(x<=10){//Crece el panel de las imagenes
 				rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x + wid + wid*0.28f , rectPanel.sizeDelta.y);
-			}
+			//}
 			//rectPanel.sizeDelta = new Vector2 (rectPanel.sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x + (thumb.GetComponent<RectTransform> ().sizeDelta.x * 0.20f)), rectPanel.sizeDelta.y);
 			//Debug.Log(rectPanel.sizeDelta);
 		}
