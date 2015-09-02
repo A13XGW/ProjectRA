@@ -6,7 +6,6 @@ using System.Collections;
 
 public class Tools : MonoBehaviour
 {
-
 	public GameObject panelBotonesOperaciones;
 	public GameObject panelEditar;
 	public GameObject panelPadre;
@@ -48,8 +47,8 @@ public class Tools : MonoBehaviour
 		AddEventTrigger(OnScroll, EventTriggerType.Scroll);
 		
 	}
-	
-	
+
+
 	#region TriggerEventsSetup
 	
 	// Use listener with no parameters
@@ -111,6 +110,18 @@ public class Tools : MonoBehaviour
 		//cortar
 		if (opcionPanel.opcion == 2) {
 			//imagenAEditar[0].fillMethod = Image.FillMethod.Radial90;
+			/*if(opcionPanel.tipo == 0)
+			{
+				imagenAEditar[0].FillMethod.Horizontal;
+			}
+			if(opcionPanel.tipo == 1)
+			{
+				imagenAEditar[0].FillMethod.Vertical;
+			}
+			if(opcionPanel.tipo == 2)
+			{
+				imagenAEditar[0].FillMethod.Radial360;
+			}*/
 			imagenAEditar[0].fillAmount -=0.05f;
 		}
 		//rotar

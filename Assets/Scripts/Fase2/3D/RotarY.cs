@@ -4,6 +4,6 @@ using System;
 public class RotarY : MonoBehaviour {
 	public GameObject objeto;
 	void OnMouseUp() {
-		objeto.transform.Rotate (Vector3.right*-1);
+		objeto.transform.Rotate (Vector3.right*-5);
 	}
 }

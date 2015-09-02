@@ -28,7 +28,7 @@ public class Soltar : MonoBehaviour, IDropHandler {
 					ArrastraMano.itemBeingDragged.transform.SetParent(transform);
 
 					ArrastraMano.startParent.GetComponent<Contador>().contadorR +=1;
-					StartCoroutine(TraerFrente());
+					//StartCoroutine(TraerFrente());
 				} 
 
 			}

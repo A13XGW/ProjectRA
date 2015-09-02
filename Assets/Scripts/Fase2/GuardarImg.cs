@@ -6,42 +6,68 @@ using System.IO;
 using UnityEngine.UI;
 
 public class GuardarImg : MonoBehaviour {
-
+	public WWW www;
+	public Image screen;
+	int xb, yb;
+	public Texture2D textu;
 	public Texture2D textura;
 	Texture2D tmp;
 	//public Image imagen;
+
 	
 	public Image lienzo;
 	public GameObject kanvas;
-	
+	string rt;
 	public int capturas;
 	
 	// Use this for initialization
 	void Start () {
 		capturas = 0;
 		string ruta = Application.persistentDataPath;
-		ruta += "/Resources/Fase2/New";
+		ruta += "/Resources/Fase2/Captura/";
 		Directory.CreateDirectory (ruta);
+		rt = ruta + "scr"+capturas+".png";
+		xb = 0;
+		yb = 0;
 	}
 	
-		
+	public void gd()
+	{
+		Debug.Log("antes");
+		Application.CaptureScreenshot (rt);
+		Debug.Log ("nothing");
+		StartCoroutine (Espera(10f));
+
+	}
+
+
 	public void guardar () {
-		
+
+
+		//StartCoroutine (Espera(5.05f));
+		//StartCoroutine(Imagenes());
+
 		//---Asignar el fondo a la textura a guardar------------------------------
+		//int ancho = Screen.width;
+		//int alto = Screen.height;
 		int ancho = (int)kanvas.GetComponent<RectTransform>().sizeDelta.x;
 		int alto = (int)kanvas.GetComponent<RectTransform>().sizeDelta.y;
 		Debug.Log (ancho+"x, " + alto + "y");
 		textura = new Texture2D (ancho, alto);
+		screen.gameObject.SetActive (true);
 
-		for (int x=0; x<ancho; x++) {
+		/*for (int x=0; x<ancho; x++) {
 			for (int y=0;y<alto;y++) {
 				//textura.SetPixel(x, y, new Color(255, 0, 255));
 //				textura.SetPixel(x, y, Color.white);
-
 				textura.SetPixel(x, y, lienzo.sprite.texture.GetPixel(x,y));
 			}
 		}
-		textura.Apply();
+		textura.Apply();*/
+
+		//-----
+
+
 		//------------------------------------------------------------------------
 		
 				
@@ -62,7 +88,7 @@ public class GuardarImg : MonoBehaviour {
 		//------------------------------------------------------------------------
 		
 		//--- Tomar y asignar todas las imagenes----------------------------------
-		Image[] imagenes = lienzo.GetComponentsInChildren<Image> ();
+		/*Image[] imagenes = lienzo.GetComponentsInChildren<Image> ();
 		Debug.Log (imagenes.Length);
 		for (int z=1; z<imagenes.Length; z++) {
 			int imgsx = (int)imagenes[z].transform.position.x;
@@ -77,12 +103,27 @@ public class GuardarImg : MonoBehaviour {
 					//textura.SetPixel(x, y, imagen.sprite.texture.GetPixel(x,y));
 					//imagen.sprite.texture.Resize(imgw, imgh);
 					textura.SetPixel(x, y, imagenes[z].sprite.texture.GetPixel(x,y));
+
 				}
 			}
 			textura.Apply();
-		}
+		}*/
 		//------------------------------------------------------------------------
-		
+		yb = 0;
+		for (int y = 205; y <= 476; y++) 
+		{
+			//yb=0;
+			for(int x = 402; x <= 1003; x++)
+			{
+				textura.SetPixel(xb,yb, screen.sprite.texture.GetPixel(x,y));
+				xb++;
+			}
+			xb=0;
+			yb++;
+		}
+		textura.Apply();
+
+
 		//---Guardar imagen-------------------------------------------------------
 		byte[] textureBuffer = textura.EncodeToPNG();
 		BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + "/Resources/Fase2/New/Imagen"+capturas.ToString()+".png",FileMode.Create));
@@ -90,11 +131,36 @@ public class GuardarImg : MonoBehaviour {
 		
 		Debug.Log ("Guardado");
 		capturas++;
+		screen.gameObject.SetActive (false);
 		//------------------------------------------------------------------------
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	IEnumerator Imagenes() {
+		//StartCoroutine(Espera (5F));
+		string url = "file://" + rt;
+		www = new WWW(url);
+		yield return www;
+		textu = www.texture;
+		Rect r;
+		Vector2 v = new Vector2 (0.5f,0.5f);
+		r = new Rect (0,0,textu.width,textu.height);
+		screen.sprite = Sprite.Create(textu,r,v);
+
+	}
+	IEnumerator Espera(float waitTime) {
+		Debug.Log(Time.time);
+		yield return new WaitForSeconds(waitTime);
+		Debug.Log(Time.time);
+		string url = "file://" + rt;
+		www = new WWW(url);
+		yield return www;
+		textu = www.texture;
+		Rect r;
+		Vector2 v = new Vector2 (0.5f,0.5f);
+		r = new Rect (0,0,textu.width,textu.height);
+		screen.sprite = Sprite.Create(textu,r,v);
+		guardar ();
 	}
 }
+
+

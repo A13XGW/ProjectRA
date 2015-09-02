@@ -5,6 +5,6 @@ public class RotarX : MonoBehaviour {
 	public GameObject objeto;
 	
 	void OnMouseUp() {
-		objeto.transform.Rotate (Vector3.up*-1);
+		objeto.transform.Rotate (Vector3.up*-5);
 	}
 }
