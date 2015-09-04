@@ -17,7 +17,8 @@ public class Slot : MonoBehaviour, IDropHandler {
 		} else 
 		if (DragHandeler.startParent != panel.transform) {
 			DragHandeler.itemBeingDragged.transform.SetParent (transform);
-			DragHandeler.itemBeingDragged.transform.position = Input.mousePosition; 
+			DragHandeler.itemBeingDragged.transform.position = Input.mousePosition;
+			DragHandeler.itemBeingDragged.GetComponent<Tools>().enabled = true;
 		}else {
 //			GameObject tmp = Instantiate(DragHandeler.itemBeingDragged);
 //			tmp.transform.localScale = new Vector3(1,1,1);
@@ -27,7 +28,6 @@ public class Slot : MonoBehaviour, IDropHandler {
 			DragHandeler.itemBeingDragged.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f,0.5f);
 			DragHandeler.itemBeingDragged.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f,0.5f);
 			DragHandeler.itemBeingDragged.transform.SetParent (transform);
-			DragHandeler.itemBeingDragged.GetComponent<Image>().type = Image.Type.Filled;
 			DragHandeler.itemBeingDragged.transform.position = Input.mousePosition;
 		}
 		/*else{

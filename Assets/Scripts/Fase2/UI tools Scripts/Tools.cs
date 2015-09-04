@@ -25,6 +25,7 @@ public class Tools : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+
 		panelBotonesOperaciones = GameObject.Find("PanelBotones");
 		panelEditar = GameObject.Find("Area de Trabajo");
 		panelPadre = GameObject.Find("Canvas");
@@ -49,8 +50,15 @@ public class Tools : MonoBehaviour
 	}
 
 
+
+
+
+
+
 	#region TriggerEventsSetup
-	
+
+
+
 	// Use listener with no parameters
 	private void AddEventTrigger(UnityAction action, EventTriggerType triggerType)
 	{
@@ -97,7 +105,22 @@ public class Tools : MonoBehaviour
 	
 	
 	#region Callbacks
-	
+	/*public Image clon;
+
+	public void  Prueba_corte(){
+		
+		if (Input.mousePresent) {
+			clon = Instantiate (imagenAEditar [0]);
+			Destroy (imagenAEditar [0]);
+
+
+			clon.type = Image.Type.Filled;
+
+
+		}
+	}*/
+
+
 	private void OnPointerClick(BaseEventData data)
 	{
 		//textField.text = "OnPointerClick " + data.selectedObject;
@@ -108,21 +131,15 @@ public class Tools : MonoBehaviour
 			imagenAEditar[0].gameObject.transform.SetParent(panelEditar.transform);
 		}
 		//cortar
-		if (opcionPanel.opcion == 2) {
-			//imagenAEditar[0].fillMethod = Image.FillMethod.Radial90;
-			/*if(opcionPanel.tipo == 0)
-			{
-				imagenAEditar[0].FillMethod.Horizontal;
-			}
-			if(opcionPanel.tipo == 1)
-			{
-				imagenAEditar[0].FillMethod.Vertical;
-			}
-			if(opcionPanel.tipo == 2)
-			{
-				imagenAEditar[0].FillMethod.Radial360;
-			}*/
-			imagenAEditar[0].fillAmount -=0.05f;
+		if (opcionPanel.opcion == 8 || opcionPanel.opcion == 7 || opcionPanel.opcion == 6) {
+			imagenAEditar[0].type = Image.Type.Filled;
+
+			//imagenAEditar[0].fillAmount -=0.05f;
+
+			//clon.fillAmount -=0.05f;
+
+
+
 		}
 		//rotar
 		if (opcionPanel.opcion == 3) {
@@ -140,43 +157,63 @@ public class Tools : MonoBehaviour
 				imagenAEditar[0].transform.eulerAngles = new Vector3(0f,180f,0f);
 			}
 		}
-		Debug.Log("OnPointerClick ");
+		if (opcionPanel.opcion == 6) {
+
+			imagenAEditar[0].fillMethod = Image.FillMethod.Horizontal;
+			imagenAEditar[0].fillAmount -=0.05f;
+
+
+		}
+		if (opcionPanel.opcion == 7) {
+
+			imagenAEditar[0].fillMethod = Image.FillMethod.Vertical;
+			imagenAEditar[0].fillAmount -=0.05f;
+			
+		}
+		if (opcionPanel.opcion == 8) {
+
+			imagenAEditar[0].fillMethod = Image.FillMethod.Radial360;
+			imagenAEditar[0].fillAmount -=0.05f;
+			
+		}
+
+		//Debug.Log("OnPointerClick ");
 	}
 
 	private void OnPointerEnter()
 	{
-		Debug.Log( "OnPointerEnter");
+		//Debug.Log( "OnPointerEnter");
 	}
 	private void OnPointerExit()
 	{
-		Debug.Log("OnPointerExit");
+		//Debug.Log("OnPointerExit");
 	}
 	
 	private void OnPointerDown()
 	{
-		Debug.Log("Entra down");
+		//Debug.Log("Entra down");
 		
 	}
 	
 	private void OnPointerUp()
 	{
 		
-		Debug.Log( "OnPointerUp");
+		//Debug.Log( "OnPointerUp");
 	} 
 	
 	private void OnDrag()
 	{
-		Debug.Log("OnDrag");
+		//Debug.Log("OnDrag");
 	}
 	
 	private void OnDrop()
 	{
-		Debug.Log("OnDrop");
+		//Debug.Log("OnDrop");
 	}
 	
 	private void OnScroll()
 	{
-		Debug.Log("OnScroll");
+		//Debug.Log("OnScroll");
 	} 
 	#endregion
 }

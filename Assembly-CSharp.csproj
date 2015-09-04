@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Fase2\Seleccion.cs" />
      <Compile Include="Assets\Scripts\Fase2\SelecionFondo.cs" />
      <Compile Include="Assets\Scripts\Fase2\Slot.cs" />
+     <Compile Include="Assets\Scripts\Fase2\SwitchTools.cs" />
      <Compile Include="Assets\Scripts\Fase2\TresD.cs" />
      <Compile Include="Assets\Scripts\Fase2\UI tools Scripts\BarraImgs.cs" />
      <Compile Include="Assets\Scripts\Fase2\UI tools Scripts\Tools.cs" />

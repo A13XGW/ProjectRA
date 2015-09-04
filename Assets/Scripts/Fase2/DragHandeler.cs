@@ -29,6 +29,7 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			tmp.GetComponent<CanvasGroup> ().blocksRaycasts = false;
 			
 			itemBeingDragged = tmp;
+
 		}
 
 
@@ -46,6 +47,7 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			{
 				Vector2 tch = Input.GetTouch(0).deltaPosition;
 				itemBeingDragged.transform.position = new Vector2 (tch.x,tch.y);
+				itemBeingDragged.GetComponent<Image>().type = Image.Type.Filled;
 			}
 		} 
 		else 
