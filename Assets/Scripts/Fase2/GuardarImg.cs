@@ -36,7 +36,10 @@ public class GuardarImg : MonoBehaviour {
 		Debug.Log("antes");
 		Application.CaptureScreenshot (rt);
 		Debug.Log ("nothing");
-		StartCoroutine (Espera(10f));
+		Debug.Log(Time.time);
+		StartCoroutine (Espera(2f));
+		Debug.Log(Time.time);
+
 
 	}
 
@@ -148,9 +151,8 @@ public class GuardarImg : MonoBehaviour {
 
 	}
 	IEnumerator Espera(float waitTime) {
-		Debug.Log(Time.time);
-		yield return new WaitForSeconds(waitTime);
-		Debug.Log(Time.time);
+		//Debug.Log(Time.time);
+		//yield return new WaitForSeconds(waitTime);
 		string url = "file://" + rt;
 		www = new WWW(url);
 		yield return www;

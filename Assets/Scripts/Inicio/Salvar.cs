@@ -6,7 +6,7 @@ public class Salvar : MonoBehaviour {
 	public GameObject objeto;
 	// Use this for initialization
 	void Awake () {
-		DontDestroyOnLoad (gameObject);
+		DontDestroyOnLoad (gameObject);//Indica que el objeto asociado no sera destruido al cargar la siguiente escena
 		objeto=gameObject;
 	}
 

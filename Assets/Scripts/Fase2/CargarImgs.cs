@@ -75,7 +75,7 @@ public class CargarImgs : MonoBehaviour
 		}
 		imagenesCarreteO++;
 
-		Debug.Log ("Personas");
+//		Debug.Log ("Personas");
 		//Personas
 		thumbs = Resources.LoadAll<Texture2D> ("Face2/Personas");
 		//asigna imagenes al objeto

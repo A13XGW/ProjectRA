@@ -21,6 +21,19 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		startPosition = transform.position;
 		startParent = transform.parent;
 		GetComponent<CanvasGroup> ().blocksRaycasts = false;
+		if(startParent.tag != "slot")
+		{
+			itemBeingDragged.GetComponent<CanvasGroup>().blocksRaycasts = true;
+			itemBeingDragged.transform.position = DragHandeler.startPosition;
+			itemBeingDragged.transform.SetParent(DragHandeler.startParent);
+			itemBeingDragged.transform.localScale = new Vector3(1,1,1);
+			itemBeingDragged.GetComponent<CanvasGroup> ().blocksRaycasts = false;
+		}
+
+//		itemBeingDragged = gameObject;
+//		startPosition = transform.position;
+//		startParent = transform.parent;
+//		GetComponent<CanvasGroup> ().blocksRaycasts = false;
 	}
 	
 	#endregion

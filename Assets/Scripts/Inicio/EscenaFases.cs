@@ -10,7 +10,7 @@ public class EscenaFases : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			if (Input.GetKeyDown (KeyCode.F12)) {
+			if (Input.GetKeyDown (KeyCode.F12)) {//Condicional - Listener de la tecla F12 para una accion especifica
 				Fases.SetActive(true);
 			}
 	}

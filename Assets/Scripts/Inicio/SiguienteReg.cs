@@ -18,16 +18,16 @@ public class SiguienteReg : MonoBehaviour {
 	public GameObject Equipo;
 	public void OnButtonDown(){
 
-		if (integr.text != "") {
-			integrantes = Convert.ToInt32 (integr.text);
-			if (integrantes > 1) {
-				PanelRegIntegrantes.SetActive(true);
+		if (integr.text != "") {//valdia diferente de cadena vacia
+			integrantes = Convert.ToInt32 (integr.text);//convierte valor de cadena a entero
+			if (integrantes > 1 && integrantes < 7) {//valida que el numero este en el range definio
+				PanelRegIntegrantes.SetActive(true);//vuelve visivle el cuadro de registro
 				GameObject[] temp;
 				//Debug.Log (integrantes);
 				tmp = new GameObject[integrantes];
 				temp = new GameObject[integrantes];
 				//Debug.Log (tmp.Length);
-				for (int i = 1; i < integrantes; i++) {
+				for (int i = 1; i < integrantes; i++) {//ciclo de instancia, nombramiento y psocionameinto de los cuadros de registro
 					tmp[i] = Instantiate(integrante);
 					tmp[i].transform.SetParent(PanelIntegrantes.transform);
 					tmp[i].transform.localScale = new Vector3 (1f,1f,1f);
@@ -51,11 +51,11 @@ public class SiguienteReg : MonoBehaviour {
 				panelRegEquipo.SetActive (false);
 				//Debug.Log (integrantes);
 			} else {
-				AlertMenor.SetActive(true);
+				AlertMenor.SetActive(true);//si el numero no esta en el rango llama a la ventan emergente
 			}
 		} else {
 			if (AlertNada!=null)
-				AlertNada.SetActive(true);
+				AlertNada.SetActive(true);//si el valor es vacio llama ventana emergente
 		}
 	}
 }

@@ -73,7 +73,11 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			itemBeingDragged.transform.position = startPosition;
 		}
 		itemBeingDragged = null;
+		Espera (0.50f);
 	}
 
 	#endregion
+	IEnumerator Espera(float waitTime) {
+		yield return new WaitForSeconds(waitTime);
+	}
 }

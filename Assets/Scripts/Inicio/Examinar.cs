@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 public class Examinar : MonoBehaviour {
+//Selecionar imagend e grupo
 	public Image thumb;
 	Texture2D[] thumbs;
 	public GameObject ImgGrupo;
