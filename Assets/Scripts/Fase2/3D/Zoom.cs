@@ -129,7 +129,7 @@ public class Zoom : MonoBehaviour
 							}
 						}
 					}
-						if(diferenciaX1 > diferenciaY1)
+					if(diferenciaX1 > diferenciaY1)
 					{
 						//Debug.Log("X mayor");
 						CoorInicial1 = tmpxI1;

@@ -80,7 +80,6 @@
      <Compile Include="Assets\Scripts\Fase2\UI tools Scripts\Tools.cs" />
      <Compile Include="Assets\Scripts\Fase2\UI tools Scripts\botones.cs" />
      <Compile Include="Assets\Scripts\Fase2\finalizar.cs" />
-     <Compile Include="Assets\Scripts\Fase2\metas.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiaImgClick3.cs" />
      <Compile Include="Assets\Scripts\Fase3\CambiarImagen3.cs" />
      <Compile Include="Assets\Scripts\Fase3\Contador.cs" />

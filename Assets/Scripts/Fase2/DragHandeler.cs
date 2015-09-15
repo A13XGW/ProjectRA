@@ -11,6 +11,7 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public static Transform startParent;
 	public  GameObject AreaDeTrabajo, AreaFondo, panel;
 	GameObject tmp;
+	public GameObject canvas;
 	#region IBeginDragHandler implementation
 
 	public void OnBeginDrag (PointerEventData eventData)
@@ -31,8 +32,13 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			itemBeingDragged = tmp;
 
 		}
-
-
+		if (startParent.tag != "Area De Trabajo") 
+		{
+			canvas.GetComponent<Gestos> ().objeto = tmp.GetComponent<Image> ();
+		} else 
+		{
+			canvas.GetComponent<Gestos> ().objeto = itemBeingDragged.GetComponent<Image> ();
+		}
 	}
 
 	#endregion

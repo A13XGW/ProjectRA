@@ -19,20 +19,22 @@ public class GuardarImg : MonoBehaviour {
 	public GameObject kanvas;
 	string rt;
 	public int capturas;
+	public string ruta;
 	
 	// Use this for initialization
 	void Start () {
 		capturas = 0;
-		string ruta = Application.persistentDataPath;
+		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase2/Captura/";
 		Directory.CreateDirectory (ruta);
-		rt = ruta + "scr"+capturas+".png";
+		//rt = ruta + "scr"+capturas+".png";
 		xb = 0;
 		yb = 0;
 	}
 	
 	public void gd()
 	{
+		rt = ruta + "scr"+capturas+".png";
 		Debug.Log("antes");
 		Application.CaptureScreenshot (rt);
 		Debug.Log ("nothing");
@@ -131,7 +133,6 @@ public class GuardarImg : MonoBehaviour {
 		byte[] textureBuffer = textura.EncodeToPNG();
 		BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + "/Resources/Fase2/New/Imagen"+capturas.ToString()+".png",FileMode.Create));
 		binary.Write(textureBuffer);
-		
 		Debug.Log ("Guardado");
 		capturas++;
 		screen.gameObject.SetActive (false);
