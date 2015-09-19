@@ -25,13 +25,15 @@ public class Guardad : MonoBehaviour {
 
 
 IEnumerator Espera(float waitTime) {
-	yield return new WaitForSeconds(waitTime);
+		Debug.Log (Time.time);
+		yield return new WaitForSeconds(waitTime);
+		Debug.Log (Time.time);
 	//LA LINEA SIGUIENTE SE DEBE QUITAR CUANDO HAYA COMENTARIOS ACTIVADOS Y LA PANTALLA QUE SE DEBE ENVIAR
 	//SERA LA DE COMENTARIOS
-	CapturoPantalla.SetActive (true);
-	CapturoPantalla.SetActive (false);
+		CapturoPantalla.SetActive (true);
+	//CapturoPantalla.SetActive (false);
 	
-	Comentarios.SetActive (true);
+		Comentarios.SetActive (true);
 }
 
 }

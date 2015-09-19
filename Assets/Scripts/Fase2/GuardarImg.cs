@@ -12,9 +12,10 @@ public class GuardarImg : MonoBehaviour {
 	public Texture2D textu;
 	public Texture2D textura;
 	Texture2D tmp;
+	public GameObject boton;
 	//public Image imagen;
 
-	
+	string url;
 	public Image lienzo;
 	public GameObject kanvas;
 	string rt;
@@ -25,33 +26,34 @@ public class GuardarImg : MonoBehaviour {
 	void Start () {
 		capturas = 0;
 		ruta = Application.persistentDataPath;
-		ruta += "/Resources/Fase2/Captura/";
+		ruta += "/Resources/Fase2/Capturas/";
 		Directory.CreateDirectory (ruta);
+		Directory.CreateDirectory (Application.persistentDataPath + "/Resources/Fase2/New");
 		//rt = ruta + "scr"+capturas+".png";
 		xb = 0;
 		yb = 0;
 	}
-	
-	public void gd()
-	{
-		rt = ruta + "scr"+capturas+".png";
-		Debug.Log("antes");
-		Application.CaptureScreenshot (rt);
-		Debug.Log ("nothing");
+	IEnumerator Espera(float waitTime) {
 		Debug.Log(Time.time);
-		StartCoroutine (Espera(2f));
+		yield return new WaitForSeconds(waitTime);
 		Debug.Log(Time.time);
-
-
+		url = "file://" + rt;
+		www = new WWW(url);
+		yield return www;
+		textu = www.texture;
+		Rect r;
+		Vector2 v = new Vector2 (0.5f,0.5f);
+		r = new Rect (0,0,textu.width,textu.height);
+		screen.sprite = Sprite.Create (textu,r,v);
+		guardar ();
 	}
 
-
 	public void guardar () {
-
-
+		
+		
 		//StartCoroutine (Espera(5.05f));
 		//StartCoroutine(Imagenes());
-
+		
 		//---Asignar el fondo a la textura a guardar------------------------------
 		//int ancho = Screen.width;
 		//int alto = Screen.height;
@@ -59,8 +61,9 @@ public class GuardarImg : MonoBehaviour {
 		int alto = (int)kanvas.GetComponent<RectTransform>().sizeDelta.y;
 		Debug.Log (ancho+"x, " + alto + "y");
 		textura = new Texture2D (ancho, alto);
+		//textura = new Texture2D (600, 278);
 		screen.gameObject.SetActive (true);
-
+		
 		/*for (int x=0; x<ancho; x++) {
 			for (int y=0;y<alto;y++) {
 				//textura.SetPixel(x, y, new Color(255, 0, 255));
@@ -69,13 +72,13 @@ public class GuardarImg : MonoBehaviour {
 			}
 		}
 		textura.Apply();*/
-
+		
 		//-----
-
-
+		
+		
 		//------------------------------------------------------------------------
 		
-				
+		
 		//--- Asignar imagen a la textura-----------------------------------------
 		/*int imgx = (int)imagen.transform.position.x;
 		int imgy = (int)imagen.transform.position.y;
@@ -115,10 +118,10 @@ public class GuardarImg : MonoBehaviour {
 		}*/
 		//------------------------------------------------------------------------
 		yb = 0;
-		for (int y = 205; y <= 476; y++) 
+		for (int y = 201; y <= 479; y++) 
 		{
 			//yb=0;
-			for(int x = 402; x <= 1003; x++)
+			for(int x = 400; x <= 1000; x++)
 			{
 				textura.SetPixel(xb,yb, screen.sprite.texture.GetPixel(x,y));
 				xb++;
@@ -127,43 +130,31 @@ public class GuardarImg : MonoBehaviour {
 			yb++;
 		}
 		textura.Apply();
-
-
+		
+		
 		//---Guardar imagen-------------------------------------------------------
 		byte[] textureBuffer = textura.EncodeToPNG();
-		BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + "/Resources/Fase2/New/Imagen"+capturas.ToString()+".png",FileMode.Create));
+		
+		BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + "/Resources/Fase2/New/Imagen"+capturas+".png",FileMode.Create));
 		binary.Write(textureBuffer);
 		Debug.Log ("Guardado");
 		capturas++;
 		screen.gameObject.SetActive (false);
+		boton.GetComponent<Button> ().interactable = true;
+
 		//------------------------------------------------------------------------
 	}
-	
-	IEnumerator Imagenes() {
-		//StartCoroutine(Espera (5F));
-		string url = "file://" + rt;
-		www = new WWW(url);
-		yield return www;
-		textu = www.texture;
-		Rect r;
-		Vector2 v = new Vector2 (0.5f,0.5f);
-		r = new Rect (0,0,textu.width,textu.height);
-		screen.sprite = Sprite.Create(textu,r,v);
+	public void gd()
+	{
+		boton.GetComponent<Button> ().interactable = false;
+		rt = ruta + "scr0"+capturas+".png";
+		Debug.Log("antes");
+		Application.CaptureScreenshot (rt);
+		Debug.Log(Time.time);
+		//StartCoroutine(Espera(5.0f));
+		StartCoroutine (Espera (2.0f));
+		Debug.Log(Time.time);
+	}
 
-	}
-	IEnumerator Espera(float waitTime) {
-		//Debug.Log(Time.time);
-		//yield return new WaitForSeconds(waitTime);
-		string url = "file://" + rt;
-		www = new WWW(url);
-		yield return www;
-		textu = www.texture;
-		Rect r;
-		Vector2 v = new Vector2 (0.5f,0.5f);
-		r = new Rect (0,0,textu.width,textu.height);
-		screen.sprite = Sprite.Create(textu,r,v);
-		guardar ();
-	}
+
 }
-
-

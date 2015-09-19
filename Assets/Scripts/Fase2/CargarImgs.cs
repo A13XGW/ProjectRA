@@ -72,6 +72,7 @@ public class CargarImgs : MonoBehaviour
 			imagesO [x].transform.SetParent (panelO.transform);
 			imagesO [x].gameObject.GetComponent<RectTransform> ().localScale = new Vector3 (1.0f, 1.0f, 1.0f);
 			imagesO [x].GetComponent<ImagePanelViewer>().i = x;
+			imagesO[x].tag = "objetos";
 		}
 		imagenesCarreteO++;
 

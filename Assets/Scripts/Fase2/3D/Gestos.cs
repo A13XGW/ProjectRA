@@ -20,10 +20,10 @@ public class Gestos : MonoBehaviour
 			Sector [i] = 0;
 		}
 	}
-	#region IBeginDragHandler implementation
 	void Update () 
 	{
-		//objeto = 
+
+		//Debug.Log (objeto.tag);
 		if (Input.touchSupported == true) 
 		{//Validacion del soprte de touch
 			if(Input.multiTouchEnabled == true && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && Input.GetTouch(1).phase == TouchPhase.Began)
@@ -34,6 +34,7 @@ public class Gestos : MonoBehaviour
 				tmpyI1 = Input.GetTouch (1).position.y;
 //				Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch (0).position);
 //				RaycastHit hit;
+				objeto.GetComponent<CanvasGroup>().blocksRaycasts = true;
 //				
 //				if ( Physics.Raycast(ray, out hit, 100f ) )
 //				{
@@ -318,6 +319,7 @@ public class Gestos : MonoBehaviour
 						{
 							Sector[i]=0;
 						}
+						GetComponent<CanvasGroup>().blocksRaycasts = false;
 						/*string MiNombre = objeto.mainTexture.name;
 						TextureImporter tImporter = AssetImporter.GetAtPath("Assets/Resources/Face2/"+MiNombre+".png") as TextureImporter;
 						tImporter.mipmapEnabled = true;
@@ -329,7 +331,6 @@ public class Gestos : MonoBehaviour
 				}
 			}
 		}
-		#endregion
 	}
 	//-----------------------------------------------------------------
 }
