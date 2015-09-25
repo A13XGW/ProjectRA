@@ -17,23 +17,15 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	
 	public void OnBeginDrag (PointerEventData eventData)
 	{
+
+		//imagen.gameObject.SetActive (false);
+
+
 		itemBeingDragged = gameObject;
 		startPosition = transform.position;
 		startParent = transform.parent;
 		GetComponent<CanvasGroup> ().blocksRaycasts = false;
-		if(startParent.tag != "slot")
-		{
-			itemBeingDragged.GetComponent<CanvasGroup>().blocksRaycasts = true;
-			itemBeingDragged.transform.position = DragHandeler.startPosition;
-			itemBeingDragged.transform.SetParent(DragHandeler.startParent);
-			itemBeingDragged.transform.localScale = new Vector3(1,1,1);
-			itemBeingDragged.GetComponent<CanvasGroup> ().blocksRaycasts = false;
-		}
 
-//		itemBeingDragged = gameObject;
-//		startPosition = transform.position;
-//		startParent = transform.parent;
-//		GetComponent<CanvasGroup> ().blocksRaycasts = false;
 	}
 	
 	#endregion
@@ -42,20 +34,7 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	
 	public void OnDrag (PointerEventData eventData)
 	{
-
-		if (Input.touchSupported == true) 
-		{
-			if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-			{
-				Vector2 tch = Input.GetTouch(0).deltaPosition;
-				transform.position = new Vector2 (tch.x,tch.y);
-			}
-		} 
-		else 
-		{
-			transform.position = Input.mousePosition;
-		}
-		//transform.position = Input.mousePosition;
+		transform.position = Input.mousePosition;
 
 			
 			GetComponent<GirarImagen> ().Velocidadx = 0;
@@ -69,26 +48,26 @@ public class ArrastraMano : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	
 	public void OnEndDrag (PointerEventData eventData)
 	{
-
 		itemBeingDragged = null;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
-		if(transform.tag != "slot")
-		{
-			if(transform.parent == startParent)
-			{
-				transform.position = startPosition;
-			}
-		}
+		if (transform.parent == startParent) {
+		
+			transform.position = startPosition;
 
-/*		if (transform.parent == panel.transform || transform.parent == canvas.transform) 
+			/*	if (transform.parent == panelPadre) {
+				GetComponent<GirarImagen> ().Velocidadx = 0.005F;
+				GetComponent<GirarImagen> ().Velocidady = 0.005F;
+			}*/
+		} 
+		if (transform.parent == panel.transform || transform.parent == canvas.transform) 
 		{		
 			Debug.Log ("Entra");
 			transform.position = startPosition;
-		}*/
-		if (GetComponent<GirarImagen> ().girarObj==true) {
-			GetComponent<GirarImagen> ().girarObj=false;
-			//GetComponent<GirarImagen> ().Velocidadx = 0.005F;
-			//GetComponent<GirarImagen> ().Velocidady = 0.005F;
+	
+		}
+		if (GetComponent<GirarImagen> ().girarObj) {
+			GetComponent<GirarImagen> ().Velocidadx = 0.005F;
+			GetComponent<GirarImagen> ().Velocidady = 0.005F;
 			//imagen.gameObject.SetActive (true);
 		} else {
 			GetComponent<GirarImagen> ().Velocidadx = 0;

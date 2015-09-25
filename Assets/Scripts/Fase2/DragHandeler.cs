@@ -12,8 +12,26 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public  GameObject AreaDeTrabajo, AreaFondo, panel;
 	GameObject tmp;
 	public GameObject canvas;
-	#region IBeginDragHandler implementation
 
+	void Start()
+	{
+		if (Input.touchSupported == true) {//Validacion del soprte de touch
+			transform.GetComponent<Button> ().enabled = true;
+		} else {
+			transform.GetComponent<Button> ().enabled = false;
+		}
+	}
+
+	void OnMouseDown()
+	{
+		canvas.GetComponent<Gestos> ().objeto = transform.GetComponent<Image> ();
+	}
+	public void OnTouchDown()
+	{
+		canvas.GetComponent<Gestos> ().objeto = transform.GetComponent<Image> ();
+	}
+
+	#region IBeginDragHandler implementation
 	public void OnBeginDrag (PointerEventData eventData)
 	{
 		itemBeingDragged = gameObject;
@@ -32,6 +50,7 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			itemBeingDragged = tmp;
 
 		}
+
 		if (startParent.tag != "Area De Trabajo") 
 		{
 			canvas.GetComponent<Gestos> ().objeto = tmp.GetComponent<Image> ();
