@@ -13,6 +13,9 @@ public class GuardarImg : MonoBehaviour {
 	public Texture2D textura;
 	Texture2D tmp;
 	public GameObject boton;
+
+	public GameObject AlertaGuardando;
+
 	//public Image imagen;
 
 	string url;
@@ -147,6 +150,7 @@ public class GuardarImg : MonoBehaviour {
 	public void gd()
 	{
 		boton.GetComponent<Button> ().interactable = false;
+		AlertaGuardando.SetActive (true);
 		rt = ruta + "scr0"+capturas+".png";
 		Debug.Log("antes");
 		Application.CaptureScreenshot (rt);

@@ -16,9 +16,11 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	void Start()
 	{
 		if (Input.touchSupported == true) {//Validacion del soprte de touch
-			transform.GetComponent<Button> ().enabled = true;
+			if(transform.GetComponent<Button>() != null)
+				transform.GetComponent<Button> ().enabled = true;
 		} else {
-			transform.GetComponent<Button> ().enabled = false;
+			if(transform.GetComponent<Button>() != null)
+				transform.GetComponent<Button> ().enabled = false;
 		}
 	}
 
