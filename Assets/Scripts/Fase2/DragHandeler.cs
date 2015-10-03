@@ -13,7 +13,7 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	GameObject tmp;
 	public GameObject canvas;
 
-	void Start()
+	/*void Start()
 	{
 		if (Input.touchSupported == true) {//Validacion del soprte de touch
 			if(transform.GetComponent<Button>() != null)
@@ -22,16 +22,16 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			if(transform.GetComponent<Button>() != null)
 				transform.GetComponent<Button> ().enabled = false;
 		}
-	}
+	}*/
 
-	void OnMouseDown()
+	/*void OnMouseDown()
 	{
 		canvas.GetComponent<Gestos> ().objeto = transform.GetComponent<Image> ();
 	}
 	public void OnTouchDown()
 	{
 		canvas.GetComponent<Gestos> ().objeto = transform.GetComponent<Image> ();
-	}
+	}*/
 
 	#region IBeginDragHandler implementation
 	public void OnBeginDrag (PointerEventData eventData)
@@ -48,7 +48,7 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			tmp.transform.SetParent(DragHandeler.startParent);
 			tmp.transform.localScale = new Vector3(1,1,1);
 			tmp.GetComponent<CanvasGroup> ().blocksRaycasts = false;
-			
+			tmp.GetComponent<Image>().preserveAspect = false;
 			itemBeingDragged = tmp;
 
 		}

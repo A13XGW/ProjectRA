@@ -13,6 +13,7 @@ public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHa
 	public static Transform startParent;
 	Transform lastchild;
 
+
 	#region IBeginDragHandler implementation
 
 	public void OnBeginDrag (PointerEventData eventData)
@@ -21,7 +22,6 @@ public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHa
 		startPosition = transform.position;
 		startParent = transform.parent;
 		GetComponent<CanvasGroup> ().blocksRaycasts = false;
-
 	}
 
 	#endregion
@@ -35,7 +35,8 @@ public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHa
 			if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
 			{
 				Vector2 tch = Input.GetTouch(0).deltaPosition;
-				transform.position = new Vector2 (tch.x,tch.y);
+				itemBeingDragged.transform.position = new Vector2 (tch.x,tch.y);
+				//transform.position = new Vector2 (tch.x,tch.y);
 			}
 		} 
 		else 
@@ -52,7 +53,7 @@ public class Dragler : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHa
 	{
 		itemBeingDragged = null;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
-		if(transform.tag != "grupo")
+		if(transform.tag != /*"grupo"*/"slot")
 		{
 			if(transform.parent == startParent)
 			{

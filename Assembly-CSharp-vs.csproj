@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Fase2\3D\SeleccionDeColor.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\SeleccionObj3d.cs" />
      <Compile Include="Assets\Scripts\Fase2\3D\Zoom.cs" />
+     <Compile Include="Assets\Scripts\Fase2\Bandera.cs" />
      <Compile Include="Assets\Scripts\Fase2\CargarImgs.cs" />
      <Compile Include="Assets\Scripts\Fase2\Clonar.cs" />
      <Compile Include="Assets\Scripts\Fase2\DragHandeler.cs" />

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class botones : MonoBehaviour
 {
-	public GameObject panelCorteTipos;
+	public GameObject panel;
 	public int opcion, sentido;
 	public Button[] boton;
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class botones : MonoBehaviour
 	}
 
 	public void OnCorteDown(){
-		panelCorteTipos.SetActive (true);
+		panel.SetActive (true);
 	}
 }
 

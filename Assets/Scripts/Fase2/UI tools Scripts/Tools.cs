@@ -10,8 +10,10 @@ public class Tools : MonoBehaviour
 	public GameObject panelEditar;
 	public GameObject panelPadre;
 	public botones opcionPanel;
+	public GameObject panelCrecer;
+	public Bandera opcionBandera;
 	public Image[] imagenAEditar;
-
+	//public int bandera;
 	public GameObject tmp;
 	// Use this for initialization
 	EventTrigger eventTrigger = null;
@@ -25,13 +27,14 @@ public class Tools : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-
 		panelBotonesOperaciones = GameObject.Find("PanelBotones");
+		//	panelCrecer = GameObject.Find("PanelCrecer");
 		panelEditar = GameObject.Find("Area de Trabajo");
 		panelPadre = GameObject.Find("Canvas");
 		tmp = GameObject.Find("Grupo");
 
 		opcionPanel = panelBotonesOperaciones.GetComponent<botones>();
+		opcionBandera = panelCrecer.GetComponent<Bandera>();
 
 		imagenAEditar = transform.GetComponentsInParent<Image>(); //El indice 1 es el que editara
 		
@@ -143,7 +146,7 @@ public class Tools : MonoBehaviour
 		}
 		//rotar
 		if (opcionPanel.opcion == 3) {
-			imagenAEditar[0].rectTransform.Rotate (Vector3.back);
+			imagenAEditar[0].rectTransform.Rotate (Vector3.back*5);
 		}
 		if (opcionPanel.opcion == 4) {
 			imagenAEditar[0].transform.SetParent(tmp.transform);
@@ -176,7 +179,37 @@ public class Tools : MonoBehaviour
 			imagenAEditar[0].fillAmount -=0.05f;
 			
 		}
+		if (opcionPanel.opcion == 9) {
+			if(opcionBandera.bandera == 1)
+			{
+				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x+5,imagenAEditar[0].rectTransform.sizeDelta.y+5);
+			}else
+			{
+				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x-5,imagenAEditar[0].rectTransform.sizeDelta.y-5);
+			}
+			
+		}
+		if (opcionPanel.opcion == 10) {
 
+			if(opcionBandera.bandera == 1)
+			{
+				imagenAEditar [0].rectTransform.sizeDelta = new Vector2 (imagenAEditar [0].rectTransform.sizeDelta.x + 5, imagenAEditar [0].rectTransform.sizeDelta.y);
+				//imagenAEditar [0].sprite.texture.
+			}else 
+			{
+				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x-5,imagenAEditar[0].rectTransform.sizeDelta.y);
+					
+			}
+		} 
+		if (opcionPanel.opcion == 11) {
+			if(opcionBandera.bandera == 1)
+			{
+				imagenAEditar [0].rectTransform.sizeDelta = new Vector2 (imagenAEditar [0].rectTransform.sizeDelta.x, imagenAEditar [0].rectTransform.sizeDelta.y + 5);
+			}else {
+				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x,imagenAEditar[0].rectTransform.sizeDelta.y-5);
+					
+			}
+		} 
 		//Debug.Log("OnPointerClick ");
 	}
 

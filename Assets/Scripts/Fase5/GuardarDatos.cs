@@ -11,7 +11,10 @@ public class GuardarDatos : MonoBehaviour {
 	void Start(){
 		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase5/";
-		Directory.CreateDirectory (ruta);
+		if (!Directory.Exists (ruta)) {
+			Directory.CreateDirectory (ruta);
+		}
+		//Directory.CreateDirectory (ruta);
 		ruta += "Evaluacion.txt";
 		if (File.Exists (ruta) == false) {
 			File.Create (ruta);
@@ -20,6 +23,9 @@ public class GuardarDatos : MonoBehaviour {
 	}
 
 	public void GuardaValores() {
+		if (File.Exists (ruta) == false) {
+			File.Create (ruta);
+		}
 		File.WriteAllText(ruta,texto);
 	//	File.WriteAllText ("Evaluacion.txt", texto);
 

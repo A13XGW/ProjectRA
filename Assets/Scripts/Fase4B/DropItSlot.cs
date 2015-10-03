@@ -48,6 +48,8 @@ public class DropItSlot : MonoBehaviour, IDropHandler
 					{
 						panel.GetComponent<RectTransform>().sizeDelta = new Vector2 (panel.GetComponent<RectTransform>().sizeDelta.x - Dragler.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x - (Dragler.itemBeingDragged.GetComponent<RectTransform>().sizeDelta.x * 0.20f), panel.GetComponent<RectTransform>().sizeDelta.y);
 					}
+					if(Input.GetTouch(0).phase != TouchPhase.Canceled)
+						Dragler.itemBeingDragged.transform.SetParent(transform);
 				}
 				slots++;
 				transform.GetComponentInParent<Dragler>().slots++;
@@ -58,8 +60,7 @@ public class DropItSlot : MonoBehaviour, IDropHandler
 					tmp.transform.localScale = new Vector3(1f,1f,1f);
 				}
 
-				Dragler.itemBeingDragged.transform.SetParent(transform);
-
+				//Dragler.itemBeingDragged.transform.SetParent(transform);
 				if (Dragler.startParent.GetComponentInParent<Dragler>()!=null && Dragler.startParent != panel.transform)
 				{//Destruye
 					if(Dragler.startParent.GetComponentInParent<Dragler>().slots>=2 )

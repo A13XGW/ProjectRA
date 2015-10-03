@@ -13,7 +13,7 @@ public class GuardarImg : MonoBehaviour {
 	public Texture2D textura;
 	Texture2D tmp;
 	public GameObject boton;
-
+	private int bandera;
 	public GameObject AlertaGuardando;
 
 	//public Image imagen;
@@ -24,18 +24,59 @@ public class GuardarImg : MonoBehaviour {
 	string rt;
 	public int capturas;
 	public string ruta;
+	public string rutaG;
 	
 	// Use this for initialization
 	void Start () {
-		capturas = 0;
+		bandera = 1;
+		capturas = 1;
 		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase2/Capturas/";
-		Directory.CreateDirectory (ruta);
-		Directory.CreateDirectory (Application.persistentDataPath + "/Resources/Fase2/New");
+		if (!Directory.Exists (ruta)) {
+			Directory.CreateDirectory (ruta);
+		}
+		if (!Directory.Exists (Application.persistentDataPath + "/Resources/Fase2/Individual")) {
+			Directory.CreateDirectory (Application.persistentDataPath + "/Resources/Fase2/Individual");
+		}
+		if (!Directory.Exists (Application.persistentDataPath + "/Resources/Fase2/Grupal")) {
+			Directory.CreateDirectory (Application.persistentDataPath + "/Resources/Fase2/Grupal");
+		}
+
+		rutaG = "/Resources/Fase2/Individual/";
+
+//		if (bandera.bandera == 1) 
+//		{
+//			rutaG = "/Resources/Fase2/Individual";
+//			capturas = 0;
+//		}
+//		if(bandera.bandera == 0)
+//		{
+//			rutaG = "/Resources/Fase2/Grupal";
+//			capturas = 0;
+//		}
+		//Directory.CreateDirectory (ruta);
+		//Directory.CreateDirectory (Application.persistentDataPath + "/Resources/Fase2/Individual");
+		//Directory.CreateDirectory (Application.persistentDataPath + "/Resources/Fase2/Grupal");
 		//rt = ruta + "scr"+capturas+".png";
 		xb = 0;
 		yb = 0;
 	}
+
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.F12)) {//Condicional - Listener de la tecla F12 para una accion especifica
+			if(bandera == 0)
+			{
+				bandera = 1;
+				rutaG = "/Resources/Fase2/Individual";
+				capturas = 1;
+			}else{
+				bandera = 0;
+				rutaG = "/Resources/Fase2/Grupal";
+				capturas = 1;
+			}
+		}
+	}
+
 	IEnumerator Espera(float waitTime) {
 		Debug.Log(Time.time);
 		yield return new WaitForSeconds(waitTime);
@@ -52,7 +93,7 @@ public class GuardarImg : MonoBehaviour {
 	}
 
 	public void guardar () {
-		
+
 		
 		//StartCoroutine (Espera(5.05f));
 		//StartCoroutine(Imagenes());
@@ -138,7 +179,9 @@ public class GuardarImg : MonoBehaviour {
 		//---Guardar imagen-------------------------------------------------------
 		byte[] textureBuffer = textura.EncodeToPNG();
 		
-		BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + "/Resources/Fase2/New/Imagen"+capturas+".png",FileMode.Create));
+		//BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + "/Resources/Fase2/Individual/Imagen"+capturas+".png",FileMode.Create));
+		BinaryWriter binary = new BinaryWriter(File.Open (Application.persistentDataPath + rutaG + "Imagen" + capturas + ".jpg",FileMode.Create));
+
 		binary.Write(textureBuffer);
 		Debug.Log ("Guardado");
 		capturas++;

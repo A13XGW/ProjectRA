@@ -11,7 +11,7 @@ public class SituarAvatar : MonoBehaviour {
 
 		if (AvatarEquipo!=null) {
 			AvatarEquipo.transform.SetParent (canvas.transform);
-			AvatarEquipo.transform.position = new Vector2 (50,150);
+			AvatarEquipo.transform.position = new Vector2 (75,150);
 		}
 	}
 

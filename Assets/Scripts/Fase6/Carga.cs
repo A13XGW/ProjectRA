@@ -29,13 +29,15 @@ public class Carga : MonoBehaviour {
 
 		//---Carga externa--------
 		//string url = "file://C:/Users/alexa_000/Desktop/Individual/(207).jpg";
-		string url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+1+".jpg";
+//		string url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+1+".jpg";
+		string url = "file://"+Application.persistentDataPath+"/Resources/Fase2/Individual/Imagen"+1+".jpg";
 		www = new WWW(url);
 		yield return www;
 
-		int z = 0;
+		int z = 0;//PanelCrecer
 		while ((int)www.texture.width != 8){
-			url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+(z+1)+".jpg";
+			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+(z+1)+".jpg";
+			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/Individual/Imagen"+(z+1)+".jpg";
 			www = new WWW(url);
 			if (www.texture.width!=8)
 				yield return www;
@@ -47,12 +49,14 @@ public class Carga : MonoBehaviour {
 		individual = new Texture2D[z];
 
 	
-		url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+1+".jpg";
+		//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+1+".jpg";
+		url = "file://"+Application.persistentDataPath+"/Resources/Fase2/Grupal/Imagen"+1+".jpg";
 		www = new WWW(url);
 		yield return www;
 		z = 0;
 		while ((int)www.texture.width != 8){
-			url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+(z+1)+".jpg";
+			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+(z+1)+".jpg";
+			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/Grupal/Imagen"+(z+1)+".jpg";
 			www = new WWW(url);
 			if (www.texture.width!=8)
 				yield return www;
@@ -68,7 +72,8 @@ public class Carga : MonoBehaviour {
 		z = 0;
 		while (z<individual.Length){
 			z++;
-			url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+z+".jpg";
+			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+z+".jpg";
+			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/Individual/Imagen"+z+".jpg";
 			www = new WWW(url);
 			yield return www;
 			individual [z-1] = www.texture;
@@ -77,7 +82,8 @@ public class Carga : MonoBehaviour {
 		z = 0;
 		while (z<grupo.Length){
 			z++;
-			url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+z+".jpg";
+			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+z+".jpg";
+			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/Grupal/Imagen"+z+".jpg";
 			www = new WWW(url);
 			yield return www;
 			grupo [z-1] = www.texture;
