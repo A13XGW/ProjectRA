@@ -11,6 +11,8 @@ public class Modal : MonoBehaviour {
 	public int indice, tipo;
 	public Image Fondo;
 
+	public Image ImagenModal;
+
 	// Use this for initialization
 	void Start () {
 		img = gameObject.GetComponent<Image> ();
@@ -31,7 +33,7 @@ public class Modal : MonoBehaviour {
 		Vector2 v = new Vector2 (0.5f,0.5f);
 		r = new Rect (0,0,img.sprite.texture.width,img.sprite.texture.height);
 
-		Modall.GetComponentsInChildren<Image> ()[1].sprite = Sprite.Create(img.sprite.texture,r,v);
+		ImagenModal.sprite = Sprite.Create(img.sprite.texture,r,v);
 
 		Fondo.GetComponent<Carga> ().tipo = tipo;
 		Fondo.GetComponent<Carga> ().indice = indice;

@@ -26,6 +26,7 @@ public class GuardarDatos : MonoBehaviour {
 		if (File.Exists (ruta) == false) {
 			File.Create (ruta);
 		}
+
 		File.WriteAllText(ruta,texto);
 	//	File.WriteAllText ("Evaluacion.txt", texto);
 
