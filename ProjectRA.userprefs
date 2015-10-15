@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fase5\GuardarDatos.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\RAsE2\Assets\Escripts\SeleccionObj3d.cs">
     <Files>
-      <File FileName="Assets\Scripts\AvanzarFase.cs" Line="9" Column="47" />
-      <File FileName="Assets\Scripts\Fase4B\DropItSlot.cs" Line="52" Column="64" />
-      <File FileName="Assets\Scripts\Inicio\EscenaFases.cs" Line="13" Column="18" />
-      <File FileName="Assets\Scripts\Fase4B\Dragler.cs" Line="56" Column="34" />
-      <File FileName="Assets\Scripts\Fase5\GuardarDatos.cs" Line="30" Column="3" />
+      <File FileName="..\RAsE2\Assets\Escripts\MostrarDatosGPS.cs" Line="41" Column="21" />
+      <File FileName="..\RAsE2\Assets\Escripts\SeleccionObj3d.cs" Line="20" Column="67" />
+      <File FileName="..\RAsE2\Assets\Scripts\MoverRotarObjeto3d.cs" Line="1" Column="1" />
+      <File FileName="..\RAsE2\Assets\Escripts\CambiarObj3d.cs" Line="1" Column="1" />
+      <File FileName="..\RAsE2\Assets\Escripts\D3D.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,6 +9,20 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public GameObject panel;
 	public GameObject canvas;
 	public int validar=0;
+
+	void Update()
+	{
+		if (Input.GetMouseButton(0)) {
+			if(Input.mousePosition.x >= 1260)
+			{
+				Debug.Log("area");
+				transform.position = startPosition;
+				Input.mousePosition.Set(startPosition.x,startPosition.y,startPosition.z);
+				//return;
+			}
+		}
+
+	}
 	#region IBeginDragHandler implementation
 	
 	public void OnBeginDrag (PointerEventData eventData)
@@ -41,6 +55,7 @@ public class DragHand : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	
 	public void OnEndDrag (PointerEventData eventData)
 	{
+		Debug.Log (Input.mousePosition);
 		itemBeingDragged = null;
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
 		if(transform.parent == startParent)

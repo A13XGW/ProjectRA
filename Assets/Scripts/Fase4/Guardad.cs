@@ -33,7 +33,12 @@ IEnumerator Espera(float waitTime) {
 		CapturoPantalla.SetActive (true);
 	//CapturoPantalla.SetActive (false);
 	
-		Comentarios.SetActive (true);
+
 }
+
+	public void comentar()
+	{
+		Comentarios.SetActive (true);
+	}
 
 }

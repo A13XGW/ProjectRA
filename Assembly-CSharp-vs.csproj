@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Drag3D.cs" />
+     <Compile Include="Assets\FileBrowser\Script\FileBrowser.cs" />
+     <Compile Include="Assets\FileBrowser\Script\testFileBrowser.cs" />
      <Compile Include="Assets\Scripts\AvanzarFase.cs" />
      <Compile Include="Assets\Scripts\CuadroDialogo.cs" />
      <Compile Include="Assets\Scripts\DeleteAlert.cs" />
@@ -123,10 +125,12 @@
      <Compile Include="Assets\Scripts\Inicio\finaliza.cs" />
      <Compile Include="Assets\Scripts\Inicio\inciar.cs" />
      <Compile Include="Assets\Scripts\MostrarIns.cs" />
+     <Compile Include="Assets\Scripts\MouseBorder.cs" />
      <Compile Include="Assets\Scripts\SituarAvatar.cs" />
      <Compile Include="Assets\Scripts\Teclado.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
      <Compile Include="Assets\Scripts\inicializacion.cs" />
+     <None Include="Assets\FileBrowser\readme.txt" />
      <None Include="Assets\Resources\Tutorial\Fase3.txt" />
      <None Include="Assets\Resources\Tutorial\Fase1.txt" />
      <None Include="Assets\Resources\Tutorial\Fase6.txt" />

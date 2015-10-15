@@ -20,19 +20,19 @@ public class MoverRotarObjeto3d : MonoBehaviour {
 	}
 
 	public void Subir(){
-		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y + 0.1f, objeto.transform.position.z);
+		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y + 0.5f, objeto.transform.position.z);
 	}
 
 	public void Bajar(){
-		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y - 0.1f, objeto.transform.position.z);
+		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y - 0.5f, objeto.transform.position.z);
 	}
 
 	public void Acercar(){
-		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y, objeto.transform.position.z -0.1f);
+		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y, objeto.transform.position.z -0.5f);
 	}
 	
 	public void Alejar(){
-		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y, objeto.transform.position.z + 0.1f);
+		objeto.transform.position = new Vector3 (objeto.transform.position.x , objeto.transform.position.y, objeto.transform.position.z + 0.5f);
 	}
 
 	public void Crecer(){
