@@ -67,11 +67,11 @@ public class GuardarImg : MonoBehaviour {
 			if(bandera == 0)
 			{
 				bandera = 1;
-				rutaG = "/Resources/Fase2/Individual";
+				rutaG = "/Resources/Fase2/Individual/";
 				capturas = 1;
 			}else{
 				bandera = 0;
-				rutaG = "/Resources/Fase2/Grupal";
+				rutaG = "/Resources/Fase2/Grupal/";
 				capturas = 1;
 			}
 		}

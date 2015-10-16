@@ -1,12 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\RAsE2\Assets\Escripts\SeleccionObj3d.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\RAsE2\Assets\Escripts\CrearCarrete.cs">
     <Files>
-      <File FileName="..\RAsE2\Assets\Escripts\MostrarDatosGPS.cs" Line="41" Column="21" />
-      <File FileName="..\RAsE2\Assets\Escripts\SeleccionObj3d.cs" Line="20" Column="67" />
-      <File FileName="..\RAsE2\Assets\Scripts\MoverRotarObjeto3d.cs" Line="1" Column="1" />
+      <File FileName="..\RAsE2\Assets\Escripts\CrearCarrete.cs" Line="89" Column="5" />
       <File FileName="..\RAsE2\Assets\Escripts\CambiarObj3d.cs" Line="1" Column="1" />
-      <File FileName="..\RAsE2\Assets\Escripts\D3D.cs" Line="1" Column="1" />
+      <File FileName="..\RAsE2\Assets\Escripts\MostrarDatosGPS.cs" Line="104" Column="18" />
+      <File FileName="Assets\Scripts\Fase4\CargarImagenes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase6\Carga.cs" Line="83" Column="35" />
+      <File FileName="Assets\Scripts\Evaluador.cs" Line="66" Column="1" />
+      <File FileName="Assets\Scripts\Fase1\CapturarText.cs" Line="44" Column="48" />
+      <File FileName="Assets\Scripts\Fase1\GuardadNuevaImagen.cs" Line="32" Column="55" />
+      <File FileName="Assets\Scripts\Fase2\Bandera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase2\Seleccion.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Fase2\GuardarImg.cs" Line="70" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

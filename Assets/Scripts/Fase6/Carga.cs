@@ -20,6 +20,9 @@ public class Carga : MonoBehaviour {
 	public GameObject panelFaltanDatos;
 
 	public WWW www;
+
+	private string url;
+	private int z;
 	IEnumerator Start() {
 		usuario = lienzo.GetComponent<Init> ().usuario;
 		//nombre.text = lienzo.GetComponent<Init>().nombre[usuario];
@@ -30,64 +33,82 @@ public class Carga : MonoBehaviour {
 		//---Carga externa--------
 		//string url = "file://C:/Users/alexa_000/Desktop/Individual/(207).jpg";
 		//string url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+1+".jpg";
-		string url = "file://"+Application.persistentDataPath+"/Resources/Fase2/individual/imagen"+1+".jpg";
-		www = new WWW(url);
-		yield return www;
 
-		int z = 0;
-		while ((int)www.texture.width != 8){
-			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+(z+1)+".jpg";
-			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/individual/imagen"+(z+1)+".jpg";
-			www = new WWW(url);
-			if (www.texture.width!=8)
-				yield return www;
-			else 
-				break;
-			//if ((int)www.texture.width == 8) break;
-			z++;
+		DirectoryInfo dir = new DirectoryInfo (Application.persistentDataPath + "/Resources/Fase2/individual/");
+		FileInfo[] info = dir.GetFiles ("*.*");
+		int h = 0;
+		foreach (FileInfo f in info) {
+			h++;
 		}
-		individual = new Texture2D[z];
+		if (h != 0) {
+			url = "file://" + Application.persistentDataPath + "/Resources/Fase2/individual/imagen" + 1 + ".jpg";
+			www = new WWW (url);
+			yield return www;
 
-	
-		//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+1+".jpg";
-		url = "file://"+Application.persistentDataPath+"/Resources/Fase2/grupal/imagen"+1+".jpg";
-		www = new WWW(url);
-		yield return www;
-		z = 0;
-		while ((int)www.texture.width != 8){
-			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+(z+1)+".jpg";
-			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/grupal/imagen"+(z+1)+".jpg";
-			www = new WWW(url);
-			if (www.texture.width!=8)
+			int z = 0;
+			while ((int)www.texture.width != 8) {
+				//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+(z+1)+".jpg";
+				url = "file://" + Application.persistentDataPath + "/Resources/Fase2/individual/imagen" + (z + 1) + ".jpg";
+				www = new WWW (url);
+				if (www.texture.width != 8)
+					yield return www;
+				else 
+					break;
+				//if ((int)www.texture.width == 8) break;
+				z++;
+			}
+			individual = new Texture2D[z];
+
+			z = 0;
+			while (z<individual.Length){
+				z++;
+				//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+z+".jpg";
+				url = "file://"+Application.persistentDataPath+"/Resources/Fase2/individual/imagen"+z+".jpg";
+				www = new WWW(url);
 				yield return www;
-			else 
-				break;
-
-		//	yield return www;
-		//	if ((int)www.texture.width == 8) break;
-			z++;
+				individual [z-1] = www.texture;
+			}
 		}
-		grupo = new Texture2D[z];
 
-		z = 0;
-		while (z<individual.Length){
-			z++;
-			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/individuales/imagen"+z+".jpg";
-			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/individual/imagen"+z+".jpg";
+
+		dir = new DirectoryInfo (Application.persistentDataPath + "/Resources/Fase2/grupal/");
+		info = dir.GetFiles ("*.*");
+		h = 0;
+		foreach (FileInfo f in info) 
+		{
+			h++;
+		}	
+		 if (h != 0) {
+			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+1+".jpg";
+			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/grupal/imagen"+1+".jpg";
 			www = new WWW(url);
 			yield return www;
-			individual [z-1] = www.texture;
-		}
+			 z = 0;
+			while ((int)www.texture.width != 8){
+				//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+(z+1)+".jpg";
+				url = "file://"+Application.persistentDataPath+"/Resources/Fase2/grupal/imagen"+(z+1)+".jpg";
+				www = new WWW(url);
+				if (www.texture.width!=8)
+					yield return www;
+				else 
+					break;
+				
+				//	yield return www;
+				//	if ((int)www.texture.width == 8) break;
+				z++;
+				grupo = new Texture2D[z];
 
-		z = 0;
-		while (z<grupo.Length){
-			z++;
-			//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+z+".jpg";
-			url = "file://"+Application.persistentDataPath+"/Resources/Fase2/grupal/imagen"+z+".jpg";
-			www = new WWW(url);
-			yield return www;
-			grupo [z-1] = www.texture;
+				z = 0;
+				while (z<grupo.Length){
+					z++;
+					//url = "file://"+Application.persistentDataPath+"/../../../../Desktop/grupo/imagen"+z+".jpg";
+					url = "file://"+Application.persistentDataPath+"/Resources/Fase2/grupal/imagen"+z+".jpg";
+					www = new WWW(url);
+					yield return www;
+					grupo [z-1] = www.texture;
+			}
 		}
+	}
 		//------------------------
 
 		ifindividual = new int[individual.Length];
