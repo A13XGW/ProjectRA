@@ -75,12 +75,28 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 				Vector2 tch = Input.GetTouch(0).deltaPosition;
 				itemBeingDragged.transform.position = new Vector2 (tch.x,tch.y);
 				itemBeingDragged.GetComponent<Image>().type = Image.Type.Filled;
+				if(Input.GetTouch(0).position.x >= 1260 || Input.GetTouch(0).position.x <= 20 || Input.GetTouch(0).position.y >= 580 || Input.GetTouch(0).position.y <= 20)
+				{
+					itemBeingDragged.transform.position = startPosition;
+					Input.GetTouch(0).position.Set(startPosition.x,startPosition.y);
+					return;
+				}
 			}
 		} 
 		else 
 		{
+			if (Input.GetMouseButton(0)) {
+				if(Input.mousePosition.x >= 1260 || Input.mousePosition.y >= 580 || Input.mousePosition.x <= 20 || Input.mousePosition.y <= 20)
+				{
+					//				Debug.Log("area");
+					itemBeingDragged.transform.position = startPosition;
+					Input.mousePosition.Set(startPosition.x,startPosition.y,startPosition.z);
+					return;
+				}
+			}
 			itemBeingDragged.transform.position = Input.mousePosition;
 		}
+
 	}
 
 	#endregion
