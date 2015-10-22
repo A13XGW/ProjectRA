@@ -15,6 +15,7 @@ public class GuardarImg : MonoBehaviour {
 	public GameObject boton;
 	private int bandera;
 	public GameObject AlertaGuardando;
+	public GameObject gdo;
 
 	//public Image imagen;
 
@@ -25,6 +26,7 @@ public class GuardarImg : MonoBehaviour {
 	public int capturas;
 	public string ruta;
 	public string rutaG;
+	public Text tipoCreacion;
 	
 	// Use this for initialization
 	void Start () {
@@ -32,6 +34,7 @@ public class GuardarImg : MonoBehaviour {
 		capturas = 1;
 		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase2/Capturas/";
+		tipoCreacion.text = "Individual";
 		if (!Directory.Exists (ruta)) {
 			Directory.CreateDirectory (ruta);
 		}
@@ -68,10 +71,12 @@ public class GuardarImg : MonoBehaviour {
 			{
 				bandera = 1;
 				rutaG = "/Resources/Fase2/Individual/";
+				tipoCreacion.text = "Individual";
 				capturas = 1;
 			}else{
 				bandera = 0;
 				rutaG = "/Resources/Fase2/Grupal/";
+				tipoCreacion.text = "Grupal";
 				capturas = 1;
 			}
 		}
@@ -187,6 +192,7 @@ public class GuardarImg : MonoBehaviour {
 		capturas++;
 		screen.gameObject.SetActive (false);
 		boton.GetComponent<Button> ().interactable = true;
+		gdo.SetActive (true);
 
 		//------------------------------------------------------------------------
 	}
