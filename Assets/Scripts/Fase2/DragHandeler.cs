@@ -37,10 +37,17 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 	public void OnBeginDrag (PointerEventData eventData)
 	{
 		itemBeingDragged = gameObject;
+
+
+
 		startPosition = transform.position;
 		startParent = transform.parent;
 		GetComponent<CanvasGroup> ().blocksRaycasts = false;
-		if(startParent.tag != "Area De Trabajo")
+		if (itemBeingDragged.transform.parent.tag == "guupo") {
+			canvas.GetComponent <CargarImgs> ().agrupados--;
+		}
+
+		if(startParent.tag == "carrete")
 		{
 			tmp = Instantiate(DragHandeler.itemBeingDragged);
 			tmp.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -48,18 +55,18 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 			tmp.transform.SetParent(DragHandeler.startParent);
 			tmp.transform.localScale = new Vector3(1,1,1);
 			tmp.GetComponent<CanvasGroup> ().blocksRaycasts = false;
-			tmp.GetComponent<Image>().preserveAspect = false;
+			//tmp.GetComponent<Image>().preserveAspect = false;
 			itemBeingDragged = tmp;
 
 		}
 
-		if (startParent.tag != "Area De Trabajo") 
+		/*if (startParent.tag != "Area De Trabajo") 
 		{
 			canvas.GetComponent<Gestos> ().objeto = tmp.GetComponent<Image> ();
 		} else 
 		{
 			canvas.GetComponent<Gestos> ().objeto = itemBeingDragged.GetComponent<Image> ();
-		}
+		}*/
 	}
 
 	#endregion
@@ -109,12 +116,16 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		GetComponent<CanvasGroup> ().blocksRaycasts = true;
 		if (startParent.tag != "Area De Trabajo") 
 		{
-			tmp.GetComponent<CanvasGroup> ().blocksRaycasts = true;
+			if(tmp != null){
+				tmp.GetComponent<CanvasGroup> ().blocksRaycasts = true;
+			}
+			itemBeingDragged.GetComponent<CanvasGroup> ().blocksRaycasts = true;
 		}
 		if(itemBeingDragged.transform.parent == panel)
 		{
 			itemBeingDragged.transform.position = startPosition;
 		}
+		tmp = null;
 		itemBeingDragged = null;
 		Espera (0.50f);
 	}

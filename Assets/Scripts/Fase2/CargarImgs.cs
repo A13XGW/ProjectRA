@@ -16,8 +16,12 @@ public class CargarImgs : MonoBehaviour
 	public RectTransform rectPanel, rectPanelO, rectPanelP;//mismo que el panel
 	public int imagenesCarrete=0, imagenesCarreteP=0, imagenesCarreteO=0;
 	public Scrollbar barra, barraO, barraP;//para istuar siempre el scroll en el inicio
+	public int agrupados;
+	public bool opcion4;
 	// Use this for initialization
 	void Start () {
+		agrupados = 0;
+		opcion4 = false;
 
 		Rect rec;
 		Vector2 vec = new Vector2 (0.5f, 0.5f);

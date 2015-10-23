@@ -31,7 +31,9 @@ public class DropItSlot : MonoBehaviour, IDropHandler
 	{
 		if (!item) 
 		{
-			if(Dragler.itemBeingDragged.transform.parent.parent != transform.parent && Dragler.itemBeingDragged != null)
+			if(Dragler.itemBeingDragged != null)
+			{
+			if(Dragler.itemBeingDragged.transform.parent.parent != transform.parent)
 			{//Si el padre del slot es el mismo no hacer nada
 				if (slots < 5) 
 				{//Crece el grupo a lo ancho
@@ -69,6 +71,7 @@ public class DropItSlot : MonoBehaviour, IDropHandler
 						Destroy(Dragler.startParent.gameObject);
 					}
 				}
+			}
 			}
 		}
 	}

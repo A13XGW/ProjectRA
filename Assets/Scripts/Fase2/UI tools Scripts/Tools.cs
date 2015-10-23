@@ -13,6 +13,8 @@ public class Tools : MonoBehaviour
 	public GameObject panelCrecer;
 	public Bandera opcionBandera;
 	public Image[] imagenAEditar;
+	//public bool opcion4;
+	public Canvas canvas;
 	//public int bandera;
 	public GameObject tmp;
 	// Use this for initialization
@@ -27,6 +29,7 @@ public class Tools : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		//opcion4 = false;
 		panelBotonesOperaciones = GameObject.Find("PanelBotones");
 		//	panelCrecer = GameObject.Find("PanelCrecer");
 		panelEditar = GameObject.Find("Area de Trabajo");
@@ -53,7 +56,11 @@ public class Tools : MonoBehaviour
 	}
 
 
-
+	void Update(){
+		if ( canvas.GetComponent <CargarImgs> ().agrupados == 0) {
+			canvas.GetComponent <CargarImgs> ().opcion4 = false;
+		}
+	}
 
 
 
@@ -149,16 +156,23 @@ public class Tools : MonoBehaviour
 			imagenAEditar[0].rectTransform.Rotate (Vector3.back*5);
 		}
 		if (opcionPanel.opcion == 4) {
+			canvas.GetComponent <CargarImgs> ().agrupados ++;
+
 			imagenAEditar[0].transform.SetParent(tmp.transform);
+			canvas.GetComponent <CargarImgs> ().opcion4 = true;
 		}
 		if (opcionPanel.opcion == 5) {
+			Vector3 theScale = imagenAEditar[0].transform.localScale;
+			theScale.x *= -1;
+			imagenAEditar[0].transform.localScale = theScale;
+			/*
 			if(imagenAEditar[0].transform.rotation.y == 180)
 			{
 				imagenAEditar[0].transform.eulerAngles = new Vector3(0f,0f,0f);
 			}else
 			{
 				imagenAEditar[0].transform.eulerAngles = new Vector3(0f,180f,0f);
-			}
+			}*/
 		}
 		if (opcionPanel.opcion == 6) {
 
@@ -180,32 +194,44 @@ public class Tools : MonoBehaviour
 			
 		}
 		if (opcionPanel.opcion == 9) {
+			agrupadosGP(0.2f,0.2f);
+
 			if(opcionBandera.bandera == 1)
 			{
+				imagenAEditar[0].preserveAspect= false;
 				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x+5,imagenAEditar[0].rectTransform.sizeDelta.y+5);
+
 			}else
 			{
+				imagenAEditar[0].preserveAspect= false;
 				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x-5,imagenAEditar[0].rectTransform.sizeDelta.y-5);
 			}
 			
 		}
 		if (opcionPanel.opcion == 10) {
-
+			agrupadosGP(0.2f, 0);
 			if(opcionBandera.bandera == 1)
 			{
+
+				imagenAEditar[0].preserveAspect= false;
 				imagenAEditar [0].rectTransform.sizeDelta = new Vector2 (imagenAEditar [0].rectTransform.sizeDelta.x + 5, imagenAEditar [0].rectTransform.sizeDelta.y);
 				//imagenAEditar [0].sprite.texture.
 			}else 
 			{
+				imagenAEditar[0].preserveAspect= false;
 				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x-5,imagenAEditar[0].rectTransform.sizeDelta.y);
 					
 			}
 		} 
 		if (opcionPanel.opcion == 11) {
+			agrupadosGP(0, 0.2f);
+
 			if(opcionBandera.bandera == 1)
 			{
+				imagenAEditar[0].preserveAspect= false;
 				imagenAEditar [0].rectTransform.sizeDelta = new Vector2 (imagenAEditar [0].rectTransform.sizeDelta.x, imagenAEditar [0].rectTransform.sizeDelta.y + 5);
 			}else {
+				imagenAEditar[0].preserveAspect= false;
 				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x,imagenAEditar[0].rectTransform.sizeDelta.y-5);
 					
 			}
@@ -249,4 +275,14 @@ public class Tools : MonoBehaviour
 		//Debug.Log("OnScroll");
 	} 
 	#endregion
+
+	void agrupadosGP(float x, float y){
+		if (canvas.GetComponent <CargarImgs> ().opcion4 == true) {
+			if (opcionBandera.bandera == 1) {
+				tmp.transform.localScale += new Vector3 (x, y);
+			} else {
+				tmp.transform.localScale -= new Vector3 (x, y);
+			}
+		}
+	}
 }

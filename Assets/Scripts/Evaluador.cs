@@ -29,14 +29,18 @@ public class Evaluador : MonoBehaviour {
 				nombreInte[i] =PlayerPrefs.GetString ("Integrante"+(i+1));
 			}
 		}
-
+		
 		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase6/";
-		Directory.CreateDirectory (ruta);
+		if (Directory.Exists (ruta) == false) {
+			Directory.CreateDirectory (ruta);
+		}
 		ruta += "Evaluacion.txt";
+		
 		if (File.Exists (ruta) == false) {
 			File.Create (ruta);
 		}
+		
 	}
 	// Update is called once per frame
 	public void GuardaCodigoEvaluador() {
