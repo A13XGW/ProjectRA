@@ -3,12 +3,12 @@
 			Instrucciones:
 			
 			Agrupen las siguientes obras libremente conforme a su percepción. 
-			
-			Asignen un título a cada grupo creado conforme a sus características (criterios).
+			Asignen un título a cada grupo creado conforme a sus características (criterios 
+			creados por el equipo anteriormente).
 
 			Creen tantos grupos como deseen. 
 
 			Al terminar, capturen la pantalla cuidando que aparezcan todos los grupos.
-			Además, de manera individual accedan al teclado digital y añadan caracteristicas de las 
+			Además, de manera grupal accedan al teclado digital y añadan caracteristicas de las 
 			imágenes al archivo "Criterios".
-			Recuerden incluir su código de participante (A1,B2,...) al principio de cada aportación. 
+			Recuerden incluir su nombre de equipo (Alfa, Beta, ...) al principio de cada aportación. 

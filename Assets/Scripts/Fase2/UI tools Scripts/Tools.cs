@@ -6,12 +6,17 @@ using System.Collections;
 
 public class Tools : MonoBehaviour
 {
+	public Text HerramientaActual;
 	public GameObject panelBotonesOperaciones;
 	public GameObject panelEditar;
 	public GameObject panelPadre;
 	public botones opcionPanel;
+	public GameObject panelCortar;
 	public GameObject panelCrecer;
+	public GameObject panelGirar;
 	public Bandera opcionBandera;
+	public Bandera OpcionCortar;
+	public Bandera giro;
 	public Image[] imagenAEditar;
 	//public bool opcion4;
 	public Canvas canvas;
@@ -31,13 +36,18 @@ public class Tools : MonoBehaviour
 	{
 		//opcion4 = false;
 		panelBotonesOperaciones = GameObject.Find("PanelBotones");
-		//	panelCrecer = GameObject.Find("PanelCrecer");
+		//panelCrecer = GameObject.FindGameObjectWithTag("PanelCrecer");
 		panelEditar = GameObject.Find("Area de Trabajo");
 		panelPadre = GameObject.Find("Canvas");
 		tmp = GameObject.Find("Grupo");
+		//panelCortar = GameObject.FindGameObjectWithTag ("PanelCortar");
+
+		//Debug.Log (panelCortar.tag);
 
 		opcionPanel = panelBotonesOperaciones.GetComponent<botones>();
 		opcionBandera = panelCrecer.GetComponent<Bandera>();
+		OpcionCortar = panelCortar.GetComponent<Bandera> ();
+		giro = panelGirar.GetComponent<Bandera> ();
 
 		imagenAEditar = transform.GetComponentsInParent<Image>(); //El indice 1 es el que editara
 		
@@ -139,11 +149,12 @@ public class Tools : MonoBehaviour
 		if (opcionPanel.opcion == 1) {  
 			imagenAEditar[0].gameObject.transform.SetParent(panelPadre.transform);
 			imagenAEditar[0].gameObject.transform.SetParent(panelEditar.transform);
+			HerramientaActual.text = "Traer al Frente";
 		}
 		//cortar
 		if (opcionPanel.opcion == 8 || opcionPanel.opcion == 7 || opcionPanel.opcion == 6) {
 			imagenAEditar[0].type = Image.Type.Filled;
-
+			HerramientaActual.text = "Cortar";
 			//imagenAEditar[0].fillAmount -=0.05f;
 
 			//clon.fillAmount -=0.05f;
@@ -153,7 +164,11 @@ public class Tools : MonoBehaviour
 		}
 		//rotar
 		if (opcionPanel.opcion == 3) {
-			imagenAEditar[0].rectTransform.Rotate (Vector3.back*5);
+			HerramientaActual.text = "Girar";
+			if(giro.bandera == 0)
+				imagenAEditar[0].rectTransform.Rotate (Vector3.back*5);
+			else
+				imagenAEditar[0].rectTransform.Rotate (Vector3.back*-5);
 		}
 		if (opcionPanel.opcion == 4) {
 			canvas.GetComponent <CargarImgs> ().agrupados ++;
@@ -162,6 +177,7 @@ public class Tools : MonoBehaviour
 			canvas.GetComponent <CargarImgs> ().opcion4 = true;
 		}
 		if (opcionPanel.opcion == 5) {
+			HerramientaActual.text = "Crecer";
 			Vector3 theScale = imagenAEditar[0].transform.localScale;
 			theScale.x *= -1;
 			imagenAEditar[0].transform.localScale = theScale;
@@ -176,25 +192,56 @@ public class Tools : MonoBehaviour
 		}
 		if (opcionPanel.opcion == 6) {
 
-			imagenAEditar[0].fillMethod = Image.FillMethod.Horizontal;
-			imagenAEditar[0].fillAmount -=0.05f;
+			if(OpcionCortar.bandera == 0){
+				imagenAEditar[0].fillMethod = Image.FillMethod.Horizontal;
+				imagenAEditar[0].fillOrigin = (int)Image.OriginHorizontal.Right;
+				imagenAEditar[0].fillAmount -=0.05f;
+				HerramientaActual.text = "Cortar H.";
 
+			}else {
+				imagenAEditar[0].fillMethod = Image.FillMethod.Horizontal;
+				imagenAEditar[0].fillOrigin = (int)Image.OriginHorizontal.Left;
+				imagenAEditar[0].fillAmount -=0.05f;
+				HerramientaActual.text = "Cortar H.";
+			}
 
 		}
 		if (opcionPanel.opcion == 7) {
 
-			imagenAEditar[0].fillMethod = Image.FillMethod.Vertical;
-			imagenAEditar[0].fillAmount -=0.05f;
-			
+			if (OpcionCortar.bandera == 0){
+				imagenAEditar[0].fillMethod = Image.FillMethod.Vertical;
+				imagenAEditar[0].fillOrigin = (int)Image.OriginVertical.Bottom;
+				HerramientaActual.text = "Cortar V.";
+				imagenAEditar[0].fillAmount -=0.05f;
+			} else {
+				imagenAEditar[0].fillMethod = Image.FillMethod.Vertical;
+				imagenAEditar[0].fillOrigin = (int)Image.OriginVertical.Top;
+				imagenAEditar[0].fillAmount -=0.05f;
+				HerramientaActual.text = "Cortar V.";
+
+			}
+
 		}
 		if (opcionPanel.opcion == 8) {
 
-			imagenAEditar[0].fillMethod = Image.FillMethod.Radial360;
-			imagenAEditar[0].fillAmount -=0.05f;
-			
+			if(OpcionCortar.bandera == 0) {
+				imagenAEditar[0].fillMethod = Image.FillMethod.Radial360;
+				imagenAEditar[0].fillOrigin = (int)Image.Origin360.Right;
+				imagenAEditar[0].fillAmount -=0.05f;
+				HerramientaActual.text = "Cortar C.";
+
+			}else {
+				imagenAEditar[0].fillMethod = Image.FillMethod.Radial360;
+				imagenAEditar[0].fillOrigin = (int)Image.Origin360.Left;
+				imagenAEditar[0].fillAmount -=0.05f;
+				HerramientaActual.text = "Cortar C.";
+
+			}
 		}
+
 		if (opcionPanel.opcion == 9) {
 			agrupadosGP(0.2f,0.2f);
+			HerramientaActual.text = "Crecer";
 
 			if(opcionBandera.bandera == 1)
 			{
@@ -209,6 +256,7 @@ public class Tools : MonoBehaviour
 			
 		}
 		if (opcionPanel.opcion == 10) {
+			HerramientaActual.text = "Crecer";
 			agrupadosGP(0.2f, 0);
 			if(opcionBandera.bandera == 1)
 			{
@@ -224,6 +272,7 @@ public class Tools : MonoBehaviour
 			}
 		} 
 		if (opcionPanel.opcion == 11) {
+			HerramientaActual.text = "Crecer";
 			agrupadosGP(0, 0.2f);
 
 			if(opcionBandera.bandera == 1)
@@ -235,7 +284,13 @@ public class Tools : MonoBehaviour
 				imagenAEditar[0].rectTransform.sizeDelta = new Vector2(imagenAEditar[0].rectTransform.sizeDelta.x,imagenAEditar[0].rectTransform.sizeDelta.y-5);
 					
 			}
-		} 
+		}
+
+		if (opcionPanel.opcion == 12) {
+			HerramientaActual.text = "Borrar";
+
+			Destroy(imagenAEditar[0].gameObject);
+		}
 		//Debug.Log("OnPointerClick ");
 	}
 

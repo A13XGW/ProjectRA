@@ -13,7 +13,12 @@ public class Bandera : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public void OpcionActual (int opt) {
-		bandera = opt;
+	public void OpcionActual () {
+		//bandera = opt;
+		if (bandera == 0) {
+			bandera = 1;
+		} else {
+			bandera =0;
+		}
 	}
 }

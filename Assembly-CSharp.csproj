@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{531BAC3C-72EB-C314-7E4F-FDF10CD6D2DE}</ProjectGuid>
+	<ProjectGuid>{28686F1D-2C84-6DA4-5E6B-7189923DF031}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -126,10 +126,12 @@
      <Compile Include="Assets\Scripts\Inicio\inciar.cs" />
      <Compile Include="Assets\Scripts\MostrarIns.cs" />
      <Compile Include="Assets\Scripts\MouseBorder.cs" />
+     <Compile Include="Assets\Scripts\ReiniciarNivel.cs" />
      <Compile Include="Assets\Scripts\SituarAvatar.cs" />
      <Compile Include="Assets\Scripts\Teclado.cs" />
      <Compile Include="Assets\Scripts\Tutorial\PantallaInstrucciones.cs" />
      <Compile Include="Assets\Scripts\inicializacion.cs" />
+     <Compile Include="Assets\cambiarNombre.cs" />
      <None Include="Assets\FileBrowser\readme.txt" />
      <None Include="Assets\Resources\Tutorial\Fase3.txt" />
      <None Include="Assets\Resources\Tutorial\Fase1.txt" />

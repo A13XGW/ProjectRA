@@ -51,7 +51,7 @@ public class MoverRotarObjeto3d : MonoBehaviour {
 		if (bandera == 0) {
 			bandera = 1;
 			MenuRotar.SetActive (true);
-			flechas.transform.position = new Vector3(-4.9f,-0.7f,-12.1f);
+			flechas.transform.position = new Vector3(-3.43f,-0.067f,-12.1f);
 
 		} else {
 			bandera = 0;

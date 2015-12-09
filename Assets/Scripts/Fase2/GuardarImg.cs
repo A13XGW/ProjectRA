@@ -167,10 +167,10 @@ public class GuardarImg : MonoBehaviour {
 		}*/
 		//------------------------------------------------------------------------
 		yb = 0;
-		for (int y = 201; y <= 479; y++) 
+		for (int y = 260; y <= 535; y++) //antes 201  y 479, ahora 181 y 459
 		{
 			//yb=0;
-			for(int x = 400; x <= 1000; x++)
+			for(int x = 400; x <= 1000; x++) //estaba en 300x1020 para la otra resolucion 1280x600 ahora 400 y 1000 
 			{
 				textura.SetPixel(xb,yb, screen.sprite.texture.GetPixel(x,y));
 				xb++;
@@ -209,5 +209,19 @@ public class GuardarImg : MonoBehaviour {
 		Debug.Log(Time.time);
 	}
 
+	public void CambiaGrupal() {
+		if(bandera == 0)
+		{
+			bandera = 1;
+			rutaG = "/Resources/Fase2/Individual/";
+			tipoCreacion.text = "Individual";
+			capturas = 1;
+		}else{
+			bandera = 0;
+			rutaG = "/Resources/Fase2/Grupal/";
+			tipoCreacion.text = "Grupal";
+			capturas = 1;
+		}
+	}
 
 }

@@ -20,7 +20,8 @@ public class Evaluador : MonoBehaviour {
 	// Use this for initialization
 
 	void Start() {
-		cargaScript = fondo.GetComponent<Carga>() as Carga;
+		if (fondo!=null)
+			cargaScript = fondo.GetComponent<Carga>() as Carga;
 		codigoEvaluador="0";
 		nombreEquipo= PlayerPrefs.GetString ("NombreEquipo");
 	//	Debug.Log(PlayerPrefs.GetInt("IntegrantesTotal"));
@@ -32,11 +33,12 @@ public class Evaluador : MonoBehaviour {
 		
 		ruta = Application.persistentDataPath;
 		ruta += "/Resources/Fase6/";
+
 		if (Directory.Exists (ruta) == false) {
 			Directory.CreateDirectory (ruta);
 		}
+
 		ruta += "Evaluacion.txt";
-		
 		if (File.Exists (ruta) == false) {
 			File.Create (ruta);
 		}
@@ -65,7 +67,9 @@ public class Evaluador : MonoBehaviour {
 	}
 
 	public void GuardaEvaluacion(){
-		texto = "Equipo: " +  nombreEquipo + " Evaluado por codigo: " + codigoEvaluador + "\n";
+
+		texto += "Equipo: " +  nombreEquipo + " Evaluado por codigo: " + codigoEvaluador + "\n";
+
 		//flexibilidad grupal
 		for (int i = 0; i<cargaScript.ifgrupo.Length;i++) {
 			texto+="imagen " + (i+1) + "grupal en flexiblidad, valor de: " + cargaScript.ifgrupo[i] + "\n";
@@ -82,8 +86,13 @@ public class Evaluador : MonoBehaviour {
 		for (int i = 0; i<cargaScript.ioindividual.Length;i++) {
 			texto+="imagen " + (i+1) + "individual en originalidad, valor de: " + cargaScript.ioindividual[i] + "\n";
 		}
+
 		File.AppendAllText(ruta,texto);
-	//	File.WriteAllText(ruta,texto);
+		//tmp.text = File.ReadAllText (ruta) + texto + " ";
+		//File.WriteAllText(ruta,tmp.text,System.Text.Encoding.UTF8);
+		//File.Open(ruta,FileMode.OpenOrCreate);
+		//File.AppendAllText(ruta,tmp.text);
+
 	}
 
 	public void RegresaMenu() {

@@ -92,8 +92,8 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 		} 
 		else 
 		{
-			if (Input.GetMouseButton(0)) {
-				if(Input.mousePosition.x >= 1260 || Input.mousePosition.y >= 580 || Input.mousePosition.x <= 20 || Input.mousePosition.y <= 20)
+			if (Input.GetMouseButton(0)) { //estaba y en 580
+				if(Input.mousePosition.x >= 1260 || Input.mousePosition.y >= 700 || Input.mousePosition.x <= 20 || Input.mousePosition.y <= 20)
 				{
 					//				Debug.Log("area");
 					itemBeingDragged.transform.position = startPosition;
