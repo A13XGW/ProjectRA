@@ -149,12 +149,12 @@ public class Tools : MonoBehaviour
 		if (opcionPanel.opcion == 1) {  
 			imagenAEditar[0].gameObject.transform.SetParent(panelPadre.transform);
 			imagenAEditar[0].gameObject.transform.SetParent(panelEditar.transform);
-			HerramientaActual.text = "Traer al Frente";
+			HerramientaActual.text = "Herramienta actual\nTraer al Frente";
 		}
 		//cortar
 		if (opcionPanel.opcion == 8 || opcionPanel.opcion == 7 || opcionPanel.opcion == 6) {
 			imagenAEditar[0].type = Image.Type.Filled;
-			HerramientaActual.text = "Cortar";
+			HerramientaActual.text = "Herramienta actual\nCortar";
 			//imagenAEditar[0].fillAmount -=0.05f;
 
 			//clon.fillAmount -=0.05f;
@@ -164,12 +164,11 @@ public class Tools : MonoBehaviour
 		}
 		//rotar
 		if (opcionPanel.opcion == 3) {
-			HerramientaActual.text = "Girar";
-			if(giro.bandera == 0)
-				imagenAEditar[0].rectTransform.Rotate (Vector3.back*5);
-			else
-				imagenAEditar[0].rectTransform.Rotate (Vector3.back*-5);
+			HerramientaActual.text = "Herramienta actual\nGirar";
+			imagenAEditar[0].rectTransform.Rotate (Vector3.back*5);
 		}
+
+
 		if (opcionPanel.opcion == 4) {
 			canvas.GetComponent <CargarImgs> ().agrupados ++;
 
@@ -177,7 +176,7 @@ public class Tools : MonoBehaviour
 			canvas.GetComponent <CargarImgs> ().opcion4 = true;
 		}
 		if (opcionPanel.opcion == 5) {
-			HerramientaActual.text = "Crecer";
+			HerramientaActual.text = "Herramienta actual\nCrecer";
 			Vector3 theScale = imagenAEditar[0].transform.localScale;
 			theScale.x *= -1;
 			imagenAEditar[0].transform.localScale = theScale;
@@ -196,13 +195,13 @@ public class Tools : MonoBehaviour
 				imagenAEditar[0].fillMethod = Image.FillMethod.Horizontal;
 				imagenAEditar[0].fillOrigin = (int)Image.OriginHorizontal.Right;
 				imagenAEditar[0].fillAmount -=0.05f;
-				HerramientaActual.text = "Cortar H.";
+				HerramientaActual.text = "Herramienta actual\nCortar H.";
 
 			}else {
 				imagenAEditar[0].fillMethod = Image.FillMethod.Horizontal;
 				imagenAEditar[0].fillOrigin = (int)Image.OriginHorizontal.Left;
 				imagenAEditar[0].fillAmount -=0.05f;
-				HerramientaActual.text = "Cortar H.";
+				HerramientaActual.text = "Herramienta actual\nCortar H.";
 			}
 
 		}
@@ -211,13 +210,13 @@ public class Tools : MonoBehaviour
 			if (OpcionCortar.bandera == 0){
 				imagenAEditar[0].fillMethod = Image.FillMethod.Vertical;
 				imagenAEditar[0].fillOrigin = (int)Image.OriginVertical.Bottom;
-				HerramientaActual.text = "Cortar V.";
+				HerramientaActual.text = "Herramienta actual\nCortar V.";
 				imagenAEditar[0].fillAmount -=0.05f;
 			} else {
 				imagenAEditar[0].fillMethod = Image.FillMethod.Vertical;
 				imagenAEditar[0].fillOrigin = (int)Image.OriginVertical.Top;
 				imagenAEditar[0].fillAmount -=0.05f;
-				HerramientaActual.text = "Cortar V.";
+				HerramientaActual.text = "Herramienta actual\nCortar V.";
 
 			}
 
@@ -228,20 +227,20 @@ public class Tools : MonoBehaviour
 				imagenAEditar[0].fillMethod = Image.FillMethod.Radial360;
 				imagenAEditar[0].fillOrigin = (int)Image.Origin360.Right;
 				imagenAEditar[0].fillAmount -=0.05f;
-				HerramientaActual.text = "Cortar C.";
+				HerramientaActual.text = "Herramienta actual\nCortar C.";
 
 			}else {
 				imagenAEditar[0].fillMethod = Image.FillMethod.Radial360;
 				imagenAEditar[0].fillOrigin = (int)Image.Origin360.Left;
 				imagenAEditar[0].fillAmount -=0.05f;
-				HerramientaActual.text = "Cortar C.";
+				HerramientaActual.text = "Herramienta actual\nCortar C.";
 
 			}
 		}
 
 		if (opcionPanel.opcion == 9) {
 			agrupadosGP(0.2f,0.2f);
-			HerramientaActual.text = "Crecer";
+			HerramientaActual.text = "Herramienta actual\nCrecer";
 
 			if(opcionBandera.bandera == 1)
 			{
@@ -256,7 +255,7 @@ public class Tools : MonoBehaviour
 			
 		}
 		if (opcionPanel.opcion == 10) {
-			HerramientaActual.text = "Crecer";
+			HerramientaActual.text = "Herramienta actual\nCrecer";
 			agrupadosGP(0.2f, 0);
 			if(opcionBandera.bandera == 1)
 			{
@@ -272,7 +271,7 @@ public class Tools : MonoBehaviour
 			}
 		} 
 		if (opcionPanel.opcion == 11) {
-			HerramientaActual.text = "Crecer";
+			HerramientaActual.text = "Herramienta actual\nCrecer";
 			agrupadosGP(0, 0.2f);
 
 			if(opcionBandera.bandera == 1)
@@ -287,9 +286,14 @@ public class Tools : MonoBehaviour
 		}
 
 		if (opcionPanel.opcion == 12) {
-			HerramientaActual.text = "Borrar";
+			HerramientaActual.text = "Herramienta actual\nBorrar";
 
 			Destroy(imagenAEditar[0].gameObject);
+		}
+
+		if (opcionPanel.opcion == 13) {
+			HerramientaActual.text = "Herramienta actual\nGirar";
+			imagenAEditar[0].rectTransform.Rotate (Vector3.back*-5);
 		}
 		//Debug.Log("OnPointerClick ");
 	}
